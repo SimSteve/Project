@@ -29,14 +29,19 @@ mnist = tf.keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
+x_train = x_train.reshape(x_train.shape[0], x_train.shape[1], x_train.shape[2], 1)
+x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], x_test.shape[2], 1)
 
 model = tf.keras.models.Sequential([
-    tf.keras.layers.Conv2D(filters=64, kernel_size=8 * 8, activation=tf.nn.relu),
-    tf.keras.layers.Conv2D(filters=128, kernel_size=6 * 6, activation=tf.nn.relu),
-    tf.keras.layers.Conv2D(filters=128, kernel_size=5 * 5, activation=tf.nn.relu),
+    tf.keras.layers.Conv2D(filters=64, kernel_size=8, input_shape=(28,28,1), activation=tf.nn.relu),
+    tf.keras.layers.Conv2D(filters=128, kernel_size=6, activation=tf.nn.relu),
+    tf.keras.layers.Conv2D(filters=128, kernel_size=5, activation=tf.nn.relu),
     tf.keras.layers.Flatten(),
     tf.keras.layers.Dense(10, activation=tf.nn.softmax)
 ])
+
+model.summary()
+
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
