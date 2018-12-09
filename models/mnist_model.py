@@ -29,6 +29,7 @@ mnist = tf.keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
+
 model = tf.keras.models.Sequential([
     tf.keras.layers.Conv2D(filters=64, kernel_size=8 * 8, activation=tf.nn.relu),
     tf.keras.layers.Conv2D(filters=128, kernel_size=6 * 6, activation=tf.nn.relu),
