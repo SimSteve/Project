@@ -92,9 +92,7 @@ class FGSM_model():
 
 
 def create_model(m_file, data):
-    mnist = data
-
-    (x_train, y_train), (x_test, y_test) = mnist.load_data()
+    (x_train, y_train), (x_test, y_test) = data.load_data()
     x_train, x_test = x_train / 255.0, x_test / 255.0
 
     x_train = np.expand_dims(x_train, -1)
@@ -120,18 +118,15 @@ def test(m_file, data):
     # loading a saved model
     model = FGSM_model(m_file).load()
 
-    mnist = data
-
-    _, (x_test, y_test) = mnist.load_data()
+    _, (x_test, y_test) = data.load_data()
     x_test = x_test / 255.0
 
     x_test = np.expand_dims(x_test, -1)
     predictions = model.predict(x_test)
     x_test = x_test[:, :, :, 0]
 
-    i = 969
     plt.figure(figsize=(6, 3))
-    plot_image(i, predictions, y_test, x_test)
+    plot_image(i=969, predictions_array=predictions, true_label=y_test, img=x_test)
 
 
 if __name__ == '__main__':
