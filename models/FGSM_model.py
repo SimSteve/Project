@@ -60,11 +60,11 @@ class FGSM_model():
         return  self.model.predict(x_test)
 
     def save(self):
-        tf.keras.models.save_model(self.model, self.model_file)
+        tf.keras.models.save_model(self.model, '../saved_models/' + self.model_file)
 
     def load(self):
-        if Path(self.model_file).is_file():
-            self.model = tf.keras.models.load_model(self.model_file)
+        if Path('../saved_models/' + self.model_file).is_file():
+            self.model = tf.keras.models.load_model('../saved_models/' + self.model_file)
         else:
             self.model = None
         return self
@@ -108,7 +108,7 @@ def test(m_file, data):
     x_test = x_test[:, :, :, 0]
 
     plt.figure(figsize=(6, 3))
-    plot_image(i=969, predictions_array=predictions, true_label=y_test, img=x_test)
+    plot_image(i=45, predictions_array=predictions, true_label=y_test, img=x_test)
 
 
 if __name__ == '__main__':
@@ -118,5 +118,5 @@ if __name__ == '__main__':
     data = data_types[type]
     class_names = class_types[type]
 
-    create_model(m_file, data)
+    #create_model(m_file, data)
     test(m_file, data)

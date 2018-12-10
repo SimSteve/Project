@@ -78,11 +78,11 @@ class FGSM_model():
         return  self.model.predict(x_test)
 
     def save(self):
-        tf.keras.models.save_model(self.model, self.model_file)
+        tf.keras.models.save_model(self.model, '../saved_models/' + self.model_file)
 
     def load(self):
-        if Path(self.model_file).is_file():
-            self.model = tf.keras.models.load_model(self.model_file)
+        if Path('../saved_models/' + self.model_file).is_file():
+            self.model = tf.keras.models.load_model('../saved_models/' + self.model_file)
         else:
             self.model = None
         return self
