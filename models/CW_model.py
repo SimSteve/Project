@@ -34,31 +34,36 @@ class FGSM_model():
     def __init__(self,m_file):
         self.model_file = m_file
 
+    def build(self):
         self.model = tf.keras.Sequential([
-            tf.keras.layers.Conv2D(filters=32, kernel_size=3, input_shape=(28, 28, 1)),
-            #tf.keras.layers.Conv2D(filters=64, kernel_size=3, input_shape=(28, 28, 1)),
-            tf.keras.layers.ReLU(),
-            tf.keras.layers.Conv2D(filters=32, kernel_size=3),
-            #tf.keras.layers.Conv2D(filters=64, kernel_size=3),
-            tf.keras.layers.ReLU(),
+            tf.keras.layers.Conv2D(filters=32, kernel_size=3, input_shape=(28, 28, 1), activation=tf.nn.relu),
+            # tf.keras.layers.Conv2D(filters=64, kernel_size=3, input_shape=(28, 28, 1), activation=tf.nn.relu),
+
+            tf.keras.layers.Conv2D(filters=32, kernel_size=3, activation=tf.nn.relu),
+            # tf.keras.layers.Conv2D(filters=64, kernel_size=3, activation=tf.nn.relu),
+
             tf.keras.layers.MaxPool2D(pool_size=2),
-            tf.keras.layers.Conv2D(filters=64, kernel_size=3),
-            #tf.keras.layers.Conv2D(filters=128, kernel_size=3),
-            tf.keras.layers.ReLU(),
-            tf.keras.layers.Conv2D(filters=64, kernel_size=3),
-            #tf.keras.layers.Conv2D(filters=128, kernel_size=3),
-            tf.keras.layers.ReLU(),
+
+            tf.keras.layers.Conv2D(filters=64, kernel_size=3, activation=tf.nn.relu),
+            # tf.keras.layers.Conv2D(filters=128, kernel_size=3, activation=tf.nn.relu),
+
+            tf.keras.layers.Conv2D(filters=64, kernel_size=3, activation=tf.nn.relu),
+            # tf.keras.layers.Conv2D(filters=128, kernel_size=3, activation=tf.nn.relu),
+
             tf.keras.layers.MaxPool2D(pool_size=2),
+
             tf.keras.layers.Flatten(),
-            tf.keras.layers.Dense(200),
-            #tf.keras.layers.Dense(256),
-            tf.keras.layers.ReLU(),
+
+            tf.keras.layers.Dense(200, activation=tf.nn.relu),
+            # tf.keras.layers.Dense(256, activation=tf.nn.relu),
+
             tf.keras.layers.Dropout(0.2),
-            tf.keras.layers.Dense(200),
-            #tf.keras.layers.Dense(256),
-            tf.keras.layers.ReLU(),
-            tf.keras.layers.Dense(10)
-            ])
+
+            tf.keras.layers.Dense(200, activation=tf.nn.relu),
+            # tf.keras.layers.Dense(256, activation=tf.nn.relu),
+
+            tf.keras.layers.Dense(10, activation=tf.nn.softmax)
+        ])
 
     def train(self, x_train, y_train, ep):
         self.model.compile(optimizer=tf.train.AdamOptimizer(),
@@ -97,6 +102,9 @@ def create_model(m_file, data):
 
     model = FGSM_model(m_file)
 
+    # building the networks' structure
+    model.build()
+
     # training
     model.train(x_train, y_train, ep=5)
 
@@ -117,7 +125,9 @@ def test(m_file, data):
     _, (x_test, y_test) = mnist.load_data()
     x_test = x_test / 255.0
 
+    x_test = np.expand_dims(x_test, -1)
     predictions = model.predict(x_test)
+    x_test = x_test[:, :, :, 0]
 
     i = 969
     plt.figure(figsize=(6, 3))
