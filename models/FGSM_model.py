@@ -112,11 +112,11 @@ def test(m_file, data):
 
 
 if __name__ == '__main__':
-    type = 'mnist'
+    type = 'fashion_mnist'
 
     m_file = file_types[type]
     data = data_types[type]
     class_names = class_types[type]
 
-    #create_model(m_file, data)
-    test(m_file, data)
+    create_model(m_file, data)
+    #test(m_file, data)
