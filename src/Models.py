@@ -3,9 +3,6 @@ from pathlib import Path
 
 
 class Model:
-    def __init__(self, m_file):
-        self.model_file = m_file
-
     def build(self, in_shape):
         pass
 
@@ -15,19 +12,26 @@ class Model:
                            metrics=['accuracy'])
         self.model.fit(x_train, y_train, epochs=ep)
 
+    def compile(self):
+        self.model.compile(optimizer=tf.train.AdamOptimizer(),
+                           loss='sparse_categorical_crossentropy',
+                           metrics=['accuracy'])
+
     def evaluate(self, x_test, y_test):
         return self.model.evaluate(x_test, y_test)
 
     def predict(self, x_test):
         return  self.model.predict(x_test)
 
-    def save(self):
-        tf.keras.models.save_model(self.model, '../saved_models/' + self.model_file)
+    def save(self, m_file):
+        tf.keras.models.save_model(self.model, '../saved_models/' + m_file)
 
-    def load(self):
-        if Path('../saved_models/' + self.model_file).is_file():
-            self.model = tf.keras.models.load_model('../saved_models/' + self.model_file)
+    def load(self, m_file):
+        if Path('../saved_models/' + m_file).is_file():
+            self.model = tf.keras.models.load_model('../saved_models/' + m_file)
+            self.compile()
         else:
+            print("WARNING! No saved model found, train one from scratch.")
             self.model = None
         return self
 
@@ -36,9 +40,6 @@ class Model:
 
 
 class FGSM(Model):
-    def __init__(self, m_file):
-        Model.__init__(self, m_file)
-
     def build(self, in_shape):
         self.model = tf.keras.Sequential([
             tf.keras.layers.Conv2D(filters=64, kernel_size=8, input_shape=in_shape, activation=tf.nn.relu),
@@ -49,10 +50,7 @@ class FGSM(Model):
         ])
 
 
-class CW_mnist(Model):
-    def __init__(self, m_file):
-        Model.__init__(self, m_file)
-
+class CW_1(Model):
     def build(self, in_shape):
         self.model = tf.keras.Sequential([
             tf.keras.layers.Conv2D(filters=32, kernel_size=3, input_shape=in_shape, activation=tf.nn.relu),
@@ -69,10 +67,7 @@ class CW_mnist(Model):
         ])
 
 
-class CW_cifar(Model):
-    def __init__(self, m_file):
-        Model.__init__(self, m_file)
-
+class CW_2(Model):
     def build(self, in_shape):
         self.model = tf.keras.Sequential([
             tf.keras.layers.Conv2D(filters=64, kernel_size=3, input_shape=in_shape, activation=tf.nn.relu),

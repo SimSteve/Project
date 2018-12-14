@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5fee388-2e52-4a26-88b5-51cd1cd31575" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/article.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/predictor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/CW_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/FGSM_model.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/accuracies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saved_models/cifar10_CW_2_model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saved_models/fashion_mnist_CW_1_model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saved_models/mnist_CW_1_model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saved_models/fashion_mnist_CW_model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/saved_models/fashion_mnist_FGSM_model" beforeDir="false" afterPath="$PROJECT_DIR$/saved_models/fashion_mnist_FGSM_model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saved_models/mnist_CW_model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/saved_models/mnist_FGSM_model" beforeDir="false" afterPath="$PROJECT_DIR$/saved_models/mnist_FGSM_model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trainer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,26 +39,28 @@
           <entry key="json" value="1" />
           <entry key="md" value="2" />
           <entry key="py" value="15" />
+          <entry key="results" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
           <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="46" />
-          <entry key="py" value="5351" />
+          <entry key="py" value="7227" />
           <entry key="txt" value="311" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="357" />
-          <entry key="Python" value="5351" />
+          <entry key="Python" value="7227" />
         </counts>
       </usages-collector>
     </session>
@@ -61,39 +70,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="-6">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1544737072433" expanded="true" signature="1145:1575" ph="..." />
-                <marker date="1544737072433" expanded="true" signature="1600:1601" ph="..." />
-                <marker date="1544737072433" expanded="true" signature="2521:2522" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trainer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-                <marker date="1544737085292" expanded="true" signature="459:1372" ph="..." />
+                <marker date="1544790334136" expanded="true" signature="406:591" ph="..." />
+                <marker date="1544790334136" expanded="true" signature="1304:1734" ph="..." />
+                <marker date="1544790334136" expanded="true" signature="1755:1756" ph="..." />
+                <marker date="1544790334136" expanded="true" signature="2602:2603" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/trainer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+                <marker date="1544793932616" expanded="true" signature="384:1243" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/predictor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+            <state relative-caret-position="-516">
+              <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#919#1402#0" />
+                <marker date="1544792735078" expanded="true" signature="1191:1626" ph="..." />
+                <marker date="1544792735078" expanded="true" signature="1685:2078" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,8 +139,8 @@
         <option value="$PROJECT_DIR$/models/FGSM_model.py" />
         <option value="$PROJECT_DIR$/models/Models.py" />
         <option value="$PROJECT_DIR$/src/Models.py" />
-        <option value="$PROJECT_DIR$/src/trainer.py" />
         <option value="$PROJECT_DIR$/src/predictor.py" />
+        <option value="$PROJECT_DIR$/src/trainer.py" />
       </list>
     </option>
   </component>
@@ -149,6 +160,11 @@
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
@@ -183,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.predictor">
+  <component name="RunManager" selected="Python.trainer">
     <configuration name="predictor" type="PythonConfigurationType" factoryName="Python">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -310,7 +326,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28864864" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34702703" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -410,37 +426,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trainer.py">
+    <entry file="file://$PROJECT_DIR$/src/results">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="-516">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
-            <marker date="1544737085292" expanded="true" signature="459:1372" ph="..." />
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1544792735078" expanded="true" signature="1191:1626" ph="..." />
+            <marker date="1544792735078" expanded="true" signature="1685:2078" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="-6">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1544737072433" expanded="true" signature="1145:1575" ph="..." />
-            <marker date="1544737072433" expanded="true" signature="1600:1601" ph="..." />
-            <marker date="1544737072433" expanded="true" signature="2521:2522" ph="..." />
+            <marker date="1544790334136" expanded="true" signature="406:591" ph="..." />
+            <marker date="1544790334136" expanded="true" signature="1304:1734" ph="..." />
+            <marker date="1544790334136" expanded="true" signature="1755:1756" ph="..." />
+            <marker date="1544790334136" expanded="true" signature="2602:2603" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/predictor.py">
+    <entry file="file://$PROJECT_DIR$/src/trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+        <state relative-caret-position="75">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#919#1402#0" />
+            <element signature="e#0#17#0" expanded="true" />
+            <marker date="1544793932616" expanded="true" signature="384:1243" ph="..." />
           </folding>
         </state>
       </provider>

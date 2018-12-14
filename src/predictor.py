@@ -10,63 +10,82 @@ class_names = []
 
 class_types = {'fashion_mnist':fashion_mnist_classes, 'mnist':mnist_classes, 'cifar10':cifar10_classes}
 data_types = {'fashion_mnist':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
-file_types = {'fashion_mnist':'fashion_mnist_FGSM_model', 'mnist':'mnist_FGSM_model', 'cifar10':'cifar10_FGSM_model'}
+models = {"CW_1": mdl.CW_1(), "CW_2": mdl.CW_2(), "FGSM": mdl.FGSM()}
 
 DATASET = "mnist"
-MODEL = "cw"
+MODEL = "CW_1"
 
 
-def plot_image(i, predictions_array, true_label, img):
-    predictions_array, true_label, img = predictions_array[i], true_label[i], img[i]
+def plot_image(predictions, true_label, img):
+    '''
+    Draws the image. ONLY for greyscale images (the third dimension should be 1)
+    :param predictions: vector of probablities
+    :param true_label: the true label
+    :param img: the image itself
+    :return:
+    '''
+    # in order to plot the image, we need a 2D array
+    if len(np.array(img).shape) == 3:
+        img = img[:, :, 0]
+
     plt.grid(False)
     plt.xticks([])
     plt.yticks([])
 
     plt.imshow(img, cmap=plt.cm.binary)
 
-    predicted_label = np.argmax(predictions_array)
+    predicted_label = np.argmax(predictions)
     if predicted_label == true_label:
         color = 'blue'
     else:
         color = 'red'
 
-    plt.xlabel("{} {:2.0f}% ({})".format(class_names[predicted_label], 100 * np.max(predictions_array), class_names[true_label]), color=color)
+    plt.xlabel("{} {:2.0f}% ({})".format(class_names[predicted_label], 100 * np.max(predictions),
+                                         class_names[true_label]), color=color)
     plt.show()
 
 
-def main(type, model_type):
+def predict(model, data, labels, i=None):
+    if i is None:
+        # predicting the whole data
+        predictions = model.predict(data)
+
+        '''
+        Do whatever you want with the predictions (plotting, calculating accuracies, ...)
+        '''
+    else:
+        # adding a first dimension, batch-size
+        img = np.expand_dims(data[i], axis=0)
+        predictions = model.predict(img)
+
+        plot_image(predictions, labels[i], data[i])
+
+
+def main():
     global class_names, DATASET, MODEL
 
-    m_file = file_types[type]
-    data = data_types[type]
-    class_names = class_types[type]
+    data = data_types[DATASET]
+    class_names = class_types[DATASET]
 
-    # loading a saved model
-    if MODEL == "fgsm":
-        model = mdl.FGSM(m_file).load()
-    elif MODEL == "cw":
-        if DATASET == "cifar10":
-            model = mdl.CW_cifar(m_file).load()
-        else:
-            model = mdl.CW_mnist(m_file).load()
+    # getting the desired model
+    model = models[MODEL]
+
+    # loading all the weights
+    model.load(DATASET + "_" + MODEL + "_model")
 
     _, (x_test, y_test) = data.load_data()
     x_test = x_test / 255.0
 
-    # expanding the images to get a third dimension (needed for conv layers)
-    if type != 'cifar10':
+    dims = np.array(x_test).shape
+
+    changed_dims = False
+    if len(dims) != 4:
+        # expanding the images to get a third dimension (needed for conv layers)
         x_test = np.expand_dims(x_test, -1)
+        changed_dims = True
 
-    # predicting the whole data
-    predictions = model.predict(x_test)
-
-    # resizing the images to their original dimensions
-    if type != 'cifar10':
-        x_test = x_test[:, :, :, 0]
-
-    plt.figure(figsize=(6, 3))
-    plot_image(i=45, predictions_array=predictions, true_label=y_test, img=x_test)
+    predict(model, x_test, y_test, i=987)
 
 
 if __name__ == '__main__':
-    main("mnist", "cw")
+    main()

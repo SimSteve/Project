@@ -1,0 +1,7 @@
+mnist FGSM 0.9885
+mnist CW_1 0.9882
+fashion_mnist CW_1 0.9136
+cifar10 CW_2 0.7425
+fashion_mnist FGSM 0.8951
+fashion_mnist CW_2 0.9192
+mnist CW_2 0.9903
