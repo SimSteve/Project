@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5fee388-2e52-4a26-88b5-51cd1cd31575" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/accuracies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_models/cifar10_CW_2_model" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_models/fashion_mnist_CW_1_model" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_models/mnist_CW_1_model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_models/fashion_mnist_CW_model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_models/fashion_mnist_FGSM_model" beforeDir="false" afterPath="$PROJECT_DIR$/saved_models/fashion_mnist_FGSM_model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_models/mnist_CW_model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_models/mnist_FGSM_model" beforeDir="false" afterPath="$PROJECT_DIR$/saved_models/mnist_FGSM_model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predictor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trainer.py" afterDir="false" />
-    </list>
+    <list default="true" id="c5fee388-2e52-4a26-88b5-51cd1cd31575" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +40,12 @@
         <counts>
           <entry key="dummy" value="46" />
           <entry key="py" value="7227" />
-          <entry key="txt" value="311" />
+          <entry key="txt" value="421" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="357" />
+          <entry key="PLAIN_TEXT" value="467" />
           <entry key="Python" value="7227" />
         </counts>
       </usages-collector>
@@ -86,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="300">
+              <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
                 <marker date="1544793932616" expanded="true" signature="384:1243" ph="..." />
@@ -314,24 +300,30 @@
       <option name="project" value="LOCAL" />
       <updated>1544503413007</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ran the different models several times on differenr datasets, and kept track of all the accuracies">
+      <created>1544795705581</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1544795705581</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19240907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34702703" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34702703" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32972974" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -378,7 +370,8 @@
     <MESSAGE value="minor changes" />
     <MESSAGE value="minor changes (folder arrangements)" />
     <MESSAGE value="saved 4 models (CW and FGSM, each on mnist and fashion-mnist)" />
-    <option name="LAST_COMMIT_MESSAGE" value="saved 4 models (CW and FGSM, each on mnist and fashion-mnist)" />
+    <MESSAGE value="ran the different models several times on differenr datasets, and kept track of all the accuracies" />
+    <option name="LAST_COMMIT_MESSAGE" value="ran the different models several times on differenr datasets, and kept track of all the accuracies" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.vscode/settings.json">
@@ -457,8 +450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="300">
+          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
             <marker date="1544793932616" expanded="true" signature="384:1243" ph="..." />
