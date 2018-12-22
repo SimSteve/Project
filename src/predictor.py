@@ -84,7 +84,7 @@ def main():
         x_test = np.expand_dims(x_test, -1)
         changed_dims = True
 
-    predict(model, x_test, y_test, i=987)
+    predict(model, x_test, y_test, i=542)
 
 
 if __name__ == '__main__':
