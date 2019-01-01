@@ -12,9 +12,6 @@ class_types = {'fashion_mnist':fashion_mnist_classes, 'mnist':mnist_classes, 'ci
 data_types = {'fashion_mnist':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
 models = {"CW_1": mdl.CW_1(), "CW_2": mdl.CW_2(), "FGSM": mdl.FGSM()}
 
-DATASET = "mnist"
-MODEL = "CW_1"
-
 
 def plot_image(predictions, true_label, img):
     '''
@@ -84,8 +81,11 @@ def main():
         x_test = np.expand_dims(x_test, -1)
         changed_dims = True
 
-    predict(model, x_test, y_test, i=542)
+    predict(model, x_test, y_test, i=1)
 
 
 if __name__ == '__main__':
+    DATASET = "mnist"
+    MODEL = "CW_1"
+
     main()
