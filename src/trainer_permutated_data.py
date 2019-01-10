@@ -74,7 +74,7 @@ if __name__ == '__main__':
     DATASET = "mnist"
     MODEL = "CW_1"
 
-    MODEL_NAME = DATASET + "_" + MODEL + "permutated_model"
+    MODEL_NAME = DATASET + "_" + MODEL + "_permutated_model"
 
     r = open("../results", "a")
     main()
