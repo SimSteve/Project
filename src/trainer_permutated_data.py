@@ -54,23 +54,19 @@ def main():
     }
 
     # writing the training results
-    with open("../encrypted_{}_models.json".format(DATASET), 'a') as j:
+    with open("../permutated_encrypted_{}_models.json".format(DATASET), 'a') as j:
         json.dump(results, j)
         j.write('\n')
 
     # evaluating
     model.compile()
 
-    test_loss, test_acc = model.evaluate(x_test, y_test)
-    print("{0} {1} {2}\n".format(DATASET, MODEL, test_acc))
-    r.write("{0} {1} {2}\n".format(DATASET + " permutated_no_seed", MODEL, test_acc))
-
-    test_perm_loss, test_perm_acc = model.evaluate(x_test_permutated, y_test)
-    print("{0} {1} {2}\n".format(DATASET, MODEL, test_perm_acc))
-    r.write("{0} {1} {2}\n".format(DATASET + " permutated_no_seed", MODEL + " permutated_test_no_seed", test_perm_acc))
+    test_loss, test_acc = model.evaluate(x_test_permutated, y_test)
+    print("{0} {1} {2}\n".format(DATASET + " permutated_model", MODEL, test_acc))
+    r.write("{0} {1} {2}\n".format(DATASET + " permutated_model", MODEL, test_acc))
 
     # saving model
-    model.save(DATASET + "_" + MODEL + "permutated_model_no_seed")
+    model.save(MODEL_NAME)
 
 
 if __name__ == '__main__':
@@ -78,7 +74,7 @@ if __name__ == '__main__':
     DATASET = "mnist"
     MODEL = "CW_1"
 
-    MODEL_NAME = DATASET + "_" + MODEL + "_model"
+    MODEL_NAME = DATASET + "_" + MODEL + "permutated_model"
 
     r = open("../results", "a")
     main()

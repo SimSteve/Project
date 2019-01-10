@@ -10,7 +10,8 @@ class Model:
         self.model.compile(optimizer=tf.train.AdamOptimizer(),
                            loss='sparse_categorical_crossentropy',
                            metrics=['accuracy'])
-        self.model.fit(x_train, y_train, epochs=ep)
+        h = self.model.fit(x_train, y_train, epochs=ep)
+        return h.history['loss'], h.history['acc'], list(range(ep))
 
     def compile(self):
         self.model.compile(optimizer=tf.train.AdamOptimizer(),

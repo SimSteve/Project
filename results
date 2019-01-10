@@ -11,3 +11,4 @@ mnist permutated CW_1 0.0988
 mnist permutated CW_1 permutated_test 0.9655
 mnist permutated_no_seed CW_1 0.1485
 mnist permutated_no_seed CW_1 permutated_test_no_seed 0.2821
+mnist permutated_model CW_1 0.0838
