@@ -1,0 +1,20 @@
+mnist AES_ECB_model CW_1 0.1135 key is b'WR\x04\xed\x04\xec\xd8\xac\xed\xa2\xfc\xecK\x9dy\x10'
+mnist AES_CBC_model CW_1 0.1135 key is b'\xbb\xa2\xc9\xc6D\x10\x0c\x12\xb0\xb2_x]I\xf7\xf1' , IV is b'\x9f1\xe1\xa6\xd5\xb3|J\x0f\x0eU)\x90\x1b\x92-'
+mnist AES_CTR_model CW_1 0.1135 key is : b'`\xcch\xfd\xff\xf2\x06\x95\xa1\x1bH\xf3\xf42B+' , IV of counter is : <_counter.CounterBE object at 0x00000233CEB0ABE0>
+mnist AES_ECB_model CW_1 0.1135 key is b'\xa9\xe5\nG\xe7f\xce\x88/\xbd\x13\xc7\xd9\x04\xa5<'
+mnist AES_CBC_model CW_1 0.1135 key is b' \x00[\xfbh\xa2B\x14\xcd\x9f\xbf\x99\xbe\x18\xc6\xbd' , IV is b'\x1d@\xb9\xc9T\xce\xdd4\r\x00\xc5\xe5\xa6\x07\x04\xc1'
+mnist AES_CTR_model CW_2 0.101 key is : b"\xb3\xb7\x90\xddV`'\xbc&\x84s\x937,\xb0\x0b" , IV of counter is : <_counter.CounterBE object at 0x0000023384CF1500>
+mnist AES_ECB_model CW_2 0.0982 key is b'J\xa2E\x14\xb1u\x8d9\x9d\x8d\x96U\xb2\xda-\xae'
+mnist AES_CBC_model CW_2 0.1135 key is b'\x0bR\xf3p@9\xb5t\x05\x97\xd2lCg\x89\xd9' , IV is b'\xcb\xcc5\x9b\xd8\xcf\x80\xc9\xf9\xc9\x17Q\x95\x82T\x14'
+mnist AES_CTR_model FGSM 0.1028 key is : b'\x8e\xb9\x18\x1d\xd9%\xdf\x13\xa1r\xc0\xdb\xc6\xecJ\xa1' , IV of counter is : <_counter.CounterBE object at 0x0000023382A8FB88>
+mnist AES_ECB_model FGSM 0.0958 key is b'7\x9ft\xdb\n\xea\xcb\x90\x88\xb1\xa9b\xd9\xa0\xe7\xa5'
+mnist AES_CBC_model FGSM 0.1135 key is b'\xe2p&(\x8b\x01\x94\xd7yH\xb2s{\x1e\r\xb9' , IV is b'5\xb9F\xe6@\xaeh\x9a\xe4\xec\x961\xf4\xe8j\xfc'
+fashion_mnist AES_CTR_model CW_1 0.1 key is : b'g\x12\x08VJ\x87\xa7\xe3\xe4\x7f\xed.\x1f^\x1fW' , IV of counter is : <_counter.CounterBE object at 0x0000023388EC0EA0>
+fashion_mnist AES_ECB_model CW_1 0.414 key is b'~`\xddM\xcd|)\x96y|]\xd4\xbfUh#'
+fashion_mnist AES_CBC_model CW_1 0.1 key is b'?\x9c\xb9\x1e\xbd\xff8\xeaY\x91\xd3I\x1c;\xea\xb3' , IV is b'\xb9\x15\n\x05\x1d:\xaa\xef\\j\x06\xb0\x87t\x02\xd3'
+fashion_mnist AES_CTR_model CW_2 0.1 key is : b"''\xc7\xe5\xed\x9e\x8b\xefgx\xfb\xae\xc2\x98\xee\x87" , IV of counter is : <_counter.CounterBE object at 0x000002338A845870>
+fashion_mnist AES_ECB_model CW_2 0.1 key is b'{a\xbeD\xa1\x81\x17\xe4\x1aQ}\xda\x88;\x7fJ'
+fashion_mnist AES_CBC_model CW_2 0.1 key is b'c\xfb\x1b\x0fc6\xc57m\xaa@\x1aF\xe8\xcb\n' , IV is b'\xf2[\xa7\x12m\xc7xC[q1\x8b\xc0\xd4\x07\x7f'
+fashion_mnist AES_CTR_model FGSM 0.1 key is : b'B:\xbcc\xc0\xdf&%\x19.\xec\xdboo\x1b\x89' , IV of counter is : <_counter.CounterBE object at 0x0000023384FADC38>
+fashion_mnist AES_ECB_model FGSM 0.1 key is b'Lj\x86D\xcf4\xf8\xd8\xc1\\\xf5\xb33\x10\x06Y'
+fashion_mnist AES_CBC_model FGSM 0.1 key is b')|\x8fhhA\xb0\xa5&\xda\x03m\xe6\xf9\x9a)' , IV is b'\x8a_\x02\xf0\x10\x13\x92\xc4\xe9i\x84p\x10\xd7{e'
