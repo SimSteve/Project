@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="Adding trainer using random permutation on the data">
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="ran mnist with permutation model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permutated_encrypted_mnist_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/permutated_encrypted_mnist_models.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/trainer_permutated_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trainer_permutated_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,33 +17,35 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="accuracies" value="1" />
-          <entry key="json" value="2" />
+          <entry key="json" value="4" />
           <entry key="py" value="9" />
           <entry key="results" value="1" />
+          <entry key="results2" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="2" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="JSON" value="4" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="accuracies" value="9" />
-          <entry key="py" value="257" />
+          <entry key="py" value="410" />
+          <entry key="txt" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="257" />
+          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="Python" value="410" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -65,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trainer_permutated_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="279">
+              <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -105,9 +106,24 @@
         <entry file="file://$PROJECT_DIR$/results">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/permutated_encrypted_mnist_models.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/permutated_encrypted_fashion_mnist_models.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/results2">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -138,6 +154,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Steve Gutfreund &lt;simgutfreund@gmail.com&gt;" />
         <option value="Yishay" />
       </list>
     </option>
@@ -158,6 +175,8 @@
         <option value="$PROJECT_DIR$/src/trainer.py" />
         <option value="$PROJECT_DIR$/accuracies" />
         <option value="$PROJECT_DIR$/src/Models.py" />
+        <option value="$PROJECT_DIR$/results" />
+        <option value="$PROJECT_DIR$/permutated_encrypted_mnist_models.json" />
         <option value="$PROJECT_DIR$/src/trainer_permutated_data.py" />
       </list>
     </option>
@@ -387,19 +406,26 @@
       <option name="project" value="LOCAL" />
       <updated>1544355478731</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ran mnist with permutation model">
+      <created>1547141200150</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547141200150</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19240907" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19240907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.34702703" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.34702703" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -419,7 +445,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first model #1 try" />
-    <option name="LAST_COMMIT_MESSAGE" value="first model #1 try" />
+    <MESSAGE value="ran mnist with permutation model" />
+    <option name="LAST_COMMIT_MESSAGE" value="ran mnist with permutation model" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -523,19 +550,28 @@
     <entry file="file://$PROJECT_DIR$/results">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trainer_permutated_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="279">
+          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permutated_encrypted_mnist_models.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permutated_encrypted_fashion_mnist_models.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results2">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

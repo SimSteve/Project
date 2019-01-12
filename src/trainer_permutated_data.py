@@ -74,8 +74,19 @@ if __name__ == '__main__':
     DATASET = "mnist"
     MODEL = "CW_1"
 
+    r = open("../results2", "a")
+    for DATASET in ['mnist', 'fashion_mnist']:
+        for MODEL in ["CW_1", "CW_2", "FGSM"]:
+            if DATASET == 'mnist' and MODEL == 'CW_1':
+                print("hi")
+                continue
+            MODEL_NAME = DATASET + "_" + MODEL + "_permutated_model"
+            main()
+    r.close()
+    '''
     MODEL_NAME = DATASET + "_" + MODEL + "_permutated_model"
 
-    r = open("../results", "a")
+    r = open("../results2", "a")
     main()
     r.close()
+    '''
