@@ -6,7 +6,7 @@ mode = "MY_PERMUTATED"
 seed = 42
 
 
-def prepare_data(inputs):
+def encrypt(inputs):
     dims = np.array(inputs).shape
 
     permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())

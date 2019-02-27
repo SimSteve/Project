@@ -8,7 +8,7 @@ key = bytes(os.urandom(16))
 mode_of_operation = "MY_AES_ECB_V2"
 
 
-def prepare_data(inputs):
+def encrypt(inputs):
 
     return encrypt_v2(inputs)
 

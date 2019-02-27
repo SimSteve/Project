@@ -26,7 +26,7 @@ def main():
     input_shape = np.array(x_train[0]).shape
 
     # getting the desired model
-    model = models[MODEL](input_shape, encrypt=helper.prepare_data)
+    model = models[MODEL](input_shape, encrypt=helper.encrypt)
 
     # training
     loss, epoch_accs, epochs = model.train(x_train, y_train, ep=5)

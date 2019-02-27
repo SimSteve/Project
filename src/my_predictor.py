@@ -80,7 +80,7 @@ def main():
     input_shape = np.array(x_test[0]).shape
 
     # getting the desired model
-    model = models[MODEL](input_shape, encrypt=helper.prepare_data)
+    model = models[MODEL](input_shape, encrypt=helper.encrypt)
     model.load(MODEL_FILE)
 
     predict(model, x_test, y_test, i=99)
@@ -89,7 +89,7 @@ def main():
 if __name__ == '__main__':
     DATASET = "mnist"
     MODEL = "CW_1"
-    TRAIN_WITH_ME = "PERMUTATED"
+    TRAIN_WITH_ME = "UNENCRYPTED"
     MODEL_FILE = "mnist_CW_1_model"
 
     main()

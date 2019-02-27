@@ -26,10 +26,9 @@ class Encrypted_Model():
     def evaluate(self, x_test, y_test):
         return self.model.evaluate(x_test, y_test)
 
-    def predict(self, x_test):
-        for i,image in enumerate(x_test):
-            x_test[i] = self.encrypt(image)
-        return self.model.predict(x_test)
+    def predict(self, image):
+        enc_img = self.encrypt(image)
+        return self.model.predict(enc_img)
 
     def save(self, m_file):
         tf.keras.models.save_model(self.model, '../saved_models/' + m_file)
