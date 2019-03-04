@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="updated the code, encryption is 'part of' the model and invisible during prediction (for client)">
+      <change afterPath="$PROJECT_DIR$/my/json/fashion_mnist_UNENCRYPTED_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/json/mnist_UNENCRYPTED_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/my_results" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/src/my_permutated.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/src/my_unencrypted.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/my_Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_Models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/my_cbc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_cbc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/my_ctr.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_ctr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/my_ecb.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_ecb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/my_permutated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_permutated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/my_predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_predictor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/my_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_Models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_cbc.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_cbc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_ctr.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_ctr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_ecb.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_ecb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_permutated.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_unencrypted.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,77 +33,92 @@
     <session id="1401732426">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="accuracies" value="3" />
-          <entry key="json" value="11" />
-          <entry key="py" value="62" />
-          <entry key="results" value="2" />
+          <entry key="accuracies" value="4" />
+          <entry key="json" value="12" />
+          <entry key="my_results" value="2" />
+          <entry key="py" value="63" />
+          <entry key="results" value="4" />
           <entry key="results2" value="1" />
           <entry key="results_temp" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="11" />
-          <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="62" />
+          <entry key="JSON" value="12" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="Python" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="accuracies" value="9" />
           <entry key="dummy" value="16" />
-          <entry key="py" value="7919" />
-          <entry key="txt" value="136" />
+          <entry key="my_results" value="15" />
+          <entry key="py" value="8663" />
+          <entry key="txt" value="139" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="161" />
-          <entry key="Python" value="7919" />
+          <entry key="PLAIN_TEXT" value="179" />
+          <entry key="Python" value="8663" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/my_trainer.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+            <state relative-caret-position="276">
+              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my/my_results">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/my_Models.py">
+        <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="375">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1551306800263" expanded="true" signature="75:1577" ph="..." />
-                <marker date="1551306800263" expanded="true" signature="2342:2343" ph="..." />
+                <marker date="1551675060284" expanded="true" signature="75:1576" ph="..." />
+                <marker date="1551675060284" expanded="true" signature="2341:2342" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/my_ecb.py">
+        <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+            <state relative-caret-position="396">
+              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -100,10 +127,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/my_permutated.py">
+        <entry file="file://$PROJECT_DIR$/my/src/my_permutated.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="270">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -112,10 +139,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/my_cbc.py">
+        <entry file="file://$PROJECT_DIR$/my/src/my_unencrypted.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my/src/my_cbc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="57" column="50" selection-start-line="56" selection-end-line="57" selection-end-column="50" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -124,10 +160,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/my_ctr.py">
+        <entry file="file://$PROJECT_DIR$/my/src/my_ctr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="795">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -136,7 +172,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/my_predictor.py">
+        <entry file="file://$PROJECT_DIR$/my/src/my_predictor.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="585">
               <caret line="82" column="61" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="61" />
@@ -208,6 +244,14 @@
         <option value="$PROJECT_DIR$/src/my_ctr.py" />
         <option value="$PROJECT_DIR$/src/my_predictor.py" />
         <option value="$PROJECT_DIR$/src/my_trainer.py" />
+        <option value="$PROJECT_DIR$/my/src/my_ecb.py" />
+        <option value="$PROJECT_DIR$/my/src/my_permutated.py" />
+        <option value="$PROJECT_DIR$/my/src/my_cbc.py" />
+        <option value="$PROJECT_DIR$/my/src/my_ctr.py" />
+        <option value="$PROJECT_DIR$/my/src/my_unencrypted.py" />
+        <option value="$PROJECT_DIR$/my/src/my_trainer.py" />
+        <option value="$PROJECT_DIR$/my/src/my_Models.py" />
+        <option value="$PROJECT_DIR$/my/my_results" />
       </list>
     </option>
   </component>
@@ -233,12 +277,7 @@
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="my" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -247,11 +286,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/my/src" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my/src" />
       <recent name="C:\Users\1\PycharmProjects\Project" />
     </key>
   </component>
@@ -267,7 +307,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.my_predictor">
+  <component name="RunManager" selected="Python.my_trainer">
     <configuration name="draw_graphs" type="PythonConfigurationType" factoryName="Python">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -301,7 +341,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/my_predictor.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my/src/my_predictor.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -318,11 +358,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/my/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/my_trainer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my/src/my_trainer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -404,8 +444,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.my_predictor" />
         <item itemvalue="Python.my_trainer" />
+        <item itemvalue="Python.my_predictor" />
         <item itemvalue="Python.new_trainer" />
         <item itemvalue="Python.stam" />
         <item itemvalue="Python.tam" />
@@ -451,19 +491,25 @@
       <option name="project" value="LOCAL" />
       <updated>1551306175613</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated the code, encryption is 'part of' the model and invisible during prediction (for client)">
+      <created>1551307208339</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1551307208339</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.19820769" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.19820769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.39891893" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.39891893" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -495,8 +541,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/aes-ecb.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/image/templatetags/__init__.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/image/__init__.py" />
     <entry file="file://$PROJECT_DIR$/ecb-penguin-master/README.md" />
     <entry file="file://$PROJECT_DIR$/image_encrypt.py" />
@@ -545,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json/unencrypted_mnist_models.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -559,13 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accuracies">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -583,13 +613,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stam.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/stam.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/396691668/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -631,20 +655,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MY_UNENCRYPTED_mnist_models.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/MY_UNENCRYPTED_mnist_models.json" />
     <entry file="file://$PROJECT_DIR$/src/trainer_permutated_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="22" column="73" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/my_unencrypted.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -659,9 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1230">
           <caret line="82" column="73" selection-end-line="106" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,62 +694,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results_temp">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/results_temp" />
+    <entry file="file://$PROJECT_DIR$/results">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my_Models.py">
+    <entry file="file://$PROJECT_DIR$/my/src/my_permutated.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1551306800263" expanded="true" signature="75:1577" ph="..." />
-            <marker date="1551306800263" expanded="true" signature="2342:2343" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/my_ecb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/my_permutated.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my_cbc.py">
+    <entry file="file://$PROJECT_DIR$/my/src/my_cbc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        <state relative-caret-position="780">
+          <caret line="57" column="50" selection-start-line="56" selection-end-line="57" selection-end-column="50" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my_ctr.py">
+    <entry file="file://$PROJECT_DIR$/my/src/my_ctr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="795">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my_predictor.py">
+    <entry file="file://$PROJECT_DIR$/my/src/my_predictor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="82" column="61" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="61" />
@@ -747,10 +742,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my_trainer.py">
+    <entry file="file://$PROJECT_DIR$/my/src/my_unencrypted.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accuracies">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/json/mnist_UNENCRYPTED_models.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1551675060284" expanded="true" signature="75:1576" ph="..." />
+            <marker date="1551675060284" expanded="true" signature="2341:2342" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/my_results">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,7 @@
-import src.my_Models as mdl
+import my.src.my_Models as mdl
 import numpy as np
 import tensorflow as tf
+import json
 
 
 data_types = {'fashion_mnist':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
@@ -29,14 +30,26 @@ def main():
     model = models[MODEL](input_shape, encrypt=helper.encrypt)
 
     # training
-    loss, epoch_accs, epochs = model.train(x_train, y_train, ep=5)
+    loss, epoch_accs, epochs = model.train(x_train, y_train, ep=6)
 
     # evaluating
     model.compile()
     test_loss, test_acc = model.evaluate(x_test, y_test)
-    print("{0} {1} {2}\n".format(DATASET, MODEL, test_acc))
 
-    helper.print_results(test_acc, out=r, dataset=DATASET, model=MODEL,epoch_accuracies=epoch_accs,epochs=epochs)
+    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
+    helper.print_encryption_details(out=r)
+    r.write("\n#####################################################\n\n")
+
+    results = {
+        "name": MODEL_NAME,
+        "acc": epoch_accs,
+        "epochs": epochs
+    }
+
+    # writing the training results
+    with open("../json/{}_{}_models.json".format(DATASET, TRAIN_WITH_ME), 'a') as j:
+        json.dump(results, j)
+        j.write('\n')
 
     # saving model
     model.save(MODEL_NAME)
@@ -44,12 +57,17 @@ def main():
 
 if __name__ == '__main__':
     # these two change to get desired model
-    DATASET = "mnist"
+    DATASET = "fashion_mnist"
     MODEL = "CW_1"
     TRAIN_WITH_ME = "UNENCRYPTED"
 
-    MODEL_NAME = DATASET + "_" + MODEL + "_model"
+    for MODEL in ["FGSM", "CW_1", "CW_2"]:
+        MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME
 
-    r = open("../results_temp", "a")
-    main()
-    r.close()
+        print("DATASET = {}".format(DATASET))
+        print("MODEL = {}".format(MODEL))
+        print("TRAINER = {}\n".format(TRAIN_WITH_ME))
+
+        r = open("../my_results", "a")
+        main()
+        r.close()

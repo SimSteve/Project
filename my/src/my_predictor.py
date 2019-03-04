@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import src.my_Models as mdl
+import my.src.my_Models as mdl
 import numpy as np
 import tensorflow as tf
 

@@ -9,8 +9,6 @@ class Encrypted_Model():
     def train(self, x_train, y_train, ep):
         for i,image in enumerate(x_train):
             x_train[i] = self.encrypt(image)
-        for i,image in enumerate(y_train):
-            y_train[i] = self.encrypt(image)
 
         self.model.compile(optimizer=tf.train.AdamOptimizer(),
                             loss='sparse_categorical_crossentropy',
@@ -24,6 +22,9 @@ class Encrypted_Model():
                            metrics=['accuracy'])
 
     def evaluate(self, x_test, y_test):
+        for i,image in enumerate(x_test):
+            x_test[i] = self.encrypt(image)
+
         return self.model.evaluate(x_test, y_test)
 
     def predict(self, image):
