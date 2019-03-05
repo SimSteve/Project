@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="runninh again the models to make sure there are no bugs">
-      <change afterPath="$PROJECT_DIR$/my/src/my_draw_pic.py" afterDir="false" />
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="ran 'unencrypted' models and 'permutated' models on both datasets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my/my_results" beforeDir="false" afterPath="$PROJECT_DIR$/my/my_results" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my/src/my_ecb.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_ecb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my/src/my_permutated.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_permutated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my/src/my_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_trainer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +37,12 @@
           <entry key="dummy" value="16" />
           <entry key="my_results" value="18" />
           <entry key="py" value="8765" />
-          <entry key="txt" value="195" />
+          <entry key="txt" value="266" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="238" />
+          <entry key="PLAIN_TEXT" value="309" />
           <entry key="Python" value="8765" />
         </counts>
       </usages-collector>
@@ -65,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="291">
-              <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+              <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -100,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
-              <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+              <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -495,19 +491,25 @@
       <option name="project" value="LOCAL" />
       <updated>1551682109282</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ran 'unencrypted' models and 'permutated' models on both datasets">
+      <created>1551760955394</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551760955394</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.19820769" />
+      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.19820769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.39891893" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.39891893" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -530,7 +532,8 @@
     <MESSAGE value="ran mnist with permutation model" />
     <MESSAGE value="updated the code, encryption is 'part of' the model and invisible during prediction (for client)" />
     <MESSAGE value="runninh again the models to make sure there are no bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="runninh again the models to make sure there are no bugs" />
+    <MESSAGE value="ran 'unencrypted' models and 'permutated' models on both datasets" />
+    <option name="LAST_COMMIT_MESSAGE" value="ran 'unencrypted' models and 'permutated' models on both datasets" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -776,6 +779,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my/my_results">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -786,19 +799,9 @@
     <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
-          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

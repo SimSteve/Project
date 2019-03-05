@@ -52,3 +52,18 @@ key: 42
 
 #####################################################
 
+mnist_FGSM_ECB_V1	accuracy: 11.35%	error rate: 88.65%
+key: b'\xf9\xc3\xbb\xfe\x1c\x1f\xfe\x9c\\\rr\xb2\xd3\x9a\xc1x'
+
+#####################################################
+
+mnist_CW_1_ECB_V1	accuracy: 40.21%	error rate: 59.79%
+key: b'\xf9\xc3\xbb\xfe\x1c\x1f\xfe\x9c\\\rr\xb2\xd3\x9a\xc1x'
+
+#####################################################
+
+mnist_CW_2_ECB_V1	accuracy: 10.09%	error rate: 89.91%
+key: b'\xf9\xc3\xbb\xfe\x1c\x1f\xfe\x9c\\\rr\xb2\xd3\x9a\xc1x'
+
+#####################################################
+
