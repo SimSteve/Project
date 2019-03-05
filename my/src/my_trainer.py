@@ -57,7 +57,7 @@ def main():
 
 if __name__ == '__main__':
     # these two change to get desired model
-    DATASET = "mnist"
+    DATASET = "fashion_mnist"
     MODEL = "CW_1"
     TRAIN_WITH_ME = "ECB"
     VERSION = "_V1"
