@@ -47,7 +47,7 @@ def main():
     }
 
     # writing the training results
-    with open("../json/{}_{}_models.json".format(DATASET, TRAIN_WITH_ME), 'a') as j:
+    with open("../json/{}_{}{}_models.json".format(DATASET, TRAIN_WITH_ME, VERSION), 'a') as j:
         json.dump(results, j)
         j.write('\n')
 
@@ -57,12 +57,13 @@ def main():
 
 if __name__ == '__main__':
     # these two change to get desired model
-    DATASET = "fashion_mnist"
+    DATASET = "mnist"
     MODEL = "CW_1"
-    TRAIN_WITH_ME = "UNENCRYPTED"
+    TRAIN_WITH_ME = "ECB"
+    VERSION = "_V1"
 
     for MODEL in ["FGSM", "CW_1", "CW_2"]:
-        MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME
+        MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + VERSION
 
         print("DATASET = {}".format(DATASET))
         print("MODEL = {}".format(MODEL))

@@ -5,12 +5,10 @@ import numpy as np
 
 key = bytes(os.urandom(16))
 
-mode_of_operation = "MY_AES_ECB_V2"
-
 
 def encrypt(inputs):
 
-    return encrypt_v2(inputs)
+    return encrypt_v1(inputs)
 
 
 def encrypt_v1(inputs):

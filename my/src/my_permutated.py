@@ -16,4 +16,4 @@ def encrypt(inputs):
 
 
 def print_encryption_details(out):
-    out.write("key: {}".format(seed))
+    out.write("key: {}\n".format(seed))
