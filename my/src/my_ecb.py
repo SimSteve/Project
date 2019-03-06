@@ -8,7 +8,7 @@ key = bytes(os.urandom(16))
 
 def encrypt(inputs):
 
-    return encrypt_v1(inputs)
+    return encrypt_v2(inputs)
 
 
 def encrypt_v1(inputs):
@@ -45,7 +45,7 @@ def blockshaped(arr, nrows, ncols):
     If arr is a 2D array, the returned array should look like n subblocks with
     each subblock preserving the "physical" layout of arr.
     """
-    h, w = arr.shape
+    h, w, d = arr.shape
     return (arr.reshape(h // nrows, nrows, -1, ncols)
             .swapaxes(1, 2)
             .reshape(-1, nrows, ncols))

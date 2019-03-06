@@ -82,3 +82,33 @@ key: b'd\xcf\xfe\xa8\x93/\xc1\n\x80C\xd2K\xce\xe1\xbc\x95'
 
 #####################################################
 
+mnist_FGSM_ECB_V2	accuracy: 9.80%	error rate: 90.20%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+
+#####################################################
+
+mnist_CW_1_ECB_V2	accuracy: 40.82%	error rate: 59.18%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+
+#####################################################
+
+mnist_CW_2_ECB_V2	accuracy: 11.35%	error rate: 88.65%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+
+#####################################################
+
+fashion_mnist_FGSM_ECB_V2	accuracy: 10.00%	error rate: 90.00%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+
+#####################################################
+
+fashion_mnist_CW_1_ECB_V2	accuracy: 10.00%	error rate: 90.00%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+
+#####################################################
+
+fashion_mnist_CW_2_ECB_V2	accuracy: 10.00%	error rate: 90.00%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+
+#####################################################
+

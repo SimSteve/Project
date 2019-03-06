@@ -60,15 +60,16 @@ if __name__ == '__main__':
     DATASET = "fashion_mnist"
     MODEL = "CW_1"
     TRAIN_WITH_ME = "ECB"
-    VERSION = "_V1"
+    VERSION = "_V2"
 
-    for MODEL in ["FGSM", "CW_1", "CW_2"]:
-        MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + VERSION
+    for DATASET in ["mnist", "fashion_mnist"]:
+        for MODEL in ["FGSM", "CW_1", "CW_2"]:
+            MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + VERSION
 
-        print("DATASET = {}".format(DATASET))
-        print("MODEL = {}".format(MODEL))
-        print("TRAINER = {}\n".format(TRAIN_WITH_ME))
+            print("DATASET = {}".format(DATASET))
+            print("MODEL = {}".format(MODEL))
+            print("TRAINER = {}\n".format(TRAIN_WITH_ME))
 
-        r = open("../my_results", "a")
-        main()
-        r.close()
+            r = open("../my_results", "a")
+            main()
+            r.close()

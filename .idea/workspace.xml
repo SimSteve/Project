@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="ran 'unencrypted' models and 'permutated' models on both datasets">
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="ran ECB version 1">
+      <change afterPath="$PROJECT_DIR$/my/json/fashion_mnist_ECB_V2_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/json/mnist_ECB_V2_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_ECB_V2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my/my_results" beforeDir="false" afterPath="$PROJECT_DIR$/my/my_results" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/src/my_ecb.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_ecb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my/src/my_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_trainer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,14 +46,14 @@
           <entry key="accuracies" value="9" />
           <entry key="dummy" value="16" />
           <entry key="my_results" value="18" />
-          <entry key="py" value="8775" />
-          <entry key="txt" value="267" />
+          <entry key="py" value="8889" />
+          <entry key="txt" value="287" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="310" />
-          <entry key="Python" value="8775" />
+          <entry key="PLAIN_TEXT" value="330" />
+          <entry key="Python" value="8889" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -62,11 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="306">
+              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -74,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my/my_results">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
+            <state relative-caret-position="-509">
               <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
@@ -86,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="330">
               <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -100,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="471">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -231,8 +240,8 @@
         <option value="$PROJECT_DIR$/my/src/my_draw_pic.py" />
         <option value="$PROJECT_DIR$/my/my_results" />
         <option value="$PROJECT_DIR$/my/src/my_permutated.py" />
-        <option value="$PROJECT_DIR$/my/src/my_ecb.py" />
         <option value="$PROJECT_DIR$/my/src/my_trainer.py" />
+        <option value="$PROJECT_DIR$/my/src/my_ecb.py" />
       </list>
     </option>
   </component>
@@ -512,11 +521,19 @@
       <option name="project" value="LOCAL" />
       <updated>1551770784249</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ran ECB version 1">
+      <created>1551781592102</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551781592102</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.19820769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -547,7 +564,8 @@
     <MESSAGE value="updated the code, encryption is 'part of' the model and invisible during prediction (for client)" />
     <MESSAGE value="runninh again the models to make sure there are no bugs" />
     <MESSAGE value="ran 'unencrypted' models and 'permutated' models on both datasets" />
-    <option name="LAST_COMMIT_MESSAGE" value="ran 'unencrypted' models and 'permutated' models on both datasets" />
+    <MESSAGE value="ran ECB version 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="ran ECB version 1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -730,18 +748,6 @@
     <entry file="file://$PROJECT_DIR$/my/json/mnist_UNENCRYPTED_models.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1551675060284" expanded="true" signature="75:1576" ph="..." />
-            <marker date="1551675060284" expanded="true" signature="2341:2342" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my/src/my_draw_pic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -793,17 +799,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my/my_results">
+    <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="330">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1551675060284" expanded="true" signature="75:1576" ph="..." />
+            <marker date="1551675060284" expanded="true" signature="2341:2342" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="471">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -812,11 +823,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="306">
+          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/my_results">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-509">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
