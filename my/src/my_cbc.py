@@ -23,7 +23,7 @@ def encrypt_v1(inputs):
     aes_flattened = list(aes_cipher.encrypt(flattened))
     enc_inputs = np.reshape(aes_flattened, dims)
 
-    return enc_inputs
+    return enc_inputs / 255.0
 
 
 def encrypt_v2(inputs):
@@ -37,7 +37,7 @@ def encrypt_v2(inputs):
     aes_flattened = list(aes_cipher.encrypt(flattened))
     enc_inputs = np.reshape(aes_flattened, (dims[1], dims[2]))
 
-    return enc_inputs
+    return enc_inputs / 255.0
 
 
 def blockshaped(arr, nrows, ncols):

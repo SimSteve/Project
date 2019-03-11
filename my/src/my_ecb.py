@@ -3,7 +3,8 @@ import os
 from Crypto.Cipher import AES
 import numpy as np
 
-key = bytes(os.urandom(16))
+#key = bytes(os.urandom(16))
+key = b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
 
 
 def encrypt(inputs):
@@ -20,7 +21,7 @@ def encrypt_v1(inputs):
     aes_flattened = list(aes_cipher.encrypt(flattened))
     enc_inputs = np.reshape(aes_flattened, dims)
 
-    return enc_inputs
+    return enc_inputs / 255.0
 
 
 def encrypt_v2(inputs):
@@ -33,8 +34,7 @@ def encrypt_v2(inputs):
     flattened = bytes(map(int,[item for block in blocked_image for item in block.flatten().tolist()]))
     aes_flattened = list(aes_cipher.encrypt(flattened))
     enc_inputs = np.reshape(aes_flattened, dims)
-
-    return enc_inputs
+    return enc_inputs / 255.0
 
 
 def blockshaped(arr, nrows, ncols):

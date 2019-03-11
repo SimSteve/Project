@@ -1,19 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="ran ECB version 1">
-      <change afterPath="$PROJECT_DIR$/my/json/fashion_mnist_ECB_V2_models.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my/json/mnist_ECB_V2_models.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_ECB_V2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_ECB_V2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_ECB_V2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_ECB_V2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_ECB_V2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_ECB_V2" afterDir="false" />
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="ran ECB version 2">
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/json/fashion_mnist_ECB_V1_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/json/fashion_mnist_ECB_V2_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/json/fashion_mnist_PERMUTATED_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/json/fashion_mnist_UNENCRYPTED_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/json/mnist_ECB_V1_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/json/mnist_ECB_V2_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/json/mnist_PERMUTATED_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/json/mnist_UNENCRYPTED_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/my_results" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_CW_1_ECB_V1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_CW_1_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_CW_1_PERMUTATED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_CW_1_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_CW_2_ECB_V1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_CW_2_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_CW_2_PERMUTATED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_CW_2_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_FGSM_ECB_V1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_FGSM_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_FGSM_PERMUTATED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/fashion_mnist_FGSM_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_CW_1_ECB_V1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_CW_1_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_CW_1_PERMUTATED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_CW_1_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_CW_2_ECB_V1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_CW_2_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_CW_2_PERMUTATED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_CW_2_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_FGSM_ECB_V1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_FGSM_ECB_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_FGSM_PERMUTATED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/results_with_bug/saved_models/mnist_FGSM_UNENCRYPTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/stam.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/json/fashion_mnist_ECB_V1_models.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/json/fashion_mnist_ECB_V2_models.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/json/fashion_mnist_PERMUTATED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/my/json/fashion_mnist_PERMUTATED_models.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/json/fashion_mnist_UNENCRYPTED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/my/json/fashion_mnist_UNENCRYPTED_models.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/json/mnist_ECB_V1_models.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/json/mnist_ECB_V2_models.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/json/mnist_PERMUTATED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/my/json/mnist_PERMUTATED_models.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/json/mnist_UNENCRYPTED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/my/json/mnist_UNENCRYPTED_models.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my/my_results" beforeDir="false" afterPath="$PROJECT_DIR$/my/my_results" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_ECB_V1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_ECB_V2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_PERMUTATED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_PERMUTATED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_UNENCRYPTED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_UNENCRYPTED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_ECB_V1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_ECB_V2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_PERMUTATED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_PERMUTATED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_UNENCRYPTED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_UNENCRYPTED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_ECB_V1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_ECB_V2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_PERMUTATED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_PERMUTATED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_UNENCRYPTED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_UNENCRYPTED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_ECB_V1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_ECB_V2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_PERMUTATED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_PERMUTATED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_UNENCRYPTED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_UNENCRYPTED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_ECB_V1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_ECB_V2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_PERMUTATED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_PERMUTATED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_UNENCRYPTED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_UNENCRYPTED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_ECB_V1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_ECB_V2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_PERMUTATED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_PERMUTATED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_UNENCRYPTED" beforeDir="false" afterPath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_UNENCRYPTED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/src/my_Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_Models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/src/my_cbc.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_cbc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/src/my_ctr.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_ctr.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my/src/my_ecb.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_ecb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/src/my_permutated.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_permutated.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my/src/my_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my/src/my_unencrypted.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_unencrypted.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +88,11 @@
     <session id="1401732426">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="accuracies" value="7" />
+          <entry key="accuracies" value="8" />
           <entry key="json" value="12" />
-          <entry key="my_results" value="2" />
-          <entry key="py" value="64" />
-          <entry key="results" value="4" />
+          <entry key="my_results" value="6" />
+          <entry key="py" value="75" />
+          <entry key="results" value="6" />
           <entry key="results2" value="1" />
           <entry key="results_temp" value="1" />
         </counts>
@@ -37,45 +100,46 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="12" />
-          <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="64" />
+          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="Python" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="accuracies" value="9" />
           <entry key="dummy" value="16" />
-          <entry key="my_results" value="18" />
-          <entry key="py" value="8889" />
-          <entry key="txt" value="287" />
+          <entry key="my_results" value="19" />
+          <entry key="py" value="10820" />
+          <entry key="txt" value="291" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="330" />
-          <entry key="Python" value="8889" />
+          <entry key="PLAIN_TEXT" value="335" />
+          <entry key="Python" value="10820" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.38" value="2" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+            <state relative-caret-position="210">
+              <caret line="40" column="68" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -83,24 +147,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/my_results">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-509">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="450">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
+        <entry file="file://$PROJECT_DIR$/my/stam.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            <state relative-caret-position="270">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1551675060284" expanded="true" signature="75:1576" ph="..." />
-                <marker date="1551675060284" expanded="true" signature="2341:2342" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,10 +171,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="300">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my/src/my_cbc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my/src/my_ctr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="99" column="103" selection-start-line="99" selection-start-column="103" selection-end-line="99" selection-end-column="103" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1552233052003" expanded="true" signature="75:1575" ph="..." />
+                <marker date="1552233052003" expanded="true" signature="2440:2441" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,10 +216,7 @@
         <entry file="file://$PROJECT_DIR$/my/src/my_permutated.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -133,41 +224,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/src/my_unencrypted.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my/src/my_cbc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my/src/my_predictor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1014">
-              <caret column="31" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my/src/my_draw_pic.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -233,30 +291,29 @@
         <option value="$PROJECT_DIR$/src/my_ctr.py" />
         <option value="$PROJECT_DIR$/src/my_predictor.py" />
         <option value="$PROJECT_DIR$/src/my_trainer.py" />
-        <option value="$PROJECT_DIR$/my/src/my_cbc.py" />
-        <option value="$PROJECT_DIR$/my/src/my_ctr.py" />
-        <option value="$PROJECT_DIR$/my/src/my_unencrypted.py" />
-        <option value="$PROJECT_DIR$/my/src/my_Models.py" />
         <option value="$PROJECT_DIR$/my/src/my_draw_pic.py" />
         <option value="$PROJECT_DIR$/my/my_results" />
+        <option value="$PROJECT_DIR$/my/stam.py" />
+        <option value="$PROJECT_DIR$/my/src/my_ecb.py" />
+        <option value="$PROJECT_DIR$/my/src/my_ctr.py" />
+        <option value="$PROJECT_DIR$/my/src/my_cbc.py" />
+        <option value="$PROJECT_DIR$/my/src/my_unencrypted.py" />
+        <option value="$PROJECT_DIR$/my/src/my_Models.py" />
         <option value="$PROJECT_DIR$/my/src/my_permutated.py" />
         <option value="$PROJECT_DIR$/my/src/my_trainer.py" />
-        <option value="$PROJECT_DIR$/my/src/my_ecb.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="835" />
-    <option name="y" value="45" />
-    <option name="width" value="950" />
-    <option name="height" value="789" />
+    <option name="y" value="25" />
+    <option name="width" value="960" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,18 +330,18 @@
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="my" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="my" type="462c0819:PsiDirectoryNode" />
-              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -415,7 +472,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tam" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="stam" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -423,11 +480,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/my/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tam.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my/stam.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -438,19 +495,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.draw_graphs" />
-      <item itemvalue="Python.tam" />
-      <item itemvalue="Python.stam" />
       <item itemvalue="Python.new_trainer" />
       <item itemvalue="Python.my_trainer" />
       <item itemvalue="Python.my_predictor" />
+      <item itemvalue="Python.stam" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.my_trainer" />
+        <item itemvalue="Python.stam" />
         <item itemvalue="Python.my_predictor" />
         <item itemvalue="Python.new_trainer" />
         <item itemvalue="Python.stam" />
-        <item itemvalue="Python.tam" />
       </list>
     </recent_temporary>
   </component>
@@ -528,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551781592102</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ran ECB version 2">
+      <created>1551847751431</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551847751431</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -540,7 +603,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.39891893" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.5891892" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -565,7 +628,8 @@
     <MESSAGE value="runninh again the models to make sure there are no bugs" />
     <MESSAGE value="ran 'unencrypted' models and 'permutated' models on both datasets" />
     <MESSAGE value="ran ECB version 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="ran ECB version 1" />
+    <MESSAGE value="ran ECB version 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ran ECB version 2" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -575,8 +639,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ecb-penguin-master/README.md" />
-    <entry file="file://$PROJECT_DIR$/image_encrypt.py" />
     <entry file="file://$PROJECT_DIR$/instructions" />
     <entry file="file://$PROJECT_DIR$/ecb-penguin-master/tux_clear.bmp" />
     <entry file="file://$PROJECT_DIR$/ecb-penguin-master/tux_enc.bmp" />
@@ -668,19 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1551305807863" expanded="true" signature="1376:1806" ph="..." />
-            <marker date="1551305807863" expanded="true" signature="1827:1828" ph="..." />
-            <marker date="1551305807863" expanded="true" signature="2674:2675" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/unencrypted_mode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -721,13 +770,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results_temp" />
+    <entry file="file://$PROJECT_DIR$/my/json/mnist_UNENCRYPTED_models.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_draw_pic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/results">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -735,106 +791,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_ctr.py">
+    <entry file="file://$PROJECT_DIR$/accuracies">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my/json/mnist_UNENCRYPTED_models.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_draw_pic.py">
+    <entry file="file://$PROJECT_DIR$/src/Models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="371">
+          <caret line="84" column="10" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="84" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my/src/my_predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1014">
-          <caret column="31" selection-end-column="31" />
+        <state relative-caret-position="120">
+          <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_permutated.py">
+    <entry file="file://$USER_HOME$/venv/lib/python3.6/site-packages/tensorflow/python/keras/engine/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="514" column="6" selection-start-line="514" selection-start-column="6" selection-end-line="514" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_ctr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_cbc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/stam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my/src/my_unencrypted.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_cbc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accuracies">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1551675060284" expanded="true" signature="75:1576" ph="..." />
-            <marker date="1551675060284" expanded="true" signature="2341:2342" ph="..." />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="300">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_permutated.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/my_results">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_Models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="99" column="103" selection-start-line="99" selection-start-column="103" selection-end-line="99" selection-end-column="103" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1552233052003" expanded="true" signature="75:1575" ph="..." />
+            <marker date="1552233052003" expanded="true" signature="2440:2441" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+        <state relative-caret-position="210">
+          <caret line="40" column="68" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my/my_results">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-509">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>

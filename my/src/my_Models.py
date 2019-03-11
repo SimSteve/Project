@@ -55,7 +55,8 @@ class FGSM(Encrypted_Model):
         self.conv_2 = tf.keras.layers.Conv2D(filters=128, kernel_size=6, activation=tf.nn.relu)(self.conv_1)
         self.conv_3 = tf.keras.layers.Conv2D(filters=128, kernel_size=5, activation=tf.nn.relu)(self.conv_2)
         self.flatten = tf.keras.layers.Flatten()(self.conv_3)
-        self.output = tf.keras.layers.Dense(10, activation=tf.nn.softmax)(self.flatten)
+        self.dense = tf.keras.layers.Dense(10, name="before-softmax")(self.flatten)
+        self.output = tf.keras.layers.Activation(activation=tf.nn.softmax, name="softmax")(self.dense)
 
         self.model = tf.keras.Model(inputs=self.inputs, outputs=self.output)
 
@@ -74,7 +75,8 @@ class CW_1(Encrypted_Model):
         self.dense_1 = tf.keras.layers.Dense(200, activation=tf.nn.relu)(self.flatten)
         self.dropout = tf.keras.layers.Dropout(0.2)(self.dense_1)
         self.dense_2 = tf.keras.layers.Dense(200, activation=tf.nn.relu)(self.dropout)
-        self.output = tf.keras.layers.Dense(10, activation=tf.nn.softmax)(self.dense_2)
+        self.dense_3 = tf.keras.layers.Dense(10, name="before-softmax")(self.dense_2)
+        self.output = tf.keras.layers.Activation(activation=tf.nn.softmax, name="softmax")(self.dense_3)
 
         self.model = tf.keras.Model(inputs=self.inputs, outputs=self.output)
 
@@ -94,6 +96,7 @@ class CW_2(Encrypted_Model):
         self.dense_1 = tf.keras.layers.Dense(256, activation=tf.nn.relu)(self.flatten)
         self.dropout = tf.keras.layers.Dropout(0.2)(self.dense_1)
         self.dense_2 = tf.keras.layers.Dense(256, activation=tf.nn.relu)(self.dropout)
-        self.output = tf.keras.layers.Dense(10, activation=tf.nn.softmax)(self.dense_2)
+        self.dense_3 = tf.keras.layers.Dense(10, name="before-softmax")(self.dense_2)
+        self.output = tf.keras.layers.Activation(activation=tf.nn.softmax, name="softmax")(self.dense_3)
 
         self.model = tf.keras.Model(inputs=self.inputs, outputs=self.output)

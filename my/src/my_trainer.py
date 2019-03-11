@@ -13,7 +13,7 @@ def main():
     data = data_types[DATASET]
 
     (x_train, y_train), (x_test, y_test) = data.load_data()
-    x_train, x_test = x_train / 255.0, x_test / 255.0
+    x_train, x_test = x_train / 1.0, x_test / 1.0
 
     helper = __import__(train_mode[TRAIN_WITH_ME])
 
@@ -38,7 +38,7 @@ def main():
 
     r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
     helper.print_encryption_details(out=r)
-    r.write("\n#####################################################\n\n")
+    r.write("#####################################################\n")
 
     results = {
         "name": MODEL_NAME,
@@ -58,18 +58,21 @@ def main():
 if __name__ == '__main__':
     # these two change to get desired model
     DATASET = "fashion_mnist"
-    MODEL = "CW_1"
+    MODEL = "CW_2"
     TRAIN_WITH_ME = "ECB"
     VERSION = "_V2"
 
-    for DATASET in ["mnist", "fashion_mnist"]:
-        for MODEL in ["FGSM", "CW_1", "CW_2"]:
-            MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + VERSION
+    VERSION = ""
+    for TRAIN_WITH_ME in ["UNENCRYPTED", "PERMUTATED"]:
+        for DATASET in ["mnist", "fashion_mnist"]:
+            for MODEL in ["FGSM", "CW_1", "CW_2"]:
 
-            print("DATASET = {}".format(DATASET))
-            print("MODEL = {}".format(MODEL))
-            print("TRAINER = {}\n".format(TRAIN_WITH_ME))
+                MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + VERSION
 
-            r = open("../my_results", "a")
-            main()
-            r.close()
+                print("DATASET = {}".format(DATASET))
+                print("MODEL = {}".format(MODEL))
+                print("TRAINER = {}\n".format(TRAIN_WITH_ME))
+
+                r = open("../my_results", "a")
+                main()
+                r.close()

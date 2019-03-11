@@ -12,7 +12,7 @@ def encrypt(inputs):
     permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())
     enc_inputs = np.reshape(permutated_flattened, dims)
 
-    return enc_inputs
+    return enc_inputs / 255.0
 
 
 def print_encryption_details(out):
