@@ -7,12 +7,10 @@ from Crypto.Util import Counter
 key = bytes(os.urandom(16))
 IV = Counter.new(16 * 8)
 
-mode_of_operation = "MY_AES_CTR_V2"
-
 
 def encrypt(inputs):
 
-    return encrypt_v2(inputs)
+    return encrypt_v1(inputs)
 
 
 def encrypt_v1(inputs):

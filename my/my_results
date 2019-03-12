@@ -28,3 +28,57 @@ key: 42
 fashion_mnist_CW_2_PERMUTATED	accuracy: 86.90%	error rate: 13.10%
 key: 42
 #####################################################
+mnist_FGSM_ECB_V1	accuracy: 79.12%	error rate: 20.88%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+#####################################################
+mnist_CW_1_ECB_V1	accuracy: 83.42%	error rate: 16.58%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+#####################################################
+mnist_CW_2_ECB_V1	accuracy: 83.29%	error rate: 16.71%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+#####################################################
+fashion_mnist_FGSM_ECB_V1	accuracy: 40.77%	error rate: 59.23%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+#####################################################
+fashion_mnist_CW_1_ECB_V1	accuracy: 44.34%	error rate: 55.66%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+#####################################################
+fashion_mnist_CW_2_ECB_V1	accuracy: 44.65%	error rate: 55.35%
+key: b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+#####################################################
+mnist_FGSM_CBC_V1	accuracy: 11.35%	error rate: 88.65%
+key: b'0a}i\x95\x0c&!H+/\xf2\x07\x15K6'	IV: b'P\xf4IE\xc3\xf7(\xc5,\xed\x85\xb9\x8eg\xd7\x90'
+#####################################################
+mnist_CW_1_CBC_V1	accuracy: 35.93%	error rate: 64.07%
+key: b'0a}i\x95\x0c&!H+/\xf2\x07\x15K6'	IV: b'P\xf4IE\xc3\xf7(\xc5,\xed\x85\xb9\x8eg\xd7\x90'
+#####################################################
+mnist_CW_2_CBC_V1	accuracy: 36.24%	error rate: 63.76%
+key: b'0a}i\x95\x0c&!H+/\xf2\x07\x15K6'	IV: b'P\xf4IE\xc3\xf7(\xc5,\xed\x85\xb9\x8eg\xd7\x90'
+#####################################################
+fashion_mnist_FGSM_CBC_V1	accuracy: 10.00%	error rate: 90.00%
+key: b'0a}i\x95\x0c&!H+/\xf2\x07\x15K6'	IV: b'P\xf4IE\xc3\xf7(\xc5,\xed\x85\xb9\x8eg\xd7\x90'
+#####################################################
+fashion_mnist_CW_1_CBC_V1	accuracy: 27.88%	error rate: 72.12%
+key: b'0a}i\x95\x0c&!H+/\xf2\x07\x15K6'	IV: b'P\xf4IE\xc3\xf7(\xc5,\xed\x85\xb9\x8eg\xd7\x90'
+#####################################################
+fashion_mnist_CW_2_CBC_V1	accuracy: 10.00%	error rate: 90.00%
+key: b'0a}i\x95\x0c&!H+/\xf2\x07\x15K6'	IV: b'P\xf4IE\xc3\xf7(\xc5,\xed\x85\xb9\x8eg\xd7\x90'
+#####################################################
+mnist_FGSM_CTR_V1	accuracy: 11.35%	error rate: 88.65%
+key: b"c%\xb4\x81\x0f\x0f\xa3\x19?['\x965\x98\xb2\xcb"	IV: <_counter.CounterBE object at 0x7f27d7227df0>
+#####################################################
+mnist_CW_1_CTR_V1	accuracy: 11.35%	error rate: 88.65%
+key: b"c%\xb4\x81\x0f\x0f\xa3\x19?['\x965\x98\xb2\xcb"	IV: <_counter.CounterBE object at 0x7f27d7227df0>
+#####################################################
+mnist_CW_2_CTR_V1	accuracy: 11.35%	error rate: 88.65%
+key: b"c%\xb4\x81\x0f\x0f\xa3\x19?['\x965\x98\xb2\xcb"	IV: <_counter.CounterBE object at 0x7f27d7227df0>
+#####################################################
+fashion_mnist_FGSM_CTR_V1	accuracy: 10.00%	error rate: 90.00%
+key: b"c%\xb4\x81\x0f\x0f\xa3\x19?['\x965\x98\xb2\xcb"	IV: <_counter.CounterBE object at 0x7f27d7227df0>
+#####################################################
+fashion_mnist_CW_1_CTR_V1	accuracy: 10.00%	error rate: 90.00%
+key: b"c%\xb4\x81\x0f\x0f\xa3\x19?['\x965\x98\xb2\xcb"	IV: <_counter.CounterBE object at 0x7f27d7227df0>
+#####################################################
+fashion_mnist_CW_2_CTR_V1	accuracy: 10.00%	error rate: 90.00%
+key: b"c%\xb4\x81\x0f\x0f\xa3\x19?['\x965\x98\xb2\xcb"	IV: <_counter.CounterBE object at 0x7f27d7227df0>
+#####################################################

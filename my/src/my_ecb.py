@@ -9,7 +9,7 @@ key = b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
 
 def encrypt(inputs):
 
-    return encrypt_v2(inputs)
+    return encrypt_v1(inputs)
 
 
 def encrypt_v1(inputs):
