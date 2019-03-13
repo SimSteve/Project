@@ -60,9 +60,9 @@ if __name__ == '__main__':
     DATASET = "fashion_mnist"
     MODEL = "CW_2"
     TRAIN_WITH_ME = "ECB"
-    VERSION = "_V1"
+    VERSION = "_V2"
 
-    for TRAIN_WITH_ME in ["ECB", "CBC", "CTR"]:
+    for TRAIN_WITH_ME in ["CBC"]:
         for DATASET in ["mnist", "fashion_mnist"]:
             for MODEL in ["FGSM", "CW_1", "CW_2"]:
 
