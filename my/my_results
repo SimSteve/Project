@@ -118,3 +118,21 @@ key: b'\x83q\x8e\x9bvdy}\x0f\xbej[\x0e\xb6h\x00'	IV: b'5YR\xc7\xaeZ\xfcESz\xe81\
 fashion_mnist_CW_2_CBC_V2	accuracy: 10.00%	error rate: 90.00%
 key: b'\x83q\x8e\x9bvdy}\x0f\xbej[\x0e\xb6h\x00'	IV: b'5YR\xc7\xaeZ\xfcESz\xe81\x86t\r\xb8'
 #####################################################
+mnist_FGSM_CTR_V2	accuracy: 11.35%	error rate: 88.65%
+key: b'\x1b}2\x98\xe1\x05\xcf\r\x01\xea>\xd5\x1c\x1f?\xfd'	IV: <_counter.CounterBE object at 0x7f12a1879d98>
+#####################################################
+mnist_CW_1_CTR_V2	accuracy: 11.35%	error rate: 88.65%
+key: b'\x1b}2\x98\xe1\x05\xcf\r\x01\xea>\xd5\x1c\x1f?\xfd'	IV: <_counter.CounterBE object at 0x7f12a1879d98>
+#####################################################
+mnist_CW_2_CTR_V2	accuracy: 11.35%	error rate: 88.65%
+key: b'\x1b}2\x98\xe1\x05\xcf\r\x01\xea>\xd5\x1c\x1f?\xfd'	IV: <_counter.CounterBE object at 0x7f12a1879d98>
+#####################################################
+fashion_mnist_FGSM_CTR_V2	accuracy: 10.00%	error rate: 90.00%
+key: b'\x1b}2\x98\xe1\x05\xcf\r\x01\xea>\xd5\x1c\x1f?\xfd'	IV: <_counter.CounterBE object at 0x7f12a1879d98>
+#####################################################
+fashion_mnist_CW_1_CTR_V2	accuracy: 10.00%	error rate: 90.00%
+key: b'\x1b}2\x98\xe1\x05\xcf\r\x01\xea>\xd5\x1c\x1f?\xfd'	IV: <_counter.CounterBE object at 0x7f12a1879d98>
+#####################################################
+fashion_mnist_CW_2_CTR_V2	accuracy: 10.00%	error rate: 90.00%
+key: b'\x1b}2\x98\xe1\x05\xcf\r\x01\xea>\xd5\x1c\x1f?\xfd'	IV: <_counter.CounterBE object at 0x7f12a1879d98>
+#####################################################

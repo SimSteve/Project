@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="trained encryption version 1">
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="trained V2 partially">
+      <change afterPath="$PROJECT_DIR$/my/json/fashion_mnist_CTR_V2_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/json/mnist_CTR_V2_models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_1_CTR_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_CW_2_CTR_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/fashion_mnist_FGSM_CTR_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_1_CTR_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_CW_2_CTR_V2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my/saved_models/mnist_FGSM_CTR_V2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my/my_results" beforeDir="false" afterPath="$PROJECT_DIR$/my/my_results" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my/src/my_cbc.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_cbc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my/src/my_ctr.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_ctr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my/src/my_ecb.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_ecb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my/src/my_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/my/src/my_trainer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,14 +45,14 @@
           <entry key="accuracies" value="9" />
           <entry key="dummy" value="16" />
           <entry key="my_results" value="19" />
-          <entry key="py" value="10864" />
-          <entry key="txt" value="369" />
+          <entry key="py" value="10867" />
+          <entry key="txt" value="392" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="413" />
-          <entry key="Python" value="10864" />
+          <entry key="PLAIN_TEXT" value="436" />
+          <entry key="Python" value="10867" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -70,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="585">
               <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -82,7 +87,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my/my_results">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
+            <state relative-caret-position="265">
               <caret line="102" selection-start-line="102" selection-end-line="102" />
             </state>
           </provider>
@@ -127,7 +132,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my/src/my_ctr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="705">
               <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
             </state>
           </provider>
@@ -233,9 +238,9 @@
         <option value="$PROJECT_DIR$/my/src/my_Models.py" />
         <option value="$PROJECT_DIR$/my/src/my_permutated.py" />
         <option value="$PROJECT_DIR$/my/src/my_ecb.py" />
-        <option value="$PROJECT_DIR$/my/src/my_trainer.py" />
         <option value="$PROJECT_DIR$/my/src/my_ctr.py" />
         <option value="$PROJECT_DIR$/my/src/my_cbc.py" />
+        <option value="$PROJECT_DIR$/my/src/my_trainer.py" />
       </list>
     </option>
   </component>
@@ -541,18 +546,26 @@
       <option name="project" value="LOCAL" />
       <updated>1552378888604</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="trained V2 partially">
+      <created>1552469868566</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1552469868566</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="7" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.19820769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.6281081" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.5902703" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -580,7 +593,8 @@
     <MESSAGE value="ran ECB version 2" />
     <MESSAGE value="found a bug, started to train again" />
     <MESSAGE value="trained encryption version 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="trained encryption version 1" />
+    <MESSAGE value="trained V2 partially" />
+    <option name="LAST_COMMIT_MESSAGE" value="trained V2 partially" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -816,23 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_ctr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my/src/my_ecb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -843,9 +840,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_ctr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my/src/my_trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my/my_results">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
+        <state relative-caret-position="265">
           <caret line="102" selection-start-line="102" selection-end-line="102" />
         </state>
       </provider>

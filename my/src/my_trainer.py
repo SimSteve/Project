@@ -62,7 +62,7 @@ if __name__ == '__main__':
     TRAIN_WITH_ME = "ECB"
     VERSION = "_V2"
 
-    for TRAIN_WITH_ME in ["CBC"]:
+    for TRAIN_WITH_ME in ["CTR"]:
         for DATASET in ["mnist", "fashion_mnist"]:
             for MODEL in ["FGSM", "CW_1", "CW_2"]:
 
