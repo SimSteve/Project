@@ -1,20 +1,20 @@
 import tensorflow as tf
 import numpy as np
-import my.src.my_ecb as e
+import my.src.my_unencrypted as e
 import my.src.my_Models as m
 import my.src.my_unencrypted as u
 import tensorflow.keras.backend as K
 
 
-model = m.Encrypted_Model(encrypt=e.encrypt_v2)
+model = m.Encrypted_Model(encrypt=e.encrypt)
 #model = m.Encrypted_Model(encrypt=u.encrypt)
-model.load("fashion_mnist_CW_2_ECB_V2_weights")
+model.load("mnist_CW_1_UNENCRYPTED")
 #model.load("fashion_mnist_CW_2_UNENCRYPTED")
 
 #exit()
 
 
-(x_train, y_train), (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 #x_test = x_test / 255.0
 x_test = x_test / 1.0
 dims = np.array(x_test).shape
@@ -27,9 +27,10 @@ inp = model.model.input
 outputs = model.model.layers[-2].output
 print(outputs)
 func = K.function([inp], [outputs])
-layer_outs = func([x_test[:1]])
+layer_outs = func([x_test[9000:9001]])
 print(layer_outs)
-
+print(layer_outs[0][0])
+exit()
 inp = model.model.input
 outputs = model.model.layers[-1].output
 print(outputs)
