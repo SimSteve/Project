@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import my.src.my_Models as mdl
+import my.src.my_Models_better as mdl
 import numpy as np
 import tensorflow as tf
 
@@ -67,7 +67,6 @@ def main():
 
     # loading the data
     _, (x_test, y_test) = data.load_data()
-    x_test = x_test / 255.0
 
     dims = np.array(x_test).shape
 
@@ -83,11 +82,7 @@ def main():
     model = models[MODEL](input_shape, encrypt=helper.encrypt)
     model.load(MODEL_FILE)
 
-    #predict(model, x_test, y_test, i=99)
-
-    test_loss, test_acc = model.evaluate(x_test, y_test)
-
-    print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
+    predict(model, x_test, y_test, i=90)
 
 
 if __name__ == '__main__':

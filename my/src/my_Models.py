@@ -22,8 +22,8 @@ class Encrypted_Model():
                            metrics=['accuracy'])
 
     def evaluate(self, x_test, y_test):
-        for i,image in enumerate(x_test):
-            x_test[i] = self.encrypt(image)
+        #for i,image in enumerate(x_test):
+        #    x_test[i] = self.encrypt(image)
 
         return self.model.evaluate(x_test, y_test)
 
@@ -40,7 +40,7 @@ class Encrypted_Model():
             self.compile()
         else:
             print("WARNING! No saved model found, train one from scratch.")
-            self.model = None
+            exit()
         return self
 
     def summary(self):
