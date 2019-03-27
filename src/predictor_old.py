@@ -1,7 +1,7 @@
 import importlib
 
 import matplotlib.pyplot as plt
-import src.Models as mdl
+import src.Models_old as mdl
 import numpy as np
 import tensorflow as tf
 
@@ -69,6 +69,7 @@ def main():
 
     # loading the data
     _, (x_test, y_test) = data.load_data()
+    x_test = x_test / 255.0
 
     dims = np.array(x_test).shape
 
@@ -76,7 +77,7 @@ def main():
         # expanding the images to get a third dimension (needed for conv layers)
         x_test = np.expand_dims(x_test, -1)
 
-    helper = importlib.import_module("src.encryptions." + train_mode[TRAIN_WITH_ME])
+        helper = importlib.import_module("src.encryptions." + train_mode[TRAIN_WITH_ME])
 
     input_shape = np.array(x_test[0]).shape
 
@@ -84,7 +85,11 @@ def main():
     model = models[MODEL](input_shape, encrypt=helper.encrypt)
     model.load(MODEL_FILE)
 
-    predict(model, x_test, y_test, i=90)
+    #predict(model, x_test, y_test, i=99)
+
+    test_loss, test_acc = model.evaluate(x_test, y_test)
+
+    print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
 
 
 if __name__ == '__main__':
