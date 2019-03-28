@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="CW attack works on the encrypted models as expected + rearranged the folders">
-      <change afterPath="$PROJECT_DIR$/src/predict_image_from_file.py" afterDir="false" />
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="currently running attack on UNENCRYPTED, code prepared for PERMUTATED">
+      <change afterPath="$PROJECT_DIR$/attcked_results" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/safe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/CW_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/CW_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/l2_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/l2_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/permutated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/permutated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/unencrypted.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/unencrypted.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stam.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,14 +39,14 @@
           <entry key="accuracies" value="9" />
           <entry key="dummy" value="56" />
           <entry key="my_results" value="19" />
-          <entry key="py" value="15051" />
-          <entry key="txt" value="563" />
+          <entry key="py" value="15052" />
+          <entry key="txt" value="640" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="647" />
-          <entry key="Python" value="15051" />
+          <entry key="PLAIN_TEXT" value="724" />
+          <entry key="Python" value="15052" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -73,9 +69,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="219">
+              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
               <folding>
+                <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#699#1426#0" />
                 <element signature="e#1448#1733#0" />
               </folding>
@@ -221,18 +218,6 @@
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CW" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="encryptions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -582,12 +567,25 @@
       <option name="project" value="LOCAL" />
       <updated>1553700824036</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="currently running attack on UNENCRYPTED, code prepared for PERMUTATED">
+      <created>1553754362146</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1553754362146</updated>
+    </task>
+    <task id="LOCAL-00019" summary="currently running attack on UNENCRYPTED, code prepared for PERMUTATED">
+      <created>1553754531547</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1553754531547</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.19820769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -627,7 +625,8 @@
     <MESSAGE value="part of implementation of CW attack" />
     <MESSAGE value="implemented CW attack" />
     <MESSAGE value="CW attack works on the encrypted models as expected + rearranged the folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="CW attack works on the encrypted models as expected + rearranged the folders" />
+    <MESSAGE value="currently running attack on UNENCRYPTED, code prepared for PERMUTATED" />
+    <option name="LAST_COMMIT_MESSAGE" value="currently running attack on UNENCRYPTED, code prepared for PERMUTATED" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1012,9 +1011,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="219">
+          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
           <folding>
+            <element signature="e#0#23#0" expanded="true" />
             <element signature="e#699#1426#0" />
             <element signature="e#1448#1733#0" />
           </folding>
