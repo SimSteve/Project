@@ -96,7 +96,7 @@ with tf.Session() as sess:
     good = 0.0
     bad = 0.0
 
-    g = open("safe", 'w')
+    g = open("safe1", 'w')
 
     for i in range(len(adv)):
         real = y_test[i]
