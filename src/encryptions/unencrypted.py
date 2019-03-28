@@ -1,8 +1,7 @@
-
 '''
 # this function is used for training
 def encrypt(inputs):
-    return (inputs / 255.0) - 0.5
+    return inputs / 255.0
 '''
 
 

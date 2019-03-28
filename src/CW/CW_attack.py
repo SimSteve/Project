@@ -1,8 +1,8 @@
 import tensorflow as tf
 import numpy as np
 import src.CW.Carlini_Models as m
-import src.encryptions.unencrypted as e
-#import src.encryptions.permutated as e
+#import src.encryptions.unencrypted as e
+import src.encryptions.permutated as e
 from src.CW.l2_attack import CarliniL2
 import time
 import matplotlib.pyplot as plt
@@ -64,7 +64,10 @@ def softmax(x):
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+
+    x_test = x_test[:1000]
+    y_test = y_test[:1000]
 
     x_test = (x_test / 255.0) - 0.5
     dims = np.array(x_test).shape
@@ -72,17 +75,17 @@ with tf.Session() as sess:
         # expanding the images to get a third dimension (needed for conv layers)
         x_test = np.expand_dims(x_test, -1)
 
+
     input_shape = np.array(x_test[0]).shape
+
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
-    model.load("mnist_CW_1_UNENCRYPTED")
+    model.load("mnist_CW_1_PERMUTATED")
     class_names = mnist_classes
-    #model.load("mnist_CW_1_PERMUTATED")
 
     attack = CarliniL2(sess=sess, model=model, targeted=False)
 
-    images = np.array([x_test[1]])
-    true_label = [y_test[1]]
-    targets = np.array([[0,0,1,0,0,0,0,0,0,0]])     # TODO change to real label
+    images = np.array(x_test)
+    targets = np.eye(10)[np.array([y_test]).reshape(-1)]
 
     timestart = time.time()
     adv = attack.attack(images, targets)
@@ -90,25 +93,52 @@ with tf.Session() as sess:
 
     print("Took", timeend - timestart, "seconds to run", 1, "samples.")
 
+    good = 0.0
+    bad = 0.0
+
+    g = open("safe", 'w')
+
     for i in range(len(adv)):
-        real = true_label[i]
+        real = y_test[i]
         prob_adv = model.model.predict(adv[i:i + 1])[0]         # the output is 2D array
-        prob_orig = model.model.predict(images[i:i + 1])[0]     # likewise
+        #prob_orig = model.model.predict(images[i:i + 1])[0]     # likewise
 
         prob_adv = softmax(prob_adv)
-        prob_orig = softmax(prob_orig)
+        #prob_orig = softmax(prob_orig)
 
         pred_adv = np.argmax(prob_adv).tolist()
-        pred_orig = np.argmax(prob_orig).tolist()
+        #pred_orig = np.argmax(prob_orig).tolist()
 
-        print("Real Classification: ", real)
-        print("Classification: ", pred_orig)
-        print("Adversarial Classification: ", pred_adv)
-        print("Total distortion:", np.sum((adv[i] - images[i]) ** 2) ** .5)
+        #print("Real Classification: ", real)
+        #print("Classification: ", pred_orig)
+        #print("Adversarial Classification: ", pred_adv)
+        #print("Total distortion:", np.sum((adv[i] - images[i]) ** 2) ** .5)
 
-        plot_image(images[i], predicted_label=pred_orig, true_label=real, prob=prob_orig)
+        #r.write("Real Classification: {}\n".format(real))
+        #r.write("Classification: {}\n".format(pred_orig))
+        #r.write("Adversarial Classification: {}\n".format(pred_adv))
+        #r.write("Total distortion: {}\n\n".format(np.sum((adv[i] - images[i]) ** 2) ** .5))
 
-        plot_image(adv[i], predicted_label=pred_adv, true_label=real, prob=prob_adv)
+        #plot_image(images[i], predicted_label=pred_orig, true_label=real, prob=prob_orig)
 
-        plt.show()
+        #plot_image(adv[i], predicted_label=pred_adv, true_label=real, prob=prob_adv)
+
+        #adv_img = np.reshape(adv[i], (28,28))
+        #np.save("src/adversarial_images/adv1", adv_img)
+
+        #plt.show()
+
+        good += pred_adv == real
+        bad += pred_adv != real
+
+        if pred_adv != real:
+            g.write("{}\n".format(i))
+
+    g.close()
+
+    test_acc = good / (good +bad)
+    r = open("attcked_results1", 'w')
+    r.write("mnist_CW_1_PERMUTATED\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
+    r.write("#####################################################\n")
+    r.close()
 

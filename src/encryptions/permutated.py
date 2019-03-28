@@ -18,14 +18,12 @@ def encrypt(inputs):
 
 # this function is used when running CW_attack
 def encrypt(inputs):
-    #tf.NoGradient("RandomShuffle")
-    #tf.stop_gradient(inputs)
+    tf.NoGradient("RandomShuffle")
+
     shape = tf.shape(inputs)
 
     permutated_flattened = tf.random.shuffle(tf.reshape(inputs, [-1]), seed=seed)
     enc_inputs = tf.reshape(permutated_flattened, shape)
-
-    enc_inputs = tf.stop_gradient(enc_inputs)
 
     return enc_inputs
 
