@@ -4,28 +4,28 @@ from pathlib import Path
 
 
 class Encrypted_Model():
-    def __init__(self, encrypt=lambda a:a):
+    def __init__(self, encrypt=lambda a: a):
         self.encrypt = encrypt
 
     def train(self, x_train, y_train, ep):
-        for i,image in enumerate(x_train):
+        for i, image in enumerate(x_train):
             x_train[i] = self.encrypt(image)
 
         h = self.model.fit(x_train, y_train, epochs=ep)
         return h.history['loss'], h.history['acc'], list(range(ep))
 
     def evaluate(self, x_test, y_test):
-        for i,image in enumerate(x_test):
+        for i, image in enumerate(x_test):
             x_test[i] = self.encrypt(image)
 
         return self.model.evaluate(x_test, y_test)
 
     def predict(self, image):
         enc_img = self.encrypt(image)
-        return self.model.predict(enc_img)
+        return self.model(enc_img)
 
     def save(self, m_file):
-        self.model.save_weights(filepath='saved_weights/{}.h5'.format(m_file))
+        tf.keras.models.Model.save_weights(filepath='saved_weights/{}.h5'.format(m_file), save_format='h5')
 
     def load(self, m_file):
         if Path('saved_weights/{}.h5'.format(m_file)).is_file():
@@ -39,31 +39,18 @@ class Encrypted_Model():
         self.model.summary()
 
 
-class FGSM(Encrypted_Model):
-    def __init__(self, input_shape, encrypt=lambda a:a):
-        super(FGSM, self).__init__(encrypt)
-
-        self.model = Sequential()
-        
-        self.model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=8, input_shape=input_shape, activation=tf.nn.relu))
-        self.model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=6, activation=tf.nn.relu))
-        self.model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=5, activation=tf.nn.relu))
-        self.model.add(tf.keras.layers.Flatten())
-        self.model.add(tf.keras.layers.Dense(10, name="before-softmax"))
-        self.model.add(tf.keras.layers.Activation(activation=tf.nn.softmax, name="softmax"))
-
-        self.model.compile(optimizer=tf.train.AdamOptimizer(),
-                           loss='sparse_categorical_crossentropy',
-                           metrics=['accuracy'])
-
-
 class CW_1(Encrypted_Model):
-    def __init__(self, input_shape, encrypt=lambda a:a):
+    def __init__(self, input_shape, encrypt=lambda a: a):
         super(CW_1, self).__init__(encrypt)
 
+        self.num_channels = 1
+        self.image_size = 28
+        self.num_labels = 10
+
         self.model = Sequential()
 
-        self.model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=3, input_shape=input_shape, activation=tf.nn.relu))
+        self.model.add(
+            tf.keras.layers.Conv2D(filters=32, kernel_size=3, input_shape=input_shape, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=3, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.MaxPool2D(pool_size=2))
         self.model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=3, activation=tf.nn.relu))
@@ -74,7 +61,6 @@ class CW_1(Encrypted_Model):
         self.model.add(tf.keras.layers.Dropout(0.2))
         self.model.add(tf.keras.layers.Dense(200, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Dense(10, name="before-softmax"))
-        self.model.add(tf.keras.layers.Activation(activation=tf.nn.softmax, name="softmax"))
 
         self.model.compile(optimizer=tf.train.AdamOptimizer(),
                            loss='sparse_categorical_crossentropy',
@@ -82,12 +68,13 @@ class CW_1(Encrypted_Model):
 
 
 class CW_2(Encrypted_Model):
-    def __init__(self, input_shape, encrypt=lambda a:a):
+    def __init__(self, input_shape, encrypt=lambda a: a):
         super(CW_2, self).__init__(encrypt)
 
         self.model = Sequential()
-        
-        self.model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=3, input_shape=input_shape, activation=tf.nn.relu))
+
+        self.model.add(
+            tf.keras.layers.Conv2D(filters=64, kernel_size=3, input_shape=input_shape, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=3, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.MaxPool2D(pool_size=2))
         self.model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=3, activation=tf.nn.relu))
@@ -98,7 +85,6 @@ class CW_2(Encrypted_Model):
         self.model.add(tf.keras.layers.Dropout(0.2))
         self.model.add(tf.keras.layers.Dense(256, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Dense(10, name="before-softmax"))
-        self.model.add(tf.keras.layers.Activation(activation=tf.nn.softmax, name="softmax"))
 
         self.model.compile(optimizer=tf.train.AdamOptimizer(),
                            loss='sparse_categorical_crossentropy',

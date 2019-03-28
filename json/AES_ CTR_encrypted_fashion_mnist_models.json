@@ -1,3 +1,0 @@
-{"name": "mnist_CW_1_aes_encrypted_model", "acc": [0.09781666666666666, 0.09895, 0.0994, 0.09825, 0.09866666666666667], "epochs": [0, 1, 2, 3, 4]}
-{"name": "mnist_CW_2_aes_encrypted_model", "acc": [0.09998333333333333, 0.1, 0.1, 0.1, 0.1], "epochs": [0, 1, 2, 3, 4]}
-{"name": "mnist_FGSM_aes_encrypted_model", "acc": [0.1, 0.1, 0.1, 0.1, 0.1], "epochs": [0, 1, 2, 3, 4]}
