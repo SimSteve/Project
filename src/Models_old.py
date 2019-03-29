@@ -32,7 +32,8 @@ class Encrypted_Model():
         return self.model.predict(enc_img)
 
     def save(self, m_file):
-        tf.keras.models.save_model(self.model, 'saved_models/' + m_file)
+        #tf.keras.models.save_model(self.model, 'saved_models/' + m_file) # TODO return this to normal
+        tf.keras.models.save_model(self.model, m_file)
 
     def load(self, m_file):
         if Path('saved_models/' + m_file).is_file():

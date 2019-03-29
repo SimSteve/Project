@@ -85,11 +85,17 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    model = models["CW_1"](input_shape, encrypt=e.encrypt)
-    model.load("mnist_CW_1_PERMUTATED")
+    attack_this_model = models["CW_1"](input_shape, encrypt=e.encrypt)
+    attack_this_model.load("mnist_CW_1_PERMUTATED")
+
+    safe_name = "mnist_CW_1_PERMUTATED_SEED=79"
+
+    supposedly_safe_model = models["CW_1"](input_shape, encrypt=e.encrypt)
+    supposedly_safe_model.load(safe_name)
+
     class_names = mnist_classes
 
-    attack = CarliniL2(sess=sess, model=model, targeted=False, batch_size=batch_size)
+    attack = CarliniL2(sess=sess, model=attack_this_model, targeted=False, batch_size=batch_size)
 
     images = np.array(x_test)
     targets = np.eye(10)[np.array([y_test]).reshape(-1)]
@@ -100,14 +106,35 @@ with tf.Session() as sess:
 
     print("Took", timeend - timestart, "seconds to run", 1, "samples.")
 
-    good = 0.0
-    bad = 0.0
+    A_good = 0.0
+    A_bad = 0.0
+    S_good = 0.0
+    S_bad = 0.0
 
-    g = open("safe_permutated", 'w')
+    attacked_model_file = open("attacked_model_successfully-attacked-images", 'w')
+    supposedly_safe_model_file = open("supposedly_safe_model_successfully-attacked-images", 'w')
 
     for i in range(len(adv)):
+        e.seed = 42
+
         real = y_test[i]
-        prob_adv = model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
+        prob_adv = attack_this_model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
+        # prob_orig = model.model.predict(images[i:i + 1])[0]     # likewise
+
+        prob_adv = softmax(prob_adv)
+        # prob_orig = softmax(prob_orig)
+
+        pred_adv = np.argmax(prob_adv).tolist()
+
+        A_good += pred_adv == real
+        A_bad += pred_adv != real
+
+        if pred_adv != real:
+            attacked_model_file.write("{}\n".format(i))
+
+        e.seed = 79
+
+        prob_adv = supposedly_safe_model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
         # prob_orig = model.model.predict(images[i:i + 1])[0]     # likewise
 
         prob_adv = softmax(prob_adv)
@@ -135,17 +162,25 @@ with tf.Session() as sess:
 
         # plt.show()
 
-        good += pred_adv == real
-        bad += pred_adv != real
+        S_good += pred_adv == real
+        S_bad += pred_adv != real
 
         if pred_adv != real:
-            g.write("{}\n".format(i))
+            supposedly_safe_model_file.write("{}\n".format(i))
 
-    g.close()
+    attacked_model_file.close()
+    supposedly_safe_model_file.close()
 
-    test_acc = good / (good + bad)
-    r = open("attcked_results_permutated", 'w')
+    test_acc = A_good / (A_good + A_bad)
+
+    r = open("attacked_results_permutated", 'w')
     r.write("mnist_CW_1_PERMUTATED\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc,
                                                                                      (1.0 - test_acc) * 100))
     r.write("#####################################################\n")
+
+    test_acc = S_good / (S_good + S_bad)
+    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(safe_name, 100 * test_acc,
+                                                                  (1.0 - test_acc) * 100))
+    r.write("#####################################################\n")
+
     r.close()

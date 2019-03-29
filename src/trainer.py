@@ -8,7 +8,7 @@ import json
 
 data_types = {'fashion_mnist':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
 models = {"CW_1": mdl.CW_1, "CW_2": mdl.CW_2, "FGSM": mdl.FGSM}
-train_mode = {"CTR":"encryptions/ctr","CBC":"encryptions/cbc","ECB":"encryptions/ecb", "PERMUTATED":"encryptions/permutated", "UNENCRYPTED":"encryptions/unencrypted"}
+train_mode = {"CTR":"encryptions.ctr","CBC":"encryptions.cbc","ECB":"encryptions.ecb", "PERMUTATED":"encryptions.permutated", "UNENCRYPTED":"encryptions.unencrypted"}
 
 
 def main():
@@ -17,7 +17,7 @@ def main():
     (x_train, y_train), (x_test, y_test) = data.load_data()
     x_train, x_test = x_train / 1.0, x_test / 1.0
 
-    helper = importlib.import_module("src.encryptions." + train_mode[TRAIN_WITH_ME])
+    helper = importlib.import_module(train_mode[TRAIN_WITH_ME])
 
     dims = np.array(x_train).shape
 
@@ -49,14 +49,22 @@ def main():
     }
 
     # writing the training results
+    with open("../json/{}_{}_models.json".format(DATASET, TRAIN_WITH_ME), 'a') as j:
+        json.dump(results, j)
+        j.write('\n')
+
+
+    '''
+    # writing the training results
     with open("../json/{}_{}{}_models.json".format(DATASET, TRAIN_WITH_ME, VERSION), 'a') as j:
         json.dump(results, j)
         j.write('\n')
+    '''
 
     # saving model
     model.save(MODEL_NAME)
 
-
+'''
 if __name__ == '__main__':
     # these two change to get desired model
     DATASET = "fashion_mnist"
@@ -77,3 +85,22 @@ if __name__ == '__main__':
                 r = open("../results", "a")
                 main()
                 r.close()
+
+'''
+
+
+if __name__ == '__main__':
+    DATASET = "mnist"
+    MODEL = "CW_1"
+    TRAIN_WITH_ME = "PERMUTATED"
+    #VERSION = "_V2"
+
+    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_SEED=79" #+ VERSION
+
+    print("DATASET = {}".format(DATASET))
+    print("MODEL = {}".format(MODEL))
+    print("TRAINER = {}\n".format(TRAIN_WITH_ME))
+
+    r = open("../results_permutated_SEED=79", "a")
+    main()
+    r.close()
