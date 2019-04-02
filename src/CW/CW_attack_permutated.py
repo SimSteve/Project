@@ -58,19 +58,30 @@ def show(img):
     for i in range(28):
         print("".join([remap[int(round(x))] for x in img[i * 28:i * 28 + 28]]))
 
-
+'''
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
     return np.exp(x) / np.sum(np.exp(x), axis=0)
+'''
+
+
+def softmax(x):
+    exp = np.exp(x - np.max(x))
+    return exp / np.sum(exp)
+
+
+def get_target(x):
+    return 9 - x
 
 
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
     _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    x_test = x_test / 1.0
 
     # 1000
-    num_of_examples = 1000
+    num_of_examples = 50
 
     x_test = x_test[:num_of_examples]
     y_test = y_test[:num_of_examples]
@@ -95,10 +106,15 @@ with tf.Session() as sess:
 
     class_names = mnist_classes
 
-    attack = CarliniL2(sess=sess, model=attack_this_model, targeted=False, batch_size=batch_size)
+    attack = CarliniL2(sess=sess, model=attack_this_model, targeted=True, batch_size=batch_size)
 
     images = np.array(x_test)
-    targets = np.eye(10)[np.array([y_test]).reshape(-1)]
+
+    new_y_test = []
+    for x in y_test:
+        new_y_test.append(get_target(x))
+
+    targets = np.eye(10)[np.array([new_y_test]).reshape(-1)]
 
     timestart = time.time()
     adv = attack.attack(images, targets)
@@ -111,8 +127,8 @@ with tf.Session() as sess:
     S_good = 0.0
     S_bad = 0.0
 
-    attacked_model_file = open("attacked_model_successfully-attacked-images", 'w')
-    supposedly_safe_model_file = open("supposedly_safe_model_successfully-attacked-images", 'w')
+    #attacked_model_file = open("attacked_model_successfully-attacked-images2", 'w')
+    #supposedly_safe_model_file = open("supposedly_safe_model_successfully-attacked-images2", 'w')
 
     for i in range(len(adv)):
         e.seed = 42
@@ -129,8 +145,8 @@ with tf.Session() as sess:
         A_good += pred_adv == real
         A_bad += pred_adv != real
 
-        if pred_adv != real:
-            attacked_model_file.write("{}\n".format(i))
+        #if pred_adv != real:
+        #    attacked_model_file.write("{}\n".format(i))
 
         e.seed = 79
 
@@ -165,15 +181,15 @@ with tf.Session() as sess:
         S_good += pred_adv == real
         S_bad += pred_adv != real
 
-        if pred_adv != real:
-            supposedly_safe_model_file.write("{}\n".format(i))
+        #if pred_adv != real:
+        #    supposedly_safe_model_file.write("{}\n".format(i))
 
-    attacked_model_file.close()
-    supposedly_safe_model_file.close()
+    #attacked_model_file.close()
+    #supposedly_safe_model_file.close()
 
     test_acc = A_good / (A_good + A_bad)
 
-    r = open("attacked_results_permutated", 'w')
+    r = open("attacked_results_permutated_targeted_50", 'w')
     r.write("mnist_CW_1_PERMUTATED\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc,
                                                                                      (1.0 - test_acc) * 100))
     r.write("#####################################################\n")

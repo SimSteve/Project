@@ -8,6 +8,7 @@
 import sys
 import tensorflow as tf
 import numpy as np
+import src.encryptions.permutated as permutate
 
 BINARY_SEARCH_STEPS = 9  # number of times to adjust the constant with binary search
 MAX_ITERATIONS = 10000  # number of iterations to perform gradient descent
@@ -177,6 +178,10 @@ class CarliniL2:
             # completely reset adam's internal state.
             self.sess.run(self.init)
             batch = imgs[:batch_size]
+
+            for i,img in enumerate(batch):
+                batch[i] = permutate.encrypt(img)
+
             batchlab = labs[:batch_size]
 
             bestl2 = [1e10] * batch_size

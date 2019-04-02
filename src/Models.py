@@ -7,14 +7,16 @@ class Encrypted_Model():
     def __init__(self, encrypt=lambda a:a):
         self.encrypt = encrypt
 
-    def train(self, x_train, y_train, ep):
+    def train(self, x, y_train, ep):
+        x_train = x.copy()
         for i,image in enumerate(x_train):
             x_train[i] = self.encrypt(image)
 
         h = self.model.fit(x_train, y_train, epochs=ep)
         return h.history['loss'], h.history['acc'], list(range(ep))
 
-    def evaluate(self, x_test, y_test):
+    def evaluate(self, x, y_test):
+        x_test = x.copy()
         for i,image in enumerate(x_test):
             x_test[i] = self.encrypt(image)
 

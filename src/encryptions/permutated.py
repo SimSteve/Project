@@ -2,9 +2,9 @@ import numpy as np
 import json
 import tensorflow as tf
 
-# seed = 42 TODO seed was 42 now 79
-seed = 79
-'''
+seed = 42 # TODO seed was 42 now 79
+# seed = 79
+
 # this function is used for training
 def encrypt(inputs):
     dims = np.array(inputs).shape
@@ -25,8 +25,6 @@ def encrypt(inputs):
     enc_inputs = tf.reshape(permutated_flattened, shape)
 
     return enc_inputs
-
-
-
+'''
 def print_encryption_details(out):
     out.write("key: {}\n".format(seed))

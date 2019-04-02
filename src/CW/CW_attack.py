@@ -64,6 +64,13 @@ def softmax(x):
     return np.exp(x) / np.sum(np.exp(x), axis=0)
 
 
+'''
+def softmax(x):
+    exp = np.exp(x - np.max(x))
+    return exp / np.sum(exp)
+'''
+
+
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
