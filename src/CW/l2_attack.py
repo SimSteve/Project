@@ -179,9 +179,6 @@ class CarliniL2:
             self.sess.run(self.init)
             batch = imgs[:batch_size]
 
-            for i,img in enumerate(batch):
-                batch[i] = permutate.encrypt(img)
-
             batchlab = labs[:batch_size]
 
             bestl2 = [1e10] * batch_size

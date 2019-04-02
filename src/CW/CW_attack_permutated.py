@@ -81,7 +81,7 @@ with tf.Session() as sess:
     x_test = x_test / 1.0
 
     # 1000
-    num_of_examples = 50
+    num_of_examples = 200
 
     x_test = x_test[:num_of_examples]
     y_test = y_test[:num_of_examples]
@@ -94,12 +94,17 @@ with tf.Session() as sess:
         # expanding the images to get a third dimension (needed for conv layers)
         x_test = np.expand_dims(x_test, -1)
 
+    for i,img in enumerate(x_test):
+        x_test[i] = e.encrypt(img)
+
     input_shape = np.array(x_test[0]).shape
 
-    attack_this_model = models["CW_1"](input_shape, encrypt=e.encrypt)
-    attack_this_model.load("mnist_CW_1_PERMUTATED")
+    attacked_model = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=42"
 
-    safe_name = "mnist_CW_1_PERMUTATED_SEED=79"
+    attack_this_model = models["CW_1"](input_shape, encrypt=e.encrypt)
+    attack_this_model.load(attacked_model)
+
+    safe_name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=79"
 
     supposedly_safe_model = models["CW_1"](input_shape, encrypt=e.encrypt)
     supposedly_safe_model.load(safe_name)
@@ -188,9 +193,8 @@ with tf.Session() as sess:
     #supposedly_safe_model_file.close()
 
     test_acc = A_good / (A_good + A_bad)
-
-    r = open("attacked_results_permutated_targeted_50", 'w')
-    r.write("mnist_CW_1_PERMUTATED\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc,
+    r = open("attacked_results_permutated_targeted_200", 'w')
+    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(attacked_model, 100 * test_acc,
                                                                                      (1.0 - test_acc) * 100))
     r.write("#####################################################\n")
 

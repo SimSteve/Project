@@ -15,6 +15,11 @@ class Encrypted_Model():
         h = self.model.fit(x_train, y_train, epochs=ep)
         return h.history['loss'], h.history['acc'], list(range(ep))
 
+    def compile(self):
+        self.model.compile(optimizer=tf.train.AdamOptimizer(),
+                           loss='sparse_categorical_crossentropy',
+                           metrics=['accuracy'])
+
     def evaluate(self, x, y_test):
         x_test = x.copy()
         for i,image in enumerate(x_test):

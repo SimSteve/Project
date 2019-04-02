@@ -1,6 +1,6 @@
 import importlib
 
-import src.Models_old as mdl
+import src.Models as mdl
 import numpy as np
 import tensorflow as tf
 import json
@@ -49,14 +49,14 @@ def main():
     }
 
     # writing the training results
-    with open("../json/{}_{}_models.json".format(DATASET, TRAIN_WITH_ME), 'a') as j:
+    with open("json/{}_{}_models.json".format(DATASET, TRAIN_WITH_ME), 'a') as j:
         json.dump(results, j)
         j.write('\n')
 
 
     '''
     # writing the training results
-    with open("../json/{}_{}{}_models.json".format(DATASET, TRAIN_WITH_ME, VERSION), 'a') as j:
+    with open("json/{}_{}{}_models.json".format(DATASET, TRAIN_WITH_ME, VERSION), 'a') as j:
         json.dump(results, j)
         j.write('\n')
     '''
@@ -95,12 +95,12 @@ if __name__ == '__main__':
     TRAIN_WITH_ME = "PERMUTATED"
     #VERSION = "_V2"
 
-    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_SEED=79" #+ VERSION
+    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM_SEED=79" #+ VERSION
 
     print("DATASET = {}".format(DATASET))
     print("MODEL = {}".format(MODEL))
     print("TRAINER = {}\n".format(TRAIN_WITH_ME))
 
-    r = open("../results_permutated_SEED=79", "a")
+    r = open("results_permutated_0.5NORM", "a")
     main()
     r.close()

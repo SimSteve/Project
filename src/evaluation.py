@@ -23,7 +23,7 @@ model.load("mnist_CW_1_PERMUTATED")
 test_loss, test_acc = model.evaluate(x_test, y_test)
 
 print(test_acc * 100)
-
+'''
 good = 0.0
 bad = 0.0
 for _ in range(2):
@@ -34,3 +34,4 @@ for _ in range(2):
         bad += pred != real
 
 print((good / (good + bad))* 100)
+'''

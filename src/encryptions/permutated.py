@@ -2,9 +2,9 @@ import numpy as np
 import json
 import tensorflow as tf
 
-seed = 42 # TODO seed was 42 now 79
+seed = 79 # TODO seed was 42 now 79
 # seed = 79
-
+'''
 # this function is used for training
 def encrypt(inputs):
     dims = np.array(inputs).shape
@@ -12,7 +12,15 @@ def encrypt(inputs):
     permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())
     enc_inputs = np.reshape(permutated_flattened, dims)
 
-    return enc_inputs / 255.0
+    return enc_inputs / 255.0 - 0.5
+'''
+def encrypt(inputs):
+    dims = np.array(inputs).shape
+
+    permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())
+    enc_inputs = np.reshape(permutated_flattened, dims)
+
+    return enc_inputs
 '''
 
 # this function is used when running CW_attack
