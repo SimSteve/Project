@@ -79,7 +79,7 @@ with tf.Session() as sess:
     _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
     x_test = x_test / 1.0
 
-    num_of_examples = 50
+    num_of_examples = 100
 
     x_test = x_test[:num_of_examples]
     y_test = y_test[:num_of_examples]
@@ -159,7 +159,7 @@ with tf.Session() as sess:
     safe_file.close()
 
     test_acc = A_good / (A_good + A_bad)
-    r = open("attacked_results_permutated_non_targeted_50", 'w')
+    r = open("attacked_results_permutated_non_targeted_100", 'w')
     r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(attacked_name, 100 * test_acc,
                                                                                      (1.0 - test_acc) * 100))
     r.write("#####################################################\n")

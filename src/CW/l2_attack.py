@@ -195,6 +195,9 @@ class CarliniL2:
 
             prev = np.inf
             for iteration in range(self.MAX_ITERATIONS):
+
+
+
                 # perform the attack
                 _, l, l2s, scores, nimg = self.sess.run([self.train, self.loss,
                                                          self.l2dist, self.output,
