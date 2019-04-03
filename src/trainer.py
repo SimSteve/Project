@@ -92,15 +92,15 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     DATASET = "mnist"
     MODEL = "CW_1"
-    TRAIN_WITH_ME = "PERMUTATED"
+    TRAIN_WITH_ME = "UNENCRYPTED"
     #VERSION = "_V2"
 
-    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM_SEED=79" #+ VERSION
+    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" #+ VERSION
 
     print("DATASET = {}".format(DATASET))
     print("MODEL = {}".format(MODEL))
     print("TRAINER = {}\n".format(TRAIN_WITH_ME))
 
-    r = open("results_permutated_0.5NORM", "a")
+    r = open("results_unencrypted_0.5NORM", "a")
     main()
     r.close()

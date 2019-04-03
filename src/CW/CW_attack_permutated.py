@@ -79,8 +79,7 @@ with tf.Session() as sess:
     _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
     x_test = x_test / 1.0
 
-    # 1000
-    num_of_examples = 100
+    num_of_examples = 50
 
     x_test = x_test[:num_of_examples]
     y_test = y_test[:num_of_examples]
@@ -93,17 +92,16 @@ with tf.Session() as sess:
         # expanding the images to get a third dimension (needed for conv layers)
         x_test = np.expand_dims(x_test, -1)
 
-    for i,img in enumerate(x_test):
-        x_test[i] = e.encrypt(img)
-
     input_shape = np.array(x_test[0]).shape
 
-    attacked_name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=42"
+    #attacked_name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=42"
+    attacked_name = "mnist_CW_1_UNENCRYPTED_0.5NORM"
 
-    attacked_model = models["CW_1"](input_shape, encrypt=e.encrypt)
+    attacked_model = models["CW_1"](input_shape, encrypt=lambda a: a)
     attacked_model.load(attacked_name)
 
-    safe_name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=79"
+    #safe_name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=79"
+    safe_name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=42"
 
     safe_model = models["CW_1"](input_shape, encrypt=e.encrypt)
     safe_model.load(safe_name)
@@ -131,10 +129,11 @@ with tf.Session() as sess:
     safe_file = open("safe_model_successfully_attacked_indexes", 'w')
 
     for i in range(len(adv)):
+        img = np.reshape(adv[i], (1,28,28,1))
         real = y_test[i]
 
-        e.seed = 42
-        prob_attacked = attacked_model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
+        #e.seed = 42
+        prob_attacked = attacked_model.model.predict(img)[0]  # the output is 2D array
         prob_attacked = softmax(prob_attacked)
         pred_attacked = np.argmax(prob_attacked).tolist()
 
@@ -144,8 +143,9 @@ with tf.Session() as sess:
         if pred_attacked == real:
             attacked_file.write("{}\n".format(i))
 
-        e.seed = 79
-        prob_safe = safe_model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
+        #e.seed = 79
+        img = e.encrypt(img)
+        prob_safe = safe_model.model.predict(img)[0]  # the output is 2D array
         prob_safe = softmax(prob_safe)
         pred_safe = np.argmax(prob_safe).tolist()
 
@@ -159,7 +159,7 @@ with tf.Session() as sess:
     safe_file.close()
 
     test_acc = A_good / (A_good + A_bad)
-    r = open("attacked_results_permutated_non_targeted_100", 'w')
+    r = open("attacked_results_permutated_non_targeted_50", 'w')
     r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(attacked_name, 100 * test_acc,
                                                                                      (1.0 - test_acc) * 100))
     r.write("#####################################################\n")

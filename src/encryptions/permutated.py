@@ -3,7 +3,7 @@ import json
 import tensorflow as tf
 
 seed = 42 # TODO seed was 42 now 79
-# seed = 79
+
 '''
 # this function is used for training
 def encrypt(inputs):
@@ -14,6 +14,8 @@ def encrypt(inputs):
 
     return enc_inputs / 255.0 - 0.5
 '''
+
+
 def encrypt(inputs):
     dims = np.array(inputs).shape
 
