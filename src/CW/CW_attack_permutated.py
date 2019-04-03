@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy as np
 import src.CW.Carlini_Models as m
-# import src.encryptions.unencrypted as e
 import src.encryptions.permutated as e
 from src.CW.l2_attack import CarliniL2
 import time
@@ -81,7 +80,7 @@ with tf.Session() as sess:
     x_test = x_test / 1.0
 
     # 1000
-    num_of_examples = 200
+    num_of_examples = 100
 
     x_test = x_test[:num_of_examples]
     y_test = y_test[:num_of_examples]
@@ -99,27 +98,23 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    attacked_model = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=42"
+    attacked_name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=42"
 
-    attack_this_model = models["CW_1"](input_shape, encrypt=e.encrypt)
-    attack_this_model.load(attacked_model)
+    attacked_model = models["CW_1"](input_shape, encrypt=e.encrypt)
+    attacked_model.load(attacked_name)
 
     safe_name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=79"
 
-    supposedly_safe_model = models["CW_1"](input_shape, encrypt=e.encrypt)
-    supposedly_safe_model.load(safe_name)
+    safe_model = models["CW_1"](input_shape, encrypt=e.encrypt)
+    safe_model.load(safe_name)
 
     class_names = mnist_classes
 
-    attack = CarliniL2(sess=sess, model=attack_this_model, targeted=True, batch_size=batch_size)
+    attack = CarliniL2(sess=sess, model=attacked_model, targeted=False, batch_size=batch_size)
 
     images = np.array(x_test)
 
-    new_y_test = []
-    for x in y_test:
-        new_y_test.append(get_target(x))
-
-    targets = np.eye(10)[np.array([new_y_test]).reshape(-1)]
+    targets = np.eye(10)[np.array([y_test]).reshape(-1)]        # targets are the true labels
 
     timestart = time.time()
     adv = attack.attack(images, targets)
@@ -132,69 +127,40 @@ with tf.Session() as sess:
     S_good = 0.0
     S_bad = 0.0
 
-    #attacked_model_file = open("attacked_model_successfully-attacked-images2", 'w')
-    #supposedly_safe_model_file = open("supposedly_safe_model_successfully-attacked-images2", 'w')
+    attacked_file = open("attacked_model_successfully_predicted_indexes", 'w')
+    safe_file = open("safe_model_successfully_attacked_indexes", 'w')
 
     for i in range(len(adv)):
-        e.seed = 42
-
         real = y_test[i]
-        prob_adv = attack_this_model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
-        # prob_orig = model.model.predict(images[i:i + 1])[0]     # likewise
 
-        prob_adv = softmax(prob_adv)
-        # prob_orig = softmax(prob_orig)
+        e.seed = 42
+        prob_attacked = attacked_model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
+        prob_attacked = softmax(prob_attacked)
+        pred_attacked = np.argmax(prob_attacked).tolist()
 
-        pred_adv = np.argmax(prob_adv).tolist()
+        A_good += pred_attacked == real
+        A_bad += pred_attacked != real
 
-        A_good += pred_adv == real
-        A_bad += pred_adv != real
-
-        #if pred_adv != real:
-        #    attacked_model_file.write("{}\n".format(i))
+        if pred_attacked == real:
+            attacked_file.write("{}\n".format(i))
 
         e.seed = 79
+        prob_safe = safe_model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
+        prob_safe = softmax(prob_safe)
+        pred_safe = np.argmax(prob_safe).tolist()
 
-        prob_adv = supposedly_safe_model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
-        # prob_orig = model.model.predict(images[i:i + 1])[0]     # likewise
+        S_good += pred_safe == real
+        S_bad += pred_safe != real
 
-        prob_adv = softmax(prob_adv)
-        # prob_orig = softmax(prob_orig)
+        if pred_safe != real:
+            safe_file.write("{}\n".format(i))
 
-        pred_adv = np.argmax(prob_adv).tolist()
-        # pred_orig = np.argmax(prob_orig).tolist()
-
-        # print("Real Classification: ", real)
-        # print("Classification: ", pred_orig)
-        # print("Adversarial Classification: ", pred_adv)
-        # print("Total distortion:", np.sum((adv[i] - images[i]) ** 2) ** .5)
-
-        # r.write("Real Classification: {}\n".format(real))
-        # r.write("Classification: {}\n".format(pred_orig))
-        # r.write("Adversarial Classification: {}\n".format(pred_adv))
-        # r.write("Total distortion: {}\n\n".format(np.sum((adv[i] - images[i]) ** 2) ** .5))
-
-        # plot_image(images[i], predicted_label=pred_orig, true_label=real, prob=prob_orig)
-
-        # plot_image(adv[i], predicted_label=pred_adv, true_label=real, prob=prob_adv)
-
-        # adv_img = np.reshape(adv[i], (28,28))
-        # np.save("src/adversarial_images/adv1", adv_img)
-
-        # plt.show()
-
-        S_good += pred_adv == real
-        S_bad += pred_adv != real
-
-        #if pred_adv != real:
-        #    supposedly_safe_model_file.write("{}\n".format(i))
-
-    #attacked_model_file.close()
-    #supposedly_safe_model_file.close()
+    attacked_file.close()
+    safe_file.close()
 
     test_acc = A_good / (A_good + A_bad)
-    r = open("attacked_results_permutated_targeted_200", 'w')
-    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(attacked_model, 100 * test_acc,
+    r = open("attacked_results_permutated_non_targeted_100", 'w')
+    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(attacked_name, 100 * test_acc,
                                                                                      (1.0 - test_acc) * 100))
     r.write("#####################################################\n")
 

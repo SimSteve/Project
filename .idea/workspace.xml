@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="addressing some bugs in CW: encryption, normalization">
-      <change afterPath="$PROJECT_DIR$/results_permutated_0.5NORM" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_weights/mnist_CW_1_PERMUTATED_0.5NORM_SEED=42.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_weights/mnist_CW_1_PERMUTATED_0.5NORM_SEED=79.h5" afterDir="false" />
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="finally got the results from the article on CW">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_model_successfully-attacked-images" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_results_permutated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_results_permutated2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_results_permutated_targeted_200" beforeDir="false" afterPath="$PROJECT_DIR$/attacked_results_permutated_targeted_200" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_results_permutated_targeted_50" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_PERMUTATED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_PERMUTATED_models.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/safe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/safe_permutated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CW/CW_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/CW_attack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CW/CW_attack_permutated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/CW_attack_permutated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/Carlini_Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/Carlini_Models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/l2_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/l2_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/encryptions/permutated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/permutated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/unencrypted.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/unencrypted.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supposedly_safe_model_successfully-attacked-images" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,30 +21,33 @@
     <session id="1401732426">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="5NORM" value="3" />
+          <entry key="5NORM" value="5" />
           <entry key="5NORM_SEED=42" value="1" />
           <entry key="accuracies" value="8" />
           <entry key="attacked_model_successfully-attacked-images" value="1" />
           <entry key="attacked_results_permutated" value="2" />
           <entry key="attacked_results_permutated2" value="1" />
+          <entry key="attacked_results_permutated_non_targeted_100" value="1" />
           <entry key="attacked_results_permutated_targeted_200" value="3" />
           <entry key="attacked_results_permutated_targeted_50" value="3" />
-          <entry key="attcked_results" value="4" />
+          <entry key="attcked_results" value="5" />
           <entry key="h5" value="1" />
           <entry key="json" value="14" />
           <entry key="my_results" value="7" />
-          <entry key="py" value="182" />
+          <entry key="py" value="183" />
           <entry key="results" value="10" />
           <entry key="results2" value="1" />
           <entry key="results_permutated_seed=79" value="2" />
           <entry key="results_temp" value="1" />
+          <entry key="safe_permutated" value="1" />
+          <entry key="tmp" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="14" />
-          <entry key="PLAIN_TEXT" value="48" />
-          <entry key="Python" value="182" />
+          <entry key="PLAIN_TEXT" value="54" />
+          <entry key="Python" value="183" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -62,14 +55,14 @@
           <entry key="accuracies" value="9" />
           <entry key="dummy" value="67" />
           <entry key="my_results" value="19" />
-          <entry key="py" value="16789" />
-          <entry key="txt" value="737" />
+          <entry key="py" value="16957" />
+          <entry key="txt" value="786" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="832" />
-          <entry key="Python" value="16789" />
+          <entry key="PLAIN_TEXT" value="881" />
+          <entry key="Python" value="16957" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -104,21 +97,44 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-525">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#726#1511#0" />
+                <element signature="e#1533#1833#0" />
+                <element signature="e#1856#1963#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CW/CW_attack_permutated.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1320">
-              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="48">
+              <caret line="82" column="25" lean-forward="true" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#726#1511#0" />
                 <element signature="e#1533#1833#0" />
-                <marker date="1554213100395" expanded="true" signature="2070:2090" ph="..." />
+                <marker date="1554239444150" expanded="true" signature="2028:2048" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/attacked_results_permutated_non_targeted_100">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/attacked_results_permutated_targeted_200">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -151,20 +167,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CW/Carlini_Models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+            <state relative-caret-position="166">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/encryptions/unencrypted.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -181,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            <state relative-caret-position="60">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -278,9 +285,9 @@
         <option value="$PROJECT_DIR$/src/CW/Carlini_Models.py" />
         <option value="$PROJECT_DIR$/src/Models.py" />
         <option value="$PROJECT_DIR$/src/trainer.py" />
+        <option value="$PROJECT_DIR$/src/CW/l2_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/CW_attack.py" />
         <option value="$PROJECT_DIR$/src/encryptions/permutated.py" />
-        <option value="$PROJECT_DIR$/src/CW/l2_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/CW_attack_permutated.py" />
       </list>
     </option>
@@ -317,7 +324,7 @@
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CW" type="462c0819:PsiDirectoryNode" />
+              <item name="encryptions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -823,18 +830,26 @@
       <option name="project" value="LOCAL" />
       <updated>1554193876380</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="finally got the results from the article on CW">
+      <created>1554213129082</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1554213129082</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.19820769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.40216216" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.40216216" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39891893" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -870,7 +885,8 @@
     <MESSAGE value="currently running attack on UNENCRYPTED, code prepared for PERMUTATED" />
     <MESSAGE value="finished attack on UNENCRYPTED" />
     <MESSAGE value="addressing some bugs in CW: encryption, normalization" />
-    <option name="LAST_COMMIT_MESSAGE" value="addressing some bugs in CW: encryption, normalization" />
+    <MESSAGE value="finally got the results from the article on CW" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally got the results from the article on CW" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -902,27 +918,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/trainer_permutated_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="73" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trainer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ecb_mode_encryption.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" column="73" selection-end-line="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ctr_mode_encryption.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1157,16 +1152,6 @@
     <entry file="file://$PROJECT_DIR$/results_permutated_seed=79">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CW/Carlini_Models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1187,18 +1172,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="95" column="37" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="37" />
-          <folding>
-            <element signature="e#726#1511#0" />
-            <element signature="e#1533#1833#0" />
-            <element signature="e#1856#1963#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Models_old.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1207,16 +1180,6 @@
             <element signature="e#0#23#0" expanded="true" />
             <marker date="1554014208946" expanded="true" signature="75:1640" ph="..." />
             <marker date="1554014208946" expanded="true" signature="2505:2506" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1231,33 +1194,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results_permutated_0.5NORM">
+    <entry file="file://$PROJECT_DIR$/attacked_results_permutated_targeted_200">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attacked_results_permutated">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/attacked_results_permutated_targeted_200">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack_permutated.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1320">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#726#1511#0" />
-            <element signature="e#1533#1833#0" />
-            <marker date="1554213100395" expanded="true" signature="2070:2090" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/attacked_results_permutated">
+    <entry file="file://$PROJECT_DIR$/safe_permutated">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/attcked_results">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/attacked_results_permutated_targeted_200">
+    <entry file="file://$PROJECT_DIR$/results_permutated_0.5NORM">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-525">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#726#1511#0" />
+            <element signature="e#1533#1833#0" />
+            <element signature="e#1856#1963#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CW/Carlini_Models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack_permutated.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="82" column="25" lean-forward="true" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#726#1511#0" />
+            <element signature="e#1533#1833#0" />
+            <marker date="1554239444150" expanded="true" signature="2028:2048" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attacked_results_permutated_non_targeted_100">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

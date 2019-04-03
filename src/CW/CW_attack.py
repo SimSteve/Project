@@ -1,8 +1,7 @@
 import tensorflow as tf
 import numpy as np
 import src.CW.Carlini_Models as m
-# import src.encryptions.unencrypted as e
-import src.encryptions.permutated as e
+import src.encryptions.unencrypted as e
 from src.CW.l2_attack import CarliniL2
 import time
 import matplotlib.pyplot as plt
@@ -93,7 +92,7 @@ with tf.Session() as sess:
     input_shape = np.array(x_test[0]).shape
 
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
-    model.load("mnist_CW_1_PERMUTATED")
+    model.load("mnist_CW_1_UNENCRYPTED")
     class_names = mnist_classes
 
     attack = CarliniL2(sess=sess, model=model, targeted=False, batch_size=batch_size)
@@ -110,7 +109,7 @@ with tf.Session() as sess:
     good = 0.0
     bad = 0.0
 
-    g = open("safe_permutated", 'w')
+    g = open("safe", 'w')
 
     for i in range(len(adv)):
         real = y_test[i]
