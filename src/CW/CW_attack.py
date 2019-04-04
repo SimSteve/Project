@@ -24,7 +24,7 @@ def plot_image(img, true_label, predicted_label, prob):
     :return:
     '''
     # in order to plot the image, we need a 2D array
-    if len(np.array(img).shape) == 3:
+    if len(np.array(img).shape) > 2:
         img = img[:, :, 0]
 
     _, ax = plt.subplots()
@@ -57,17 +57,15 @@ def show(img):
     for i in range(28):
         print("".join([remap[int(round(x))] for x in img[i * 28:i * 28 + 28]]))
 
-
+'''
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
     return np.exp(x) / np.sum(np.exp(x), axis=0)
-
-
 '''
+
 def softmax(x):
     exp = np.exp(x - np.max(x))
     return exp / np.sum(exp)
-'''
 
 
 with tf.Session() as sess:
@@ -91,11 +89,15 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
+    #name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=42"
+    name = "mnist_CW_1_UNENCRYPTED_0.5NORM"
+
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
-    model.load("mnist_CW_1_UNENCRYPTED")
+    model.load(name)
     class_names = mnist_classes
 
-    attack = CarliniL2(sess=sess, model=model, targeted=False, batch_size=batch_size)
+    attack = CarliniL2(sess=sess, model=model, targeted=False, batch_size=batch_size,
+                       max_iterations=20)
 
     images = np.array(x_test)
     targets = np.eye(10)[np.array([y_test]).reshape(-1)]
@@ -109,49 +111,52 @@ with tf.Session() as sess:
     good = 0.0
     bad = 0.0
 
-    g = open("safe", 'w')
+    #g = open("attacked_unencrypted_model_indexes_safe", 'w')
 
     for i in range(len(adv)):
         real = y_test[i]
         prob_adv = model.model.predict(adv[i:i + 1])[0]  # the output is 2D array
-        # prob_orig = model.model.predict(images[i:i + 1])[0]     # likewise
+        prob_orig = model.model.predict(images[i:i + 1])[0]     # likewise
 
         prob_adv = softmax(prob_adv)
-        # prob_orig = softmax(prob_orig)
+        prob_orig = softmax(prob_orig)
 
         pred_adv = np.argmax(prob_adv).tolist()
-        # pred_orig = np.argmax(prob_orig).tolist()
+        pred_orig = np.argmax(prob_orig).tolist()
 
-        # print("Real Classification: ", real)
-        # print("Classification: ", pred_orig)
-        # print("Adversarial Classification: ", pred_adv)
-        # print("Total distortion:", np.sum((adv[i] - images[i]) ** 2) ** .5)
+        print("Real Classification: ", real)
+        print("Classification: ", pred_orig)
+        print("Adversarial Classification: ", pred_adv)
+        print("Total distortion:", np.sum((adv[i] - images[i]) ** 2) ** .5)
 
         # r.write("Real Classification: {}\n".format(real))
         # r.write("Classification: {}\n".format(pred_orig))
         # r.write("Adversarial Classification: {}\n".format(pred_adv))
         # r.write("Total distortion: {}\n\n".format(np.sum((adv[i] - images[i]) ** 2) ** .5))
 
-        # plot_image(images[i], predicted_label=pred_orig, true_label=real, prob=prob_orig)
+        plot_image(images[i], predicted_label=pred_orig, true_label=real, prob=prob_orig)
 
-        # plot_image(adv[i], predicted_label=pred_adv, true_label=real, prob=prob_adv)
+        plot_image(adv[i], predicted_label=pred_adv, true_label=real, prob=prob_adv)
 
         # adv_img = np.reshape(adv[i], (28,28))
         # np.save("src/adversarial_images/adv1", adv_img)
 
-        # plt.show()
+        plt.show()
 
         good += pred_adv == real
         bad += pred_adv != real
 
-        if pred_adv != real:
-            g.write("{}\n".format(i))
+        #if pred_adv == real:
+        #    g.write("{}\n".format(i))
 
-    g.close()
+    #g.close()
 
     test_acc = good / (good + bad)
-    r = open("attcked_results_permutated", 'w')
+    print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
+    '''
+    r = open("my_attcked_results", 'a')
     r.write("mnist_CW_1_PERMUTATED\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc,
                                                                                      (1.0 - test_acc) * 100))
     r.write("#####################################################\n")
     r.close()
+    '''

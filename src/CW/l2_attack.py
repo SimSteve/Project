@@ -8,7 +8,6 @@
 import sys
 import tensorflow as tf
 import numpy as np
-import src.encryptions.permutated as permutate
 
 BINARY_SEARCH_STEPS = 9  # number of times to adjust the constant with binary search
 MAX_ITERATIONS = 10000  # number of iterations to perform gradient descent
@@ -25,7 +24,7 @@ class CarliniL2:
                  binary_search_steps=BINARY_SEARCH_STEPS, max_iterations=MAX_ITERATIONS,
                  abort_early=ABORT_EARLY,
                  initial_const=INITIAL_CONST,
-                 boxmin=-0.5, boxmax=0.5):
+                 boxmin=-0.5, boxmax=0.5, encrypt=None):
         """
         The L_2 optimized attack.
 
@@ -52,7 +51,7 @@ class CarliniL2:
         boxmin: Minimum pixel value (default -0.5).
         boxmax: Maximum pixel value (default 0.5).
         """
-
+        self.encrypt = encrypt
         image_size, num_channels, num_labels = model.image_size, model.num_channels, model.num_labels
         self.sess = sess
         self.TARGETED = targeted
@@ -196,7 +195,10 @@ class CarliniL2:
             prev = np.inf
             for iteration in range(self.MAX_ITERATIONS):
 
-
+                if not self.encrypt is None:
+                    image = self.sess.run(self.newimg)
+                    enc_img = self.encrypt(image)
+                    self.newimg = tf.constant(enc_img)
 
                 # perform the attack
                 _, l, l2s, scores, nimg = self.sess.run([self.train, self.loss,
