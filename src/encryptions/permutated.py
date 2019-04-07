@@ -2,7 +2,7 @@ import numpy as np
 import json
 import tensorflow as tf
 
-seed = 42 # TODO seed was 42 now 79
+seed = 42
 
 '''
 # this function is used for training

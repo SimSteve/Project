@@ -18,7 +18,7 @@ input_shape = np.array(x_train[0]).shape
 
 model = m.CW_1(input_shape, e.encrypt)
 
-model.load("mnist_CW_1_PERMUTATED")
+model.load("mnist_CW_1_PERMUTATED_0.5NORM")
 
 test_loss, test_acc = model.evaluate(x_test, y_test)
 

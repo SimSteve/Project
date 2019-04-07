@@ -1,10 +1,8 @@
 import tensorflow as tf
 import numpy as np
 
-seed = 42
 
-
-def numpy_permutate(image):
+def numpy_permutate(image, seed):
     dims = np.array(image).shape
 
     permutated_flattened = np.random.RandomState(seed=seed).permutation(image.flatten())
@@ -13,7 +11,7 @@ def numpy_permutate(image):
     return enc_inputs
 
 
-def tensorflow_permutate(image):
+def tensorflow_permutate(image, seed):
     with tf.Session() as sess:
         shape = tf.shape(image)
 
@@ -23,16 +21,14 @@ def tensorflow_permutate(image):
         return sess.run(enc_inputs)
 
 
-img = np.array([[1,2,3],[4,5,6],[7,8,9]])
+img = np.array([[1.0,2,3],[4,5,6],[7,8,9]])
 
 print(img)
 print()
 
-print(numpy_permutate(image=img))
+print(numpy_permutate(image=img, seed=42))
 
-print(tensorflow_permutate(image=img))
+print(tensorflow_permutate(image=img, seed=42))
 
-
-
-
+print(numpy_permutate(numpy_permutate(image=img, seed=42), seed=0))
 

@@ -41,7 +41,7 @@ def main():
     r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
     helper.print_encryption_details(out=r)
     r.write("#####################################################\n")
-
+    '''
     results = {
         "name": MODEL_NAME,
         "acc": epoch_accs,
@@ -54,7 +54,7 @@ def main():
         j.write('\n')
 
 
-    '''
+    
     # writing the training results
     with open("json/{}_{}{}_models.json".format(DATASET, TRAIN_WITH_ME, VERSION), 'a') as j:
         json.dump(results, j)
@@ -69,29 +69,30 @@ if __name__ == '__main__':
     # these two change to get desired model
     DATASET = "fashion_mnist"
     MODEL = "CW_2"
-    TRAIN_WITH_ME = "ECB"
-    VERSION = "_V2"
+    TRAIN_WITH_ME = "PERMUTATED"
+    VERSION = ""
 
-    for TRAIN_WITH_ME in ["CTR"]:
-        for DATASET in ["mnist", "fashion_mnist"]:
-            for MODEL in ["FGSM", "CW_1", "CW_2"]:
+    for DATASET in ["mnist", "fashion_mnist"]:
+        for MODEL in ["CW_1", "CW_2"]:
+            if DATASET == "mnist" and MODEL == "CW_1":
+                continue
 
-                MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + VERSION
+            MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" #+ VERSION
 
-                print("DATASET = {}".format(DATASET))
-                print("MODEL = {}".format(MODEL))
-                print("TRAINER = {}\n".format(TRAIN_WITH_ME))
+            print("DATASET = {}".format(DATASET))
+            print("MODEL = {}".format(MODEL))
+            print("TRAINER = {}\n".format(TRAIN_WITH_ME))
 
-                r = open("../results", "a")
-                main()
-                r.close()
+            r = open("results_0.5NORM", "a")
+            main()
+            r.close()
 
 '''
 
 
 if __name__ == '__main__':
     DATASET = "mnist"
-    MODEL = "CW_1"
+    MODEL = "CW_2"
     TRAIN_WITH_ME = "UNENCRYPTED"
     #VERSION = "_V2"
 
@@ -101,6 +102,7 @@ if __name__ == '__main__':
     print("MODEL = {}".format(MODEL))
     print("TRAINER = {}\n".format(TRAIN_WITH_ME))
 
-    r = open("results_unencrypted_0.5NORM", "a")
+    r = open("results_0.5NORM", "a")
     main()
     r.close()
+    

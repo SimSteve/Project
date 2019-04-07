@@ -1,2 +1,5 @@
 mnist_CW_1_UNENCRYPTED	accuracy: 0.00%	error rate: 100.00%
 #####################################################
+max_iterations: 1000
+0.5_norm/mnist_CW_1_PERMUTATED_0.5NORM	accuracy: 96.30%	error rate: 3.70%
+#####################################################
