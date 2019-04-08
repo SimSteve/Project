@@ -27,7 +27,8 @@ def failed(adv):
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    # load dataset : now fashion
+    _, (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
 
     num_of_examples = 1000
 
@@ -44,14 +45,15 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    name = "mnist_CW_1_PERMUTATED_0.5NORM"
+    name = "fashion_mnist_CW_1_PERMUTATED_0.5NORM"
+    #name = "mnist_CW_1_PERMUTATED_0.5NORM"
     #name = "mnist_CW_1_UNENCRYPTED_0.5NORM"
 
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
     model.load(name)
     class_names = mnist_classes
 
-    attack = CarliniL2(sess=sess, model=model, targeted=False, batch_size=batch_size, max_iterations=1000, encrypt=True)
+    attack = CarliniL2(sess=sess, model=model, targeted=False, batch_size=batch_size, max_iterations=10000, encrypt=True)
 
     images = np.array(x_test)
     targets = np.eye(10)[np.array(y_test).reshape(-1)]
@@ -61,7 +63,7 @@ with tf.Session() as sess:
     timeend = time.time()
 
     print("Took", timeend - timestart, "seconds to run", 1, "samples.")
-    exit()
+    #exit()
     good = 0.0
     bad = 0.0
 

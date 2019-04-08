@@ -30,11 +30,11 @@ class CarliniL2:
         plt.show()
 
     def my_encrypt(self, image):
-        self.plot_image(image)
+        #self.plot_image(image)
         dims = np.array(image).shape
         permutated_flattened = np.random.RandomState(seed=42).permutation(image.flatten())
         enc_image = np.reshape(permutated_flattened, dims)
-        self.plot_image(enc_image)
+        #self.plot_image(enc_image)
         return enc_image
 
     def __init__(self, sess, model, batch_size=1, confidence=CONFIDENCE,

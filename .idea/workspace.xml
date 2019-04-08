@@ -1,38 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="yet another bug">
-      <change afterPath="$PROJECT_DIR$/results_0.5NORM" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_weights/fashion_mnist_CW_1_PERMUTATED_0.5NORM.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_weights/fashion_mnist_CW_1_UNENCRYPTED_0.5NORM.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_weights/fashion_mnist_CW_2_PERMUTATED_0.5NORM.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_weights/fashion_mnist_CW_2_UNENCRYPTED_0.5NORM.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_weights/mnist_CW_2_PERMUTATED_0.5NORM.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saved_weights/mnist_CW_2_UNENCRYPTED_0.5NORM.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CW/visualize_attack.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FGSM/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collage_of_permutated_images.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unsafe_indexes" afterDir="false" />
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/results_permutated_0.5NORM_TENSORFLOW_PERMUTATED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saved_weights/fashion_mnist_CW_1_PERMUTATED_0.5NORM_TENSORFLOW_PERMUTATED_SEED=42.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saved_weights/mnist_CW_1_PERMUTATED_0.5NORM_TENSORFLOW_PERMUTATED_SEED=42.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/trainer_perm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_permutated_model_indexes" beforeDir="false" afterPath="$PROJECT_DIR$/safe_indexes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_unencrypted_model_indexes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_unencrypted_model_indexes_safe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attcked_results" beforeDir="false" afterPath="$PROJECT_DIR$/attcked_results" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_UNENCRYPTED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_UNENCRYPTED_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_attcked_results" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results_unencrypted_0.5NORM" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_weights/mnist_CW_1_PERMUTATED_0.5NORM_SEED=42.h5" beforeDir="false" afterPath="$PROJECT_DIR$/saved_weights/mnist_CW_1_PERMUTATED_0.5NORM.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_PERMUTATED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_PERMUTATED_models.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/mnist_PERMUTATED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_PERMUTATED_models.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CW/CW_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/CW_attack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CW/l2_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/l2_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/permutated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/permutated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/unencrypted.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/unencrypted.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stam.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/stam.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trainer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,35 +25,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
+      <file leaf-file-name="STAMM.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my/src/STAMM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CW/l2_attack.py">
+      <file leaf-file-name="trainer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
-              <caret line="218" column="16" selection-start-line="218" selection-start-column="16" selection-end-line="218" selection-end-column="16" />
-              <folding>
-                <element signature="e#247#257#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CW/visualize_attack.py">
+      <file leaf-file-name="trainer_perm.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/trainer_perm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+            <state relative-caret-position="221">
+              <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1003">
+              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stam.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/stam.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -108,12 +105,15 @@
       <find>dist</find>
       <find>o_bestattack</find>
       <find>permuta</find>
+      <find>tf.keras</find>
+      <find>python.</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>self.model.add(tf</replace>
       <replace>axes[i].</replace>
       <replace>index</replace>
+      <replace>tf.python.keras</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -128,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/my_ebc.py" />
         <option value="$PROJECT_DIR$/src/my_Models.py" />
         <option value="$PROJECT_DIR$/src/my_ecb.py" />
         <option value="$PROJECT_DIR$/src/my_permutated.py" />
@@ -160,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/predict_image_from_file.py" />
         <option value="$PROJECT_DIR$/stam.py" />
         <option value="$PROJECT_DIR$/src/CW/Carlini_Models.py" />
-        <option value="$PROJECT_DIR$/src/Models.py" />
         <option value="$PROJECT_DIR$/src/CW/CW_attack_permutated.py" />
         <option value="$PROJECT_DIR$/my_attcked_results" />
         <option value="$PROJECT_DIR$/results_unencrypted_0.5NORM" />
@@ -173,18 +171,20 @@
         <option value="$PROJECT_DIR$/src/encryptions/unencrypted.py" />
         <option value="$PROJECT_DIR$/src/lieudw.py" />
         <option value="$PROJECT_DIR$/old_l2.py" />
-        <option value="$PROJECT_DIR$/src/stam.py" />
         <option value="$PROJECT_DIR$/old_vis.py" />
-        <option value="$PROJECT_DIR$/src/CW/l2_attack.py" />
         <option value="$PROJECT_DIR$/attcked_results" />
         <option value="$PROJECT_DIR$/src/CW/visualize_attack.py" />
+        <option value="$PROJECT_DIR$/src/CW/l2_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/CW_attack.py" />
+        <option value="$PROJECT_DIR$/src/stam.py" />
+        <option value="$PROJECT_DIR$/src/Models.py" />
+        <option value="$PROJECT_DIR$/src/trainer_perm.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="15" />
-    <option name="width" value="645" />
+    <option name="x" value="-7" />
+    <option name="width" value="642" />
     <option name="height" value="705" />
   </component>
   <component name="ProjectView">
@@ -192,12 +192,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
@@ -213,13 +219,21 @@
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CW" type="462c0819:PsiDirectoryNode" />
+              <item name="encryptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 (2) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,6 +242,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\1\PycharmProjects\Project\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\simbe\Desktop\Project\saved_weights" />
       <recent name="C:\Users\simbe\Desktop\Project\saved_weights\0.5_norm" />
@@ -235,6 +252,146 @@
       <recent name="C:\Users\simbe\Desktop\Project\saved_weights\CW" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/accuracies.pdf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/accuracies.xlsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/attcked_results</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/json/mnist_UNENCRYPTED_models.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CW/CW_attack.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CW/l2_attack.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/encryptions/permutated.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/encryptions/unencrypted.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/evaluation.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/stam.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/trainer.py</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/results_0.5NORM</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/safe_indexes</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/saved_weights/fashion_mnist_CW_1_PERMUTATED_0.5NORM.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/saved_weights/fashion_mnist_CW_1_UNENCRYPTED_0.5NORM.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/saved_weights/fashion_mnist_CW_2_PERMUTATED_0.5NORM.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/saved_weights/fashion_mnist_CW_2_UNENCRYPTED_0.5NORM.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/saved_weights/mnist_CW_1_PERMUTATED_0.5NORM.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/saved_weights/mnist_CW_2_PERMUTATED_0.5NORM.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/saved_weights/mnist_CW_2_UNENCRYPTED_0.5NORM.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CW/visualize_attack.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/FGSM/__init__.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/collage_of_permutated_images.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/unsafe_indexes</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/attacked_permutated_model_indexes</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/attacked_unencrypted_model_indexes</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/attacked_unencrypted_model_indexes_safe</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/my_attcked_results</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/results_unencrypted_0.5NORM</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/saved_weights/mnist_CW_1_PERMUTATED_0.5NORM_SEED=42.h5</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -248,7 +405,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.CW_attack">
+  <component name="RunManager" selected="Python.trainer_perm">
     <configuration name="CW_attack" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -256,9 +413,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Python36\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/CW/CW_attack.py" />
@@ -266,9 +423,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="collage_of_permutated_images" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Project" />
@@ -287,9 +441,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="draw_graphs" type="PythonConfigurationType" factoryName="Python">
       <module name="Project" />
@@ -308,30 +459,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="evaluation" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/evaluation.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="stam" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Project" />
@@ -350,9 +477,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="stam" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Project" />
@@ -413,9 +537,24 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+    </configuration>
+    <configuration name="trainer_perm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/trainer_perm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="visualize_attack" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Project" />
@@ -434,9 +573,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.draw_graphs" />
@@ -445,15 +581,15 @@
       <item itemvalue="Python.stam" />
       <item itemvalue="Python.visualize_attack" />
       <item itemvalue="Python.collage_of_permutated_images" />
-      <item itemvalue="Python.evaluation" />
+      <item itemvalue="Python.trainer_perm" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.trainer_perm" />
+        <item itemvalue="Python.stam" />
         <item itemvalue="Python.CW_attack" />
         <item itemvalue="Python.visualize_attack" />
-        <item itemvalue="Python.stam" />
         <item itemvalue="Python.collage_of_permutated_images" />
-        <item itemvalue="Python.evaluation" />
       </list>
     </recent_temporary>
   </component>
@@ -626,27 +762,37 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.28928572" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50476193" side_tool="true" weight="0.39803708" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49761903" weight="0.32864866" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71190476" visible="true" weight="0.44056708" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4952381" weight="0.39803708" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.5685997" />
       <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.2582563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.5685997" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39891893" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49761903" weight="0.32864866" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.28729573" side_tool="true" weight="0.34653464" />
-      <window_info anchor="bottom" id="Messages" order="10" />
-      <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49761903" weight="0.32864866" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39891893" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.28729573" side_tool="true" weight="0.34653464" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -671,6 +817,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="yet another bug" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/stam.py</url>
+          <line>56</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/stam.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="y_test" />
@@ -700,28 +860,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/396691668/builtins.py" />
-    <entry file="file://$PROJECT_DIR$/src/convert_to_weights.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/draw_pic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/predictor_old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/encryptions/ecb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -772,53 +910,24 @@
     <entry file="file://$PROJECT_DIR$/attacked_results_permutated_targeted_200" />
     <entry file="file://$PROJECT_DIR$/supposedly_safe_model_successfully-attacked-images" />
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/tensorflow/python/keras/models.py" />
-    <entry file="file://$PROJECT_DIR$/my/src/STAMM.py" />
+    <entry file="file://$PROJECT_DIR$/my/src/STAMM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/attacked_results_permutated_non_targeted_100" />
     <entry file="file://$PROJECT_DIR$/attcked_results_permutated" />
     <entry file="file://$PROJECT_DIR$/attacked_unencrypted_model_indexes" />
     <entry file="file://$PROJECT_DIR$/my_attcked_results" />
     <entry file="file://$PROJECT_DIR$/attacked_unencrypted_model_indexes_safe" />
-    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack_permutated.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
-          <caret line="161" column="57" selection-start-line="161" selection-start-column="57" selection-end-line="161" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python36/Lib/site-packages/matplotlib/image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="637" selection-start-line="637" selection-end-line="637" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python36/Lib/site-packages/matplotlib/figure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="677" column="8" selection-start-line="677" selection-start-column="8" selection-end-line="677" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/matplotlib/image.py" />
+    <entry file="file://C:/Python36/Lib/site-packages/matplotlib/figure.py" />
     <entry file="file://$PROJECT_DIR$/src/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,33 +958,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stam.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CW/Carlini_Models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-619">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state relative-caret-position="204">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -911,6 +1000,16 @@
         <state relative-caret-position="-408" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack_permutated.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="161" column="57" selection-start-line="161" selection-start-column="57" selection-end-line="161" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/attcked_results">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -920,18 +1019,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CW/visualize_attack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+        <state relative-caret-position="357">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CW/l2_attack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="218" column="16" selection-start-line="218" selection-start-column="16" selection-end-line="218" selection-end-column="16" />
+        <state relative-caret-position="187">
+          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding>
             <element signature="e#247#257#0" expanded="true" />
           </folding>
@@ -940,18 +1059,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="306">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
+    <entry file="file://$PROJECT_DIR$/src/stam.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state relative-caret-position="76">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="737" selection-start-line="737" selection-end-line="737" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/results_permutated_0.5NORM_TENSORFLOW_PERMUTATED">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1003">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results_permutated_0.5NORM_TENSORFLOW_PERMUTATED">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trainer_perm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
         </state>
       </provider>
     </entry>
