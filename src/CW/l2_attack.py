@@ -8,7 +8,6 @@
 import sys
 import tensorflow as tf
 import numpy as np
-import matplotlib.pyplot as plt
 
 BINARY_SEARCH_STEPS = 9  # number of times to adjust the constant with binary search
 MAX_ITERATIONS = 10000  # number of iterations to perform gradient descent
@@ -20,29 +19,12 @@ INITIAL_CONST = 1e-3  # the initial constant c to pick as a first guess
 
 
 class CarliniL2:
-    def plot_image(self, image):
-        # axes[i].imshow(images[i], cmap=plt.cm.binary)  # row=0, col=0
-        plt.imshow(np.reshape(image, (28,28)))
-        plt.grid(False)
-        plt.xticks([])
-        plt.yticks([])
-
-        plt.show()
-
-    def my_encrypt(self, image):
-        #self.plot_image(image)
-        dims = np.array(image).shape
-        permutated_flattened = np.random.RandomState(seed=42).permutation(image.flatten())
-        enc_image = np.reshape(permutated_flattened, dims)
-        #self.plot_image(enc_image)
-        return enc_image
-
     def __init__(self, sess, model, batch_size=1, confidence=CONFIDENCE,
                  targeted=TARGETED, learning_rate=LEARNING_RATE,
                  binary_search_steps=BINARY_SEARCH_STEPS, max_iterations=MAX_ITERATIONS,
                  abort_early=ABORT_EARLY,
                  initial_const=INITIAL_CONST,
-                 boxmin=-0.5, boxmax=0.5, encrypt=False):
+                 boxmin=-0.5, boxmax=0.5):
         """
         The L_2 optimized attack.
 
@@ -105,12 +87,7 @@ class CarliniL2:
         self.newimg = tf.tanh(modifier + self.timg) * self.boxmul + self.boxplus
 
         # prediction BEFORE-SOFTMAX of the model
-        if encrypt:
-            shape = tf.shape(self.newimg)
-            self.enc_img = tf.py_func(self.my_encrypt, [self.newimg], tf.float32)[0]
-            self.output = model.predict(tf.reshape(self.enc_img, shape))
-        else:
-            self.output = model.predict(self.newimg)
+        self.output = model.predict(self.newimg)
 
         # distance to the input data
         self.l2dist = tf.reduce_sum(tf.square(self.newimg - (tf.tanh(self.timg) * self.boxmul + self.boxplus)),

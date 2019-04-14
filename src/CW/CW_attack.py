@@ -1,8 +1,9 @@
 import tensorflow as tf
 import numpy as np
-import src.CW.Carlini_Models as m
-import src.encryptions.permutated as e
+import src.CW.Models as m
 from src.CW.l2_attack import CarliniL2
+from src.CW.l0_attack import CarliniL0
+from src.CW.li_attack import CarliniLi
 import time
 import matplotlib.pyplot as plt
 
@@ -27,7 +28,6 @@ def failed(adv):
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    # load dataset : now fashion
     _, (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
 
     num_of_examples = 1000
@@ -45,15 +45,25 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    name = "fashion_mnist_CW_1_PERMUTATED_0.5NORM"
-    #name = "mnist_CW_1_PERMUTATED_0.5NORM"
-    #name = "mnist_CW_1_UNENCRYPTED_0.5NORM"
+    # import src.encryptions.permutated as e
+    # name = "mnist_CW_1_PERMUTATED_0.5NORM"
+
+    # import src.encryptions.unencrypted as e
+    # name = "mnist_CW_1_UNENCRYPTED_0.5NORM"
+
+    # import src.encryptions.permutated as e
+    # name = "fashion_mnist_CW_1_PERMUTATED_0.5NORM"
+
+    import src.encryptions.unencrypted as e
+    name = "fashion_mnist_CW_1_UNENCRYPTED_0.5NORM"
 
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
     model.load(name)
-    class_names = mnist_classes
+    class_names = fashion_mnist_classes
 
-    attack = CarliniL2(sess=sess, model=model, targeted=False, batch_size=batch_size, max_iterations=10000, encrypt=True)
+    # attack = CarliniL2(sess=sess, model=model, targeted=False, max_iterations=1000)
+    # attack = CarliniL0(sess=sess, model=model, targeted=False, max_iterations=1000)
+    attack = CarliniLi(sess=sess, model=model, targeted=False, max_iterations=1000)
 
     images = np.array(x_test)
     targets = np.eye(10)[np.array(y_test).reshape(-1)]
@@ -63,12 +73,12 @@ with tf.Session() as sess:
     timeend = time.time()
 
     print("Took", timeend - timestart, "seconds to run", 1, "samples.")
-    #exit()
+
     good = 0.0
     bad = 0.0
 
-    safe = open("safe_indexes", 'w')
-    unsafe = open("unsafe_indexes", 'w')
+    safe = open("safe_indexes_unencrypted_mnist_li", 'w')
+    unsafe = open("unsafe_indexes_unencrypted_mnist_li", 'a')
     
     for i in range(len(adv)):
         if failed(adv[i]):
@@ -103,7 +113,7 @@ with tf.Session() as sess:
     test_acc = good / (good + bad)
     print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
 
-    r = open("attcked_results", 'a')
+    r = open("attacked_results", 'a')
     r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * test_acc,
                                                                                      (1.0 - test_acc) * 100))
     r.write("#####################################################\n")

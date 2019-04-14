@@ -4,16 +4,14 @@ import tensorflow as tf
 
 seed = 42
 
-'''
-# this function is used for training
-def encrypt(inputs):
-    dims = np.array(inputs).shape
-
-    permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())
-    enc_inputs = np.reshape(permutated_flattened, dims)
-
-    return enc_inputs / 255.0 - 0.5
-'''
+# # this function is used for training
+# def encrypt(inputs):
+#     dims = np.array(inputs).shape
+#
+#     permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())
+#     enc_inputs = np.reshape(permutated_flattened, dims)
+#
+#     return enc_inputs / 255.0 - 0.5
 
 
 def encrypt(inputs):
@@ -23,18 +21,17 @@ def encrypt(inputs):
     enc_inputs = np.reshape(permutated_flattened, dims)
 
     return enc_inputs
-'''
+#
+# # this function is used when running CW_attack
+# def encrypt(inputs):
+#     tf.NoGradient("RandomShuffle")
+#
+#     shape = tf.shape(inputs)
+#
+#     permutated_flattened = tf.random.shuffle(tf.reshape(inputs, [-1]), seed=seed)
+#     enc_inputs = tf.reshape(permutated_flattened, shape)
+#
+#     return enc_inputs
 
-# this function is used when running CW_attack
-def encrypt(inputs):
-    tf.NoGradient("RandomShuffle")
-
-    shape = tf.shape(inputs)
-
-    permutated_flattened = tf.random.shuffle(tf.reshape(inputs, [-1]), seed=seed)
-    enc_inputs = tf.reshape(permutated_flattened, shape)
-
-    return enc_inputs
-'''
 def print_encryption_details(out):
     out.write("key: {}\n".format(seed))

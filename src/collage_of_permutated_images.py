@@ -1,7 +1,9 @@
 import tensorflow as tf
 import src.encryptions.permutated as e
 import matplotlib.pyplot as plt
+import src.padding as p
 
+PADDING = True
 
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
@@ -34,6 +36,8 @@ for title in ["Original", "Permutated"]:
         ax.set_xticks([])
         ax.set_yticks([])
         img = x_train[dict[_class][_example]]
+        if PADDING:
+            img = p.pad(img, number_of_paddings=12, padder=0.0)
         if title == "Permutated":
             img = e.encrypt(img)
         ax.imshow(img, cmap=plt.cm.binary)

@@ -4,12 +4,12 @@ from pathlib import Path
 
 
 class Encrypted_Model():
-    def __init__(self, encrypt=lambda a: a):
+    def __init__(self, encrypt=lambda a:a):
         self.encrypt = encrypt
 
     def train(self, x, y_train, ep):
         x_train = x.copy()
-        for i, image in enumerate(x_train):
+        for i,image in enumerate(x_train):
             x_train[i] = self.encrypt(image)
 
         h = self.model.fit(x_train, y_train, epochs=ep)
@@ -22,7 +22,7 @@ class Encrypted_Model():
 
     def evaluate(self, x, y_test):
         x_test = x.copy()
-        for i, image in enumerate(x_test):
+        for i,image in enumerate(x_test):
             x_test[i] = self.encrypt(image)
 
         return self.model.evaluate(x_test, y_test)
@@ -47,13 +47,12 @@ class Encrypted_Model():
 
 
 class FGSM(Encrypted_Model):
-    def __init__(self, input_shape, encrypt=lambda a: a):
+    def __init__(self, input_shape, encrypt=lambda a:a):
         super(FGSM, self).__init__(encrypt)
 
         self.model = Sequential()
-
-        self.model.add(
-            tf.keras.layers.Conv2D(filters=64, kernel_size=8, input_shape=input_shape, activation=tf.nn.relu))
+        
+        self.model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=8, input_shape=input_shape, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=6, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=5, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Flatten())
@@ -66,13 +65,12 @@ class FGSM(Encrypted_Model):
 
 
 class CW_1(Encrypted_Model):
-    def __init__(self, input_shape, encrypt=lambda a: a):
+    def __init__(self, input_shape, encrypt=lambda a:a):
         super(CW_1, self).__init__(encrypt)
 
         self.model = Sequential()
 
-        self.model.add(
-            tf.keras.layers.Conv2D(filters=32, kernel_size=3, input_shape=input_shape, activation=tf.nn.relu))
+        self.model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=3, input_shape=input_shape, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=3, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.MaxPool2D(pool_size=2))
         self.model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=3, activation=tf.nn.relu))
@@ -91,13 +89,12 @@ class CW_1(Encrypted_Model):
 
 
 class CW_2(Encrypted_Model):
-    def __init__(self, input_shape, encrypt=lambda a: a):
+    def __init__(self, input_shape, encrypt=lambda a:a):
         super(CW_2, self).__init__(encrypt)
 
         self.model = Sequential()
-
-        self.model.add(
-            tf.keras.layers.Conv2D(filters=64, kernel_size=3, input_shape=input_shape, activation=tf.nn.relu))
+        
+        self.model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=3, input_shape=input_shape, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=3, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.MaxPool2D(pool_size=2))
         self.model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=3, activation=tf.nn.relu))

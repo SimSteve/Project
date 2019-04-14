@@ -1,5 +1,5 @@
 import importlib
-
+import src.padding as p
 import matplotlib.pyplot as plt
 import src.Models as mdl
 import numpy as np
@@ -70,6 +70,10 @@ def main():
     # loading the data
     _, (x_test, y_test) = data.load_data()
 
+    if PADDING:
+        # padding
+        x_test = [p.pad(img, number_of_paddings=32, padder=0.0) for img in x_test]
+
     dims = np.array(x_test).shape
 
     if len(dims) != 4:
@@ -90,7 +94,9 @@ def main():
 if __name__ == '__main__':
     DATASET = "mnist"
     MODEL = "CW_1"
-    TRAIN_WITH_ME = "UNENCRYPTED"
-    MODEL_FILE = "mnist_CW_1_UNENCRYPTED"
+    TRAIN_WITH_ME = "PERMUTATED"
+    MODEL_FILE = "mnist_CW_1_PERMUTATED_0.5NORM_PADDED_32"
+
+    PADDING = True
 
     main()

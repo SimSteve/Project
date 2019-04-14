@@ -4,6 +4,7 @@ import src.Models as mdl
 import numpy as np
 import tensorflow as tf
 import json
+import src.padding as p
 
 
 data_types = {'fashion_mnist':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
@@ -16,6 +17,11 @@ def main():
 
     (x_train, y_train), (x_test, y_test) = data.load_data()
     x_train, x_test = x_train / 1.0, x_test / 1.0
+
+    if PADDING:
+        # padding
+        x_train = [p.pad(img, number_of_paddings=32, padder=0.0) for img in x_train]
+        x_test = [p.pad(img, number_of_paddings=32, padder=0.0) for img in x_test]
 
     helper = importlib.import_module(train_mode[TRAIN_WITH_ME])
 
@@ -41,68 +47,43 @@ def main():
     r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
     helper.print_encryption_details(out=r)
     r.write("#####################################################\n")
-    '''
-    results = {
-        "name": MODEL_NAME,
-        "acc": epoch_accs,
-        "epochs": epochs
-    }
 
-    # writing the training results
-    with open("json/{}_{}_models.json".format(DATASET, TRAIN_WITH_ME), 'a') as j:
-        json.dump(results, j)
-        j.write('\n')
-
-
-    
-    # writing the training results
-    with open("json/{}_{}{}_models.json".format(DATASET, TRAIN_WITH_ME, VERSION), 'a') as j:
-        json.dump(results, j)
-        j.write('\n')
-    '''
+    # results = {
+    #     "name": MODEL_NAME,
+    #     "acc": epoch_accs,
+    #     "epochs": epochs
+    # }
+    #
+    # # writing the training results
+    # with open("json/{}_{}_models.json".format(DATASET, TRAIN_WITH_ME), 'a') as j:
+    #     json.dump(results, j)
+    #     j.write('\n')
+    #
+    #
+    #
+    # # writing the training results
+    # with open("json/{}_{}{}_models.json".format(DATASET, TRAIN_WITH_ME, VERSION), 'a') as j:
+    #     json.dump(results, j)
+    #     j.write('\n')
 
     # saving model
     model.save(MODEL_NAME)
 
-'''
+
 if __name__ == '__main__':
-    # these two change to get desired model
     DATASET = "fashion_mnist"
-    MODEL = "CW_2"
+    MODEL = "CW_1"
     TRAIN_WITH_ME = "PERMUTATED"
     VERSION = ""
 
-    for DATASET in ["mnist", "fashion_mnist"]:
-        for MODEL in ["CW_1", "CW_2"]:
-            if DATASET == "mnist" and MODEL == "CW_1":
-                continue
+    PADDING = True
 
-            MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" #+ VERSION
-
-            print("DATASET = {}".format(DATASET))
-            print("MODEL = {}".format(MODEL))
-            print("TRAINER = {}\n".format(TRAIN_WITH_ME))
-
-            r = open("results_0.5NORM", "a")
-            main()
-            r.close()
-
-'''
-
-
-if __name__ == '__main__':
-    DATASET = "mnist"
-    MODEL = "CW_2"
-    TRAIN_WITH_ME = "UNENCRYPTED"
-    #VERSION = "_V2"
-
-    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" #+ VERSION
+    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" + VERSION + "_PADDED_12"
 
     print("DATASET = {}".format(DATASET))
     print("MODEL = {}".format(MODEL))
     print("TRAINER = {}\n".format(TRAIN_WITH_ME))
 
-    r = open("results_0.5NORM", "a")
+    r = open("results_padding_permutated", "a")
     main()
     r.close()
-    
