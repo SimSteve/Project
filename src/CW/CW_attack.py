@@ -28,7 +28,7 @@ def failed(adv):
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    _, (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
+    _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
     num_of_examples = 1000
 
@@ -45,8 +45,8 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    # import src.encryptions.permutated as e
-    # name = "mnist_CW_1_PERMUTATED_0.5NORM"
+    import src.encryptions.permutated as e
+    name = "mnist_CW_1_PERMUTATED_0.5NORM"
 
     # import src.encryptions.unencrypted as e
     # name = "mnist_CW_1_UNENCRYPTED_0.5NORM"
@@ -54,16 +54,16 @@ with tf.Session() as sess:
     # import src.encryptions.permutated as e
     # name = "fashion_mnist_CW_1_PERMUTATED_0.5NORM"
 
-    import src.encryptions.unencrypted as e
-    name = "fashion_mnist_CW_1_UNENCRYPTED_0.5NORM"
+    # import src.encryptions.unencrypted as e
+    # name = "fashion_mnist_CW_1_UNENCRYPTED_0.5NORM"
 
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
     model.load(name)
-    class_names = fashion_mnist_classes
+    class_names = mnist_classes
 
-    # attack = CarliniL2(sess=sess, model=model, targeted=False, max_iterations=1000)
+    attack = CarliniL2(sess=sess, model=model, targeted=False, max_iterations=1000)
     # attack = CarliniL0(sess=sess, model=model, targeted=False, max_iterations=1000)
-    attack = CarliniLi(sess=sess, model=model, targeted=False, max_iterations=1000)
+    # attack = CarliniLi(sess=sess, model=model, targeted=False, max_iterations=1000)
 
     images = np.array(x_test)
     targets = np.eye(10)[np.array(y_test).reshape(-1)]
@@ -77,23 +77,23 @@ with tf.Session() as sess:
     good = 0.0
     bad = 0.0
 
-    safe = open("safe_indexes_unencrypted_mnist_li", 'w')
-    unsafe = open("unsafe_indexes_unencrypted_mnist_li", 'a')
+    safe = open("safe_indexes_work", 'w')
+    unsafe = open("unsafe_indexes_work", 'a')
     
     for i in range(len(adv)):
         if failed(adv[i]):
-            safe.write("{}\n".format(i))
+            # safe.write("{}\n".format(i))
             good += 1
             continue
 
         real = y_test[i]
-        enc_adv = np.reshape(e.encrypt(adv[i]), (1,28,28,1))
-        prob_adv = model.model.predict([enc_adv])[0]  # the output is 2D array
+        # enc_adv = np.reshape(e.encrypt(adv[i]), (1,28,28,1))
+        prob_adv = sess.run(model.predict(np.float32(np.reshape(adv[i], (1,28,28,1))))[0])          # the output is 2D array
         prob_adv = softmax(prob_adv)
         pred_adv = np.argmax(prob_adv).tolist()
 
-        enc_orig = np.reshape(e.encrypt(x_test[i]), (1, 28, 28, 1))
-        prob_orig = model.model.predict([enc_orig])[0]  # the output is 2D array
+        # enc_orig = np.reshape(e.encrypt(x_test[i]), (1, 28, 28, 1))
+        prob_orig = sess.run(model.predict(np.float32(np.reshape(x_test[i], (1, 28, 28, 1))))[0])   # the output is 2D array
         prob_orig = softmax(prob_orig)
         pred_orig = np.argmax(prob_orig).tolist()
 
@@ -107,14 +107,17 @@ with tf.Session() as sess:
                 unsafe.write("{}*\n".format(i))     # images that the attacker successfully misleaded the model
             else:
                 unsafe.write("{}\n".format(i))      # the model is wrong
+
+        # if pred_adv != real and pred_orig == real:
+        #     print("{}*\n".format(i))
     safe.close()
     unsafe.close()
 
     test_acc = good / (good + bad)
     print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
 
-    r = open("attacked_results", 'a')
-    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * test_acc,
-                                                                                     (1.0 - test_acc) * 100))
-    r.write("#####################################################\n")
-    r.close()
+    # r = open("attacked_results", 'a')
+    # r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * test_acc,
+    #                                                                                  (1.0 - test_acc) * 100))
+    # r.write("#####################################################\n")
+    # r.close()

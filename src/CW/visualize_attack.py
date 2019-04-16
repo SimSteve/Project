@@ -60,9 +60,9 @@ def softmax(x):
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    _, (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
+    _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-    index = 259
+    index = 99
 
     x_test = x_test[index:index+1]
     y_test = y_test[index:index+1]
@@ -75,18 +75,18 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    # import src.encryptions.permutated as e
-    # name = "mnist_CW_1_PERMUTATED_0.5NORM"
+    import src.encryptions.permutated as e
+    name = "mnist_CW_1_PERMUTATED_0.5NORM"
 
-    import src.encryptions.unencrypted as e
-    name = "fashion_mnist_CW_1_UNENCRYPTED_0.5NORM"
+    # import src.encryptions.unencrypted as e
+    # name = "fashion_mnist_CW_1_UNENCRYPTED_0.5NORM"
 
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
     model.load(name)
-    class_names = fashion_mnist_classes
+    class_names = mnist_classes
 
-    # attack = CarliniL2(sess=sess, model=model, targeted=False, max_iterations=1000)
-    attack = CarliniL0(sess=sess, model=model, targeted=False, max_iterations=1000)
+    attack = CarliniL2(sess=sess, model=model, targeted=False, max_iterations=1000)
+    # attack = CarliniL0(sess=sess, model=model, targeted=False, max_iterations=1000)
     # attack = CarliniLi(sess=sess, model=model, targeted=False, max_iterations=1000)
 
     images = np.array(x_test)
@@ -103,11 +103,11 @@ with tf.Session() as sess:
     # plotting the images
     real = y_test[0]
 
-    enc_img_adv = e.encrypt(adv[0])
-    enc_img_orig = e.encrypt(images[0])
+    # enc_img_adv = e.encrypt(adv[0])
+    # enc_img_orig = e.encrypt(images[0])
 
-    prob_adv = model.model.predict(np.reshape(enc_img_adv, (1,28,28,1)))[0]  # the output is 2D array
-    prob_orig = model.model.predict(np.reshape(enc_img_orig, (1,28,28,1)))[0]  # likewise
+    prob_adv = sess.run(model.predict(np.float32(np.reshape(adv[0], (1,28,28,1))))[0])      # the output is 2D array
+    prob_orig = sess.run(model.predict(np.float32(np.reshape(images[0], (1,28,28,1))))[0])  # likewise
 
     prob_adv = softmax(prob_adv)
     prob_orig = softmax(prob_orig)

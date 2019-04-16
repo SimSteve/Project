@@ -132,7 +132,7 @@ class CarliniL2:
         If self.targeted is false, then targets are the original class labels.
         """
         r = []
-        print('go up to', len(imgs))
+        # print('go up to', len(imgs))
         for i in range(0, len(imgs), self.batch_size):
             print('tick', i)
             r.extend(self.attack_batch(imgs[i:i + self.batch_size], targets[i:i + self.batch_size]))
@@ -172,7 +172,7 @@ class CarliniL2:
         o_bestattack = [np.zeros(imgs[0].shape)] * batch_size
 
         for outer_step in range(self.BINARY_SEARCH_STEPS):
-            print(o_bestl2)
+            # print(o_bestl2)
             # completely reset adam's internal state.
             self.sess.run(self.init)
             batch = imgs[:batch_size]
@@ -205,8 +205,8 @@ class CarliniL2:
                                 "The output of model.predict should return the pre-softmax layer. It looks like you are returning the probability vector (post-softmax). If you are sure you want to do that, set attack.I_KNOW_WHAT_I_AM_DOING_AND_WANT_TO_OVERRIDE_THE_PRESOFTMAX_CHECK = True")
 
                 # print out the losses every 10%
-                if iteration % (self.MAX_ITERATIONS // 10) == 0:
-                    print(iteration, self.sess.run((self.loss, self.loss1, self.loss2)))
+                # if iteration % (self.MAX_ITERATIONS // 10) == 0:
+                #     print(iteration, self.sess.run((self.loss, self.loss1, self.loss2)))
 
                 # check if we should abort search if we're getting nowhere.
                 if self.ABORT_EARLY and iteration % (self.MAX_ITERATIONS // 10) == 0:
