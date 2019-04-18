@@ -7,6 +7,7 @@ from src.CW.li_attack import CarliniLi
 import time
 import matplotlib.pyplot as plt
 
+
 fashion_mnist_classes = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag',
                          'Ankle boot']
 mnist_classes = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
@@ -62,7 +63,7 @@ with tf.Session() as sess:
 
     _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-    index = 99
+    index = 5555
 
     x_test = x_test[index:index+1]
     y_test = y_test[index:index+1]

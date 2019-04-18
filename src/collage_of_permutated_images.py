@@ -1,9 +1,19 @@
 import tensorflow as tf
-import src.encryptions.permutated as e
 import matplotlib.pyplot as plt
 import src.padding as p
+import numpy as np
 
-PADDING = True
+
+def encrypt(inputs):
+    dims = np.array(inputs).shape
+
+    permutated_flattened = np.random.RandomState(seed=42).permutation(inputs.flatten())
+    enc_inputs = np.reshape(permutated_flattened, dims)
+
+    return enc_inputs
+
+
+PADDING = False
 
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
@@ -39,7 +49,7 @@ for title in ["Original", "Permutated"]:
         if PADDING:
             img = p.pad(img, number_of_paddings=12, padder=0.0)
         if title == "Permutated":
-            img = e.encrypt(img)
+            img = encrypt(img)
         ax.imshow(img, cmap=plt.cm.binary)
         #ax.imshow(img)
 

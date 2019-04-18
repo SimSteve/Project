@@ -2,63 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="implemented FGSM attack">
-      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CW/visualize_attack.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/collage_of_permutated_images.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attcked_results" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_CBC_V1_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_CBC_V1_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_CBC_V2_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_CBC_V2_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_CTR_V1_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_CTR_V1_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_CTR_V2_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_CTR_V2_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_ECB_V1_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_ECB_V1_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_ECB_V2_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_ECB_V2_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_PERMUTATED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_PERMUTATED_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/fashion_mnist_UNENCRYPTED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/fashion_mnist_UNENCRYPTED_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_CBC_V1_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_CBC_V1_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_CBC_V2_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_CBC_V2_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_CTR_V1_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_CTR_V1_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_CTR_V2_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_CTR_V2_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_ECB_V1_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_ECB_V1_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_ECB_V2_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_ECB_V2_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_PERMUTATED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_PERMUTATED_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/mnist_UNENCRYPTED_models.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/mnist_UNENCRYPTED_models.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results" beforeDir="false" afterPath="$PROJECT_DIR$/results" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results_0.5NORM" beforeDir="false" afterPath="$PROJECT_DIR$/results_0.5NORM" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results_permutated_0.5NORM" beforeDir="false" afterPath="$PROJECT_DIR$/results_permutated_0.5NORM" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results_permutated_0.5NORM_TENSORFLOW_PERMUTATED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results_permutated_seed=79" beforeDir="false" afterPath="$PROJECT_DIR$/results_permutated_seed=79" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_weights/fashion_mnist_CW_1_PERMUTATED_0.5NORM_TENSORFLOW_PERMUTATED_SEED=42.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_weights/mnist_CW_1_PERMUTATED_0.5NORM_TENSORFLOW_PERMUTATED_SEED=42.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/CW_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/CW_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/CW_attack_permutated.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/Carlini_Models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/l2_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/l2_attack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CW/visualize_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/visualize_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models_old.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models_old.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/collage_of_permutated_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/collage_of_permutated_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/convert_to_weights.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/convert_to_weights.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/draw_pic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/draw_pic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/cbc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/cbc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/ctr.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/ctr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/ecb.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/ecb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/permutated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/permutated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/encryptions/unencrypted.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encryptions/unencrypted.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/predict_image_from_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predict_image_from_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predictor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/predictor_old.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predictor_old.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stam.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/stam.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trainer_perm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1359">
-              <caret line="97" column="15" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="15" />
+            <state relative-caret-position="257">
+              <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -81,10 +30,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/FGSM/visualize_attack.py">
+        <entry file="file://$PROJECT_DIR$/src/CW/visualize_attack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
+            <state relative-caret-position="306">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -93,22 +42,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FGSM/FGSM_attack.py">
+        <entry file="file://$PROJECT_DIR$/src/collage_of_permutated_images.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#164#369#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FGSM/Models.py">
+        <entry file="file://$PROJECT_DIR$/src/CW/Models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state relative-caret-position="206">
+              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -119,29 +68,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="323">
+              <caret line="25" column="23" lean-forward="true" selection-start-line="19" selection-end-line="25" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/attacked_results">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results_padding_permutated">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -208,6 +139,7 @@
         <option value="Yishay" />
       </list>
     </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -217,13 +149,11 @@
         <option value="$PROJECT_DIR$/src/stam.py" />
         <option value="$PROJECT_DIR$/old_vis.py" />
         <option value="$PROJECT_DIR$/src/CW/Carlini_Models.py" />
-        <option value="$PROJECT_DIR$/src/CW/visualize_attack.py" />
         <option value="$PROJECT_DIR$/unsafe_indexes_unencrypted_mnist_li" />
         <option value="$PROJECT_DIR$/results_padding_permutated" />
         <option value="$PROJECT_DIR$/src/CW/li_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/l0_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/l2_attack.py" />
-        <option value="$PROJECT_DIR$/src/collage_of_permutated_images.py" />
         <option value="$PROJECT_DIR$/src/predictor.py" />
         <option value="$PROJECT_DIR$/src/trainer.py" />
         <option value="$PROJECT_DIR$/src/FGSM/utils_keras.py" />
@@ -259,16 +189,19 @@
         <option value="$PROJECT_DIR$/src/FGSM/FGSM_Models.py" />
         <option value="$PROJECT_DIR$/src/CW/CW_attack.py" />
         <option value="$PROJECT_DIR$/attcked_results" />
-        <option value="$PROJECT_DIR$/src/encryptions/permutated.py" />
         <option value="$PROJECT_DIR$/src/FGSM/Models.py" />
         <option value="$PROJECT_DIR$/attacked_results" />
         <option value="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" />
         <option value="$PROJECT_DIR$/src/FGSM/visualize_attack.py" />
+        <option value="$PROJECT_DIR$/src/encryptions/permutated.py" />
+        <option value="$PROJECT_DIR$/src/collage_of_permutated_images.py" />
+        <option value="$PROJECT_DIR$/src/CW/visualize_attack.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="15" />
+    <option name="x" value="2686" />
+    <option name="y" value="-12" />
     <option name="width" value="645" />
     <option name="height" value="705" />
   </component>
@@ -278,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -302,17 +236,10 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="encryptions" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FGSM" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,7 +271,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.visualize_FGSM_attack">
+  <component name="RunManager" selected="Python.collage_of_permutated_images">
     <configuration name="CW_attack" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -387,6 +314,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="collage_of_permutated_images" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\steveg\AppData\Local\Programs\Python\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/collage_of_permutated_images.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="draw_graphs" type="PythonConfigurationType" factoryName="Python">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -400,48 +348,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/draw_graphs.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="predictor" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python36\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/predictor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="stam" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stam.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -537,20 +443,19 @@
     <list>
       <item itemvalue="Python.draw_graphs" />
       <item itemvalue="Python.train" />
-      <item itemvalue="Python.stam" />
       <item itemvalue="Python.CW_attack" />
-      <item itemvalue="Python.predictor" />
       <item itemvalue="Python.visualize_CW_attack" />
       <item itemvalue="Python.FGSM_attack" />
       <item itemvalue="Python.visualize_FGSM_attack" />
+      <item itemvalue="Python.collage_of_permutated_images" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.collage_of_permutated_images" />
+        <item itemvalue="Python.visualize_CW_attack" />
+        <item itemvalue="Python.CW_attack" />
         <item itemvalue="Python.visualize_FGSM_attack" />
         <item itemvalue="Python.FGSM_attack" />
-        <item itemvalue="Python.predictor" />
-        <item itemvalue="Python.CW_attack" />
-        <item itemvalue="Python.visualize_CW_attack" />
       </list>
     </recent_temporary>
   </component>
@@ -737,22 +642,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.21664464" />
+      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.21654373" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3281471" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.30551627" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32719395" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7123288" visible="true" weight="0.30444205" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39891893" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49761903" weight="0.32864866" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.28729573" side_tool="true" weight="0.34653464" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.28767124" side_tool="true" weight="0.30444205" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1018,28 +923,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CW/visualize_attack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <caret selection-end-line="122" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/encryptions/unencrypted.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CW/Models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="98" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Models.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1078,16 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1359">
-          <caret line="97" column="15" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FGSM/FGSM_attack.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -1104,16 +979,6 @@
           <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1136,6 +1001,66 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CW/Models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="23" lean-forward="true" selection-start-line="19" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collage_of_permutated_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#164#369#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CW/visualize_attack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
