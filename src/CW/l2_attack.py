@@ -5,6 +5,22 @@
 ## This program is licenced under the BSD 2-Clause licence,
 ## contained in the LICENCE file in this directory.
 
+import matplotlib.pyplot as plt
+
+
+def plot_original_adversarial(image):
+    if len(np.array(image).shape) > 2:
+        image = np.reshape(image, (28,28))
+
+    plt.grid(False)
+    plt.xticks([])
+    plt.yticks([])
+
+    plt.imshow(image)
+
+    plt.show()
+
+
 import sys
 import tensorflow as tf
 import numpy as np
@@ -85,9 +101,10 @@ class CarliniL2:
         self.boxmul = (boxmax - boxmin) / 2.
         self.boxplus = (boxmin + boxmax) / 2.
         self.newimg = tf.tanh(modifier + self.timg) * self.boxmul + self.boxplus
+        self.PERMUTATED_IMAGE = model.encrypt(self.newimg)
 
         # prediction BEFORE-SOFTMAX of the model
-        self.output = model.predict(self.newimg)
+        self.output = model.predict(self.PERMUTATED_IMAGE)
 
         # distance to the input data
         self.l2dist = tf.reduce_sum(tf.square(self.newimg - (tf.tanh(self.timg) * self.boxmul + self.boxplus)),
@@ -194,9 +211,14 @@ class CarliniL2:
             prev = np.inf
             for iteration in range(self.MAX_ITERATIONS):
                 # perform the attack
-                _, l, l2s, scores, nimg = self.sess.run([self.train, self.loss,
+                _, l, l2s, scores, nimg , perm_img = self.sess.run([self.train, self.loss,
                                                          self.l2dist, self.output,
-                                                         self.newimg])
+                                                         self.newimg,self.PERMUTATED_IMAGE])
+
+                if iteration == self.MAX_ITERATIONS - 1:
+                    plot_original_adversarial(nimg)
+                    plot_original_adversarial(perm_img)
+
 
                 if np.all(scores >= -.0001) and np.all(scores <= 1.0001):
                     if np.allclose(np.sum(scores, axis=1), 1.0, atol=1e-3):

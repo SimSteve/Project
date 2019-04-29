@@ -29,7 +29,7 @@ class Encrypted_Model():
 
     def predict(self, image):
         enc_img = self.encrypt(image)
-        return self.model(image)
+        return self.model(enc_img)
 
     def save(self, m_file):
         tf.keras.models.Model.save_weights(filepath='saved_weights/{}.h5'.format(m_file), save_format='h5')

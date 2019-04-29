@@ -63,7 +63,8 @@ with tf.Session() as sess:
 
     _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-    index = 5555
+    # index = 38
+    index = 1456
 
     x_test = x_test[index:index+1]
     y_test = y_test[index:index+1]
@@ -77,10 +78,13 @@ with tf.Session() as sess:
     input_shape = np.array(x_test[0]).shape
 
     import src.encryptions.permutated as e
-    name = "mnist_CW_1_PERMUTATED_0.5NORM"
+    # name = "mnist_CW_1_PERMUTATED_0.5NORM"
+    # name = "mnist_CW_1_PERMUTATED_0.5NORM_SEED=79"
+    # name = "mnist_CW_1_PERMUTATED_0.5NORM_seed=142"
+    name = "mnist_CW_1_PERMUTATED_0.5NORM_TENSORFLOW_PERMUTATED_SEED=42"
 
     # import src.encryptions.unencrypted as e
-    # name = "fashion_mnist_CW_1_UNENCRYPTED_0.5NORM"
+    # name = "mnist_CW_1_UNENCRYPTED_0.5NORM"
 
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
     model.load(name)
@@ -107,14 +111,17 @@ with tf.Session() as sess:
     # enc_img_adv = e.encrypt(adv[0])
     # enc_img_orig = e.encrypt(images[0])
 
-    prob_adv = sess.run(model.predict(np.float32(np.reshape(adv[0], (1,28,28,1))))[0])      # the output is 2D array
-    prob_orig = sess.run(model.predict(np.float32(np.reshape(images[0], (1,28,28,1))))[0])  # likewise
+    prob_adv = sess.run(model.encrypt_predict(np.float32(np.reshape(adv[0], (1,28,28,1))))[0])      # the output is 2D array
+    prob_orig = sess.run(model.encrypt_predict(np.float32(np.reshape(images[0], (1,28,28,1))))[0])  # likewise
 
     prob_adv = softmax(prob_adv)
     prob_orig = softmax(prob_orig)
 
     pred_adv = np.argmax(prob_adv).tolist()
     pred_orig = np.argmax(prob_orig).tolist()
+
+    print(np.argmin(prob_orig).tolist())
+    print(np.argmax(prob_orig).tolist())
 
     distortion = np.sum((adv[0] - images[0]) ** 2) ** .5
 

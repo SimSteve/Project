@@ -13,6 +13,20 @@ cifar10_classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog
 class_names = []
 
 
+def filter(inputs, model, labels):
+    f_x = []
+    f_y = []
+
+    pred = [model.predict(inputs[i:i+1]) for i in range(len(labels))]
+    pred = [np.argmax(pr) for pr in pred]
+
+    for i in range(len(inputs)):
+        if pred[i] == labels[i]:
+            f_x.append(inputs[i])
+            f_y.append(labels[i])
+    return np.array(f_x), f_y
+
+
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
@@ -37,23 +51,29 @@ with tf.Session() as sess:
     # import src.encryptions.unencrypted as e
     # name = "mnist_FGSM_UNENCRYPTED"
 
-    model = m.FGSM(input_shape, encrypt=e.encrypt)
+    model = m.FGSM(input_shape, encrypt=e.numpy_encrypt)
     model.load(name)
     class_names = mnist_classes
+
+    x_test, y_test = filter(x_test, model, y_test)
+    print(len(x_test))
 
     wrap = KerasModelWrapper(model)
     fgsm = FastGradientMethod(wrap, sess=sess)
     fgsm_params = {'eps': 0.3,
                    'clip_min': 0.,
                    'clip_max': 1.}
+
     adv_x = fgsm.generate_np(x_test, **fgsm_params)
 
     adv_pred_prob = model.predict(adv_x)
-    adv_pred = []
-    for pr in adv_pred_prob:
-        adv_pred.append(np.argmax(pr))
+    orig_pred_prob = model.predict(x_test)
+
+    adv_pred = [np.argmax(pr) for pr in adv_pred_prob]
+    orig_pred = [np.argmax(pr) for pr in orig_pred_prob]
 
     adv_acc = np.mean(np.equal(adv_pred, y_test))
+    orig_acc = np.mean(np.equal(orig_pred, y_test))
 
     print("The adversarial validation accuracy is: {}".format(adv_acc))
 

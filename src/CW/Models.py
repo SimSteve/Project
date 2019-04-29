@@ -28,6 +28,11 @@ class Encrypted_Model():
         return self.model.evaluate(x_test, y_test)
 
     def predict(self, image):
+        # enc_image = self.encrypt(image)
+        stam = self.model(image)
+        return stam
+
+    def encrypt_predict(self, image):
         enc_image = self.encrypt(image)
         return self.model(enc_image)
 

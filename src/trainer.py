@@ -44,9 +44,9 @@ def main():
     model.compile()
     test_loss, test_acc = model.evaluate(x_test, y_test)
 
-    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
-    helper.print_encryption_details(out=r)
-    r.write("#####################################################\n")
+    # r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
+    # helper.print_encryption_details(out=r)
+    # r.write("#####################################################\n")
 
     # results = {
     #     "name": MODEL_NAME,
@@ -71,19 +71,19 @@ def main():
 
 
 if __name__ == '__main__':
-    DATASET = "fashion_mnist"
+    DATASET = "mnist"
     MODEL = "CW_1"
     TRAIN_WITH_ME = "PERMUTATED"
     VERSION = ""
 
-    PADDING = True
+    PADDING = False
 
-    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" + VERSION + "_PADDED_12"
+    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" + VERSION + "seed=142"
 
     print("DATASET = {}".format(DATASET))
     print("MODEL = {}".format(MODEL))
     print("TRAINER = {}\n".format(TRAIN_WITH_ME))
 
-    r = open("results_padding_permutated", "a")
+    # r = open("results_padding_permutated", "a")
     main()
-    r.close()
+    # r.close()

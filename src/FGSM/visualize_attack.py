@@ -59,7 +59,7 @@ with tf.Session() as sess:
 
     _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-    index = 999
+    index = 3
 
     x_test = x_test[index:index+1]
     y_test = y_test[index:index+1]
@@ -72,13 +72,13 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    # import src.encryptions.permutated as e
-    # name = "mnist_FGSM_PERMUTATED"
+    import src.encryptions.permutated as e
+    name = "mnist_FGSM_PERMUTATED"
 
-    import src.encryptions.unencrypted as e
-    name = "mnist_FGSM_UNENCRYPTED"
+    # import src.encryptions.unencrypted as e
+    # name = "mnist_FGSM_UNENCRYPTED"
 
-    model = m.FGSM(input_shape, encrypt=e.encrypt)
+    model = m.FGSM(input_shape, encrypt=e.numpy_encrypt)
     model.load(name)
     class_names = mnist_classes
 
@@ -94,25 +94,34 @@ with tf.Session() as sess:
     adv = fgsm.generate_np(x_test, **fgsm_params)
     timeend = time.time()
 
-    model = m.FGSM_no_softmax(input_shape, encrypt=e.encrypt)
-    model.load(name)
+    # model = m.FGSM_no_softmax(input_shape, encrypt=e.numpy_encrypt)
+    # model.load(name)
 
     # plotting the images
     real = y_test[0]
 
-    enc_img_adv = e.encrypt(adv[0])
-    enc_img_orig = e.encrypt(images[0])
+    # enc_img_adv = e.numpy_encrypt(adv[0])
+    # enc_img_orig = e.numpy_encrypt(images[0])
+    #
+    # prob_adv = model.model.predict(np.reshape(enc_img_adv, (1,28,28,1)))[0]  # the output is 2D array
+    # prob_orig = model.model.predict(np.reshape(enc_img_orig, (1,28,28,1)))[0]  # likewise
+    #
+    # prob_adv = softmax(prob_adv)
+    # prob_orig = softmax(prob_orig)
 
-    prob_adv = model.model.predict(np.reshape(enc_img_adv, (1,28,28,1)))[0]  # the output is 2D array
-    prob_orig = model.model.predict(np.reshape(enc_img_orig, (1,28,28,1)))[0]  # likewise
+    prob_adv = sess.run(model.predict(np.float32(adv)))[0]
+    prob_orig = sess.run(model.predict(np.float32(images)))[0]
 
-    prob_adv = softmax(prob_adv)
-    prob_orig = softmax(prob_orig)
-
-    pred_adv = np.argmax(prob_adv).tolist()
-    pred_orig = np.argmax(prob_orig).tolist()
+    pred_adv = np.argmax(prob_adv)
+    pred_orig = np.argmax(prob_orig)
 
     distortion = np.sum((adv[0] - images[0]) ** 2) ** .5
+
+    print(pred_orig)
+    print(pred_adv)
+    print(real)
+    print(prob_orig)
+    print(prob_adv)
 
     plot_original_adversarial(images[0], adv[0], pred_orig, pred_adv, prob_orig, prob_adv, real, distortion)
 
