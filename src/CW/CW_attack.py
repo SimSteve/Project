@@ -28,7 +28,7 @@ def failed(adv):
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    _, (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
 
     num_of_examples = 1000
 
@@ -45,8 +45,8 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    import src.encryptions.permutated as e
-    name = "mnist_CW_1_PERMUTATED_0.5NORM"
+    # import src.encryptions.permutated as e
+    # name = "mnist_CW_1_PERMUTATED_0.5NORM"
 
     # import src.encryptions.unencrypted as e
     # name = "mnist_CW_1_UNENCRYPTED_0.5NORM"
@@ -54,12 +54,12 @@ with tf.Session() as sess:
     # import src.encryptions.permutated as e
     # name = "fashion_mnist_CW_1_PERMUTATED_0.5NORM"
 
-    # import src.encryptions.unencrypted as e
-    # name = "fashion_mnist_CW_1_UNENCRYPTED_0.5NORM"
+    import src.encryptions.unencrypted as e
+    name = "fashion_mnist_CW_1_UNENCRYPTED_0.5NORM"
 
     model = models["CW_1"](input_shape, encrypt=e.encrypt)
     model.load(name)
-    class_names = mnist_classes
+    class_names = fashion_mnist_classes
 
     attack = CarliniL2(sess=sess, model=model, targeted=False, max_iterations=1000)
     # attack = CarliniL0(sess=sess, model=model, targeted=False, max_iterations=1000)
@@ -74,12 +74,21 @@ with tf.Session() as sess:
 
     print("Took", timeend - timestart, "seconds to run", 1, "samples.")
 
+    # import src.encryptions.permutated as e
+    # name = "mnist_CW_1_PERMUTATED_0.5NORM"
+
+    import src.encryptions.permutated as e
+    name = "fashion_mnist_CW_1_PERMUTATED_0.5NORM"
+
+    model = models["CW_1"](input_shape, encrypt=e.numpy_encrypt)
+    model.load(name)
+
     good = 0.0
     bad = 0.0
 
-    safe = open("safe_indexes_work", 'w')
-    unsafe = open("unsafe_indexes_work", 'a')
-    
+    safe = open("safe_indexes_l2_fashion", 'w')
+    unsafe = open("unsafe_indexes_l2_fashion", 'w')
+
     for i in range(len(adv)):
         if failed(adv[i]):
             # safe.write("{}\n".format(i))

@@ -17,13 +17,13 @@ reverse = tfp.bijectors.Permute(permutation=permutation_indexes)
 #     return enc_inputs / 255.0 - 0.5
 
 
-# def numpy_encrypt(inputs):
-#     dims = np.array(inputs).shape
-#
-#     permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())
-#     enc_inputs = np.reshape(permutated_flattened, dims)
-#
-#     return enc_inputs
+def numpy_encrypt(inputs):
+    dims = np.array(inputs).shape
+
+    permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())
+    enc_inputs = np.reshape(permutated_flattened, dims)
+
+    return enc_inputs
 #
 # def encrypt(inputs):
 #     shape = tf.shape(inputs)
@@ -36,17 +36,17 @@ reverse = tfp.bijectors.Permute(permutation=permutation_indexes)
 #
 #     return enc_inputs
 
-tf.NoGradient("RandomShuffle")
-# this function is used when running CW_attack
-def encrypt(inputs):
-    # tf.NoGradient("RandomShuffle")
-
-    shape = tf.shape(inputs)
-
-    permutated_flattened = tf.random.shuffle(tf.reshape(inputs, [-1]), seed=seed)
-    enc_inputs = tf.reshape(permutated_flattened, shape)
-
-    return enc_inputs
+# tf.NoGradient("RandomShuffle")
+# # this function is used when running CW_attack
+# def encrypt(inputs):
+#     # tf.NoGradient("RandomShuffle")
+#
+#     shape = tf.shape(inputs)
+#
+#     permutated_flattened = tf.random.shuffle(tf.reshape(inputs, [-1]), seed=seed)
+#     enc_inputs = tf.reshape(permutated_flattened, shape)
+#
+#     return enc_inputs
 #
 # # this function is used when running CW_attack
 # def encrypt2(inputs):

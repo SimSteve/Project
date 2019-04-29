@@ -215,9 +215,9 @@ class CarliniL2:
                                                          self.l2dist, self.output,
                                                          self.newimg,self.PERMUTATED_IMAGE])
 
-                if iteration == self.MAX_ITERATIONS - 1:
-                    plot_original_adversarial(nimg)
-                    plot_original_adversarial(perm_img)
+                # if iteration == self.MAX_ITERATIONS - 1:
+                #     plot_original_adversarial(nimg)
+                #     plot_original_adversarial(perm_img)
 
 
                 if np.all(scores >= -.0001) and np.all(scores <= 1.0001):
