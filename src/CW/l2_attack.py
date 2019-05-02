@@ -101,10 +101,9 @@ class CarliniL2:
         self.boxmul = (boxmax - boxmin) / 2.
         self.boxplus = (boxmin + boxmax) / 2.
         self.newimg = tf.tanh(modifier + self.timg) * self.boxmul + self.boxplus
-        self.PERMUTATED_IMAGE = model.encrypt(self.newimg)
 
         # prediction BEFORE-SOFTMAX of the model
-        self.output = model.predict(self.PERMUTATED_IMAGE)
+        self.output = model.predict(self.newimg)
 
         # distance to the input data
         self.l2dist = tf.reduce_sum(tf.square(self.newimg - (tf.tanh(self.timg) * self.boxmul + self.boxplus)),
@@ -211,9 +210,9 @@ class CarliniL2:
             prev = np.inf
             for iteration in range(self.MAX_ITERATIONS):
                 # perform the attack
-                _, l, l2s, scores, nimg , perm_img = self.sess.run([self.train, self.loss,
+                _, l, l2s, scores, nimg = self.sess.run([self.train, self.loss,
                                                          self.l2dist, self.output,
-                                                         self.newimg,self.PERMUTATED_IMAGE])
+                                                         self.newimg])
 
                 # if iteration == self.MAX_ITERATIONS - 1:
                 #     plot_original_adversarial(nimg)

@@ -28,16 +28,11 @@ class Encrypted_Model():
         return self.model.evaluate(x_test, y_test)
 
     def predict(self, image):
-        # enc_image = self.encrypt(image)
-        stam = self.model(image)
-        return stam
-
-    def encrypt_predict(self, image):
         enc_image = self.encrypt(image)
         return self.model(enc_image)
 
     def save(self, m_file):
-        tf.keras.models.Model.save_weights(filepath='saved_weights/{}.h5'.format(m_file), save_format='h5')
+        self.model.save_weights(filepath='saved_weights/{}.h5'.format(m_file), save_format='h5')
 
     def load(self, m_file):
         if Path('saved_weights/{}.h5'.format(m_file)).is_file():

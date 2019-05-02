@@ -29,11 +29,11 @@ fashion_mnist_CW_1_UNENCRYPTED_0.5NORM	accuracy: 0.00%	error rate: 100.00%
 
 ############################# FGSM ################################
 
-mnist_FGSM_UNENCRYPTED	accuracy: 18.60%	error rate: 81.40%
-#####################################################
-mnist_FGSM_PERMUTATED	accuracy: 9.40%	error rate: 90.60%
-#####################################################
 mnist_FGSM_UNENCRYPTED	accuracy: 17.06%	error rate: 82.94%
 #####################################################
 mnist_FGSM_PERMUTATED	accuracy: 10.86%	error rate: 89.14%
+#####################################################
+fashion_mnist_FGSM_UNENCRYPTED	accuracy: 5.75%	error rate: 94.25%
+#####################################################
+fashion_mnist_FGSM_PERMUTATED	accuracy: 8.18%	error rate: 91.82%
 #####################################################

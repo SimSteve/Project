@@ -30,7 +30,7 @@ def filter(inputs, model, labels):
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    _, (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
 
     num_of_examples = 1000
 
@@ -45,15 +45,21 @@ with tf.Session() as sess:
 
     input_shape = np.array(x_test[0]).shape
 
-    import src.encryptions.permutated as e
-    name = "mnist_FGSM_PERMUTATED"
+    # import src.encryptions.permutated as e
+    # name = "mnist_FGSM_PERMUTATED"
 
     # import src.encryptions.unencrypted as e
     # name = "mnist_FGSM_UNENCRYPTED"
 
+    import src.encryptions.permutated as e
+    name = "fashion_mnist_FGSM_PERMUTATED"
+
+    # import src.encryptions.unencrypted as e
+    # name = "fashion_mnist_FGSM_UNENCRYPTED"
+
     model = m.FGSM(input_shape, encrypt=e.numpy_encrypt)
     model.load(name)
-    class_names = mnist_classes
+    class_names = fashion_mnist_classes
 
     x_test, y_test = filter(x_test, model, y_test)
     print(len(x_test))
@@ -82,3 +88,6 @@ with tf.Session() as sess:
                                                                   (1.0 - adv_acc) * 100))
     r.write("#####################################################\n")
     r.close()
+
+    print("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * adv_acc,
+                                                                  (1.0 - adv_acc) * 100))
