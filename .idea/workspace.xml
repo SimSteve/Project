@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="working">
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="done with CW">
+      <change afterPath="$PROJECT_DIR$/safe_indexes_l0_fashion" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/safe_indexes_li_fashion" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/safe_indexes_li_mnist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unsafe_indexes_l0_fashion" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unsafe_indexes_li_fashion" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unsafe_indexes_li_mnist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accuracies.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accuracies.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_results" beforeDir="false" afterPath="$PROJECT_DIR$/attacked_results" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_l2_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_l2_mnist" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CW/CW_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/CW_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/Models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/l2_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/l2_attack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/convert_to_weights.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/convert_to_weights.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_l2_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_l2_mnist" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,65 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/encryptions/permutated.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/evaluation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FGSM/FGSM_attack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CW/l2_attack.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="218" column="52" selection-start-line="218" selection-start-column="48" selection-end-line="218" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CW/Models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="349">
+              <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -205,17 +150,17 @@
         <option value="$PROJECT_DIR$/src/CW/l2_attack.py" />
         <option value="$PROJECT_DIR$/src/convert_to_weights.py" />
         <option value="$PROJECT_DIR$/attacked_results" />
-        <option value="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/CW_attack.py" />
         <option value="$PROJECT_DIR$/src/evaluation.py" />
+        <option value="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="709" />
+    <option name="y" value="-17" />
+    <option name="width" value="645" />
+    <option name="height" value="705" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -229,11 +174,6 @@
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="saved_weights" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
@@ -294,8 +234,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.evaluation">
-    <configuration name="CW_attack" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.FGSM_attack">
+    <configuration name="CW_attack" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -453,9 +393,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.FGSM_attack" />
         <item itemvalue="Python.evaluation" />
         <item itemvalue="Python.CW_attack" />
-        <item itemvalue="Python.FGSM_attack" />
         <item itemvalue="Python.convert_to_weights" />
         <item itemvalue="Python.visualize_CW_attack" />
       </list>
@@ -661,19 +601,39 @@
       <option name="project" value="LOCAL" />
       <updated>1556551716833</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="finally something seems to work">
+      <created>1556775872156</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1556775872156</updated>
+    </task>
+    <task id="LOCAL-00029" summary="updated pdf">
+      <created>1556777587161</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1556777587161</updated>
+    </task>
+    <task id="LOCAL-00030" summary="done with CW">
+      <created>1557128003999</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1557128003999</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.23972602" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.23972602" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719395" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.24052005" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.41928494" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -711,7 +671,10 @@
     <MESSAGE value="implemented FGSM attack" />
     <MESSAGE value="ran CW attack on mnist - 100% error rate" />
     <MESSAGE value="working" />
-    <option name="LAST_COMMIT_MESSAGE" value="working" />
+    <MESSAGE value="finally something seems to work" />
+    <MESSAGE value="updated pdf" />
+    <MESSAGE value="done with CW" />
+    <option name="LAST_COMMIT_MESSAGE" value="done with CW" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -743,27 +706,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FGSM/cleverhans/cleverhans/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FGSM/cleverhans/cleverhans/attacks/max_confidence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FGSM/cleverhans/cleverhans/attacks/basic_iterative_method.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FGSM/cleverhans/cleverhans/attacks/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -1041,16 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FGSM/FGSM_attack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/safe_indexes_l2_mnist">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1064,17 +996,43 @@
         <state relative-caret-position="-160" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/unsafe_indexes_l0_fashion">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1683" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unsafe_indexes_li_mnist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-512" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unsafe_indexes_li_fashion">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
+        <state relative-caret-position="85">
+          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+          <folding>
+            <element signature="e#1#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CW/CW_attack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+        <state relative-caret-position="651">
+          <caret line="125" column="100" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FGSM/FGSM_attack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

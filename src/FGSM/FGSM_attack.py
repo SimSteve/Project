@@ -30,7 +30,7 @@ def filter(inputs, model, labels):
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    _, (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
+    _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
     num_of_examples = 1000
 
@@ -48,16 +48,16 @@ with tf.Session() as sess:
     # import src.encryptions.permutated as e
     # name = "mnist_FGSM_PERMUTATED"
 
-    # import src.encryptions.unencrypted as e
-    # name = "mnist_FGSM_UNENCRYPTED"
+    import src.encryptions.unencrypted as e
+    name = "mnist_FGSM_UNENCRYPTED"
 
-    import src.encryptions.permutated as e
-    name = "fashion_mnist_FGSM_PERMUTATED"
+    # import src.encryptions.permutated as e
+    # name = "fashion_mnist_FGSM_PERMUTATED"
 
     # import src.encryptions.unencrypted as e
     # name = "fashion_mnist_FGSM_UNENCRYPTED"
 
-    model = m.FGSM(input_shape, encrypt=e.numpy_encrypt)
+    model = m.FGSM(input_shape, encrypt=e.encrypt)
     model.load(name)
     class_names = fashion_mnist_classes
 
@@ -72,6 +72,15 @@ with tf.Session() as sess:
 
     adv_x = fgsm.generate_np(x_test, **fgsm_params)
 
+    import src.encryptions.permutated as e
+    name = "mnist_FGSM_PERMUTATED"
+
+    # import src.encryptions.permutated as e
+    # name = "fashion_mnist_FGSM_PERMUTATED"
+
+    model = m.FGSM(input_shape, encrypt=e.numpy_encrypt)
+    model.load(name)
+
     adv_pred_prob = model.predict(adv_x)
     orig_pred_prob = model.predict(x_test)
 
@@ -81,13 +90,13 @@ with tf.Session() as sess:
     adv_acc = np.mean(np.equal(adv_pred, y_test))
     orig_acc = np.mean(np.equal(orig_pred, y_test))
 
-    print("The adversarial validation accuracy is: {}".format(adv_acc))
+    print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * adv_acc, (1.0 - adv_acc) * 100))
 
-    r = open("attacked_results", 'a')
-    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * adv_acc,
-                                                                  (1.0 - adv_acc) * 100))
-    r.write("#####################################################\n")
-    r.close()
-
-    print("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * adv_acc,
-                                                                  (1.0 - adv_acc) * 100))
+    # r = open("attacked_results", 'a')
+    # r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * adv_acc,
+    #                                                               (1.0 - adv_acc) * 100))
+    # r.write("#####################################################\n")
+    # r.close()
+    #
+    # print("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * adv_acc,
+    #                                                               (1.0 - adv_acc) * 100))

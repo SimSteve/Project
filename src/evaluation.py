@@ -1,11 +1,14 @@
-import src.CW.Models as m
 import tensorflow as tf
 import src.encryptions.permutated as e
 import numpy as np
 
 
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
-x_train, x_test = x_train / 255.0 - 0.5, x_test / 255.0 - 0.5
+# x_train, x_test = x_train / 255.0 - 0.5, x_test / 255.0 - 0.5
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+x_test = x_test[:1000]
+y_test = y_test[:1000]
 
 dims = np.array(x_train).shape
 
@@ -16,11 +19,21 @@ if len(dims) != 4:
 
 input_shape = np.array(x_train[0]).shape
 
-model = m.CW_1(input_shape, e.numpy_encrypt)
 
+# import src.FGSM.Models as m
+# model = m.CW_1(input_shape, e.numpy_encrypt)
+#
 # model.load("mnist_CW_1_PERMUTATED_0.5NORM")
-model.load("fashion_mnist_CW_1_PERMUTATED_0.5NORM")
+# model.load("fashion_mnist_CW_1_PERMUTATED_0.5NORM")
+# model.load("mnist_CW_1_UNENCRYPTED_0.5NORM")
+# model.load("fashion_mnist_CW_1_UNENCRYPTED_0.5NORM")
+
+import src.FGSM.Models as m
+model = m.FGSM(input_shape, e.numpy_encrypt)
+# model.load("mnist_FGSM_UNENCRYPTED")
 # model.load("fashion_mnist_FGSM_UNENCRYPTED")
+# model.load("mnist_FGSM_PERMUTATED")
+model.load("fashion_mnist_FGSM_PERMUTATED")
 
 test_loss, test_acc = model.evaluate(x_test, y_test)
 
