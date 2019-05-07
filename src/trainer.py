@@ -16,12 +16,12 @@ def main():
     data = data_types[DATASET]
 
     (x_train, y_train), (x_test, y_test) = data.load_data()
-    x_train, x_test = x_train / 1.0, x_test / 1.0
+    x_train, x_test = x_train / 255.0 - 0.5, x_test / 255.0 - 0.5
 
     if PADDING:
         # padding
-        x_train = [p.pad(img, number_of_paddings=32, padder=0.0) for img in x_train]
-        x_test = [p.pad(img, number_of_paddings=32, padder=0.0) for img in x_test]
+        x_train = [p.pad(img, number_of_paddings=72, padder=0.0) for img in x_train]
+        x_test = [p.pad(img, number_of_paddings=72, padder=0.0) for img in x_test]
 
     helper = importlib.import_module(train_mode[TRAIN_WITH_ME])
 
@@ -71,14 +71,14 @@ def main():
 
 
 if __name__ == '__main__':
-    DATASET = "mnist"
+    DATASET = "fashion_mnist"
     MODEL = "CW_1"
     TRAIN_WITH_ME = "PERMUTATED"
     VERSION = ""
 
-    PADDING = False
+    PADDING = True
 
-    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" + VERSION + "seed=142"
+    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" + VERSION + "_PADDED_72"
 
     print("DATASET = {}".format(DATASET))
     print("MODEL = {}".format(MODEL))

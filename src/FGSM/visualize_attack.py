@@ -59,7 +59,7 @@ with tf.Session() as sess:
 
     _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-    index = 3
+    index = 985
 
     x_test = x_test[index:index+1]
     y_test = y_test[index:index+1]
@@ -78,7 +78,7 @@ with tf.Session() as sess:
     # import src.encryptions.unencrypted as e
     # name = "mnist_FGSM_UNENCRYPTED"
 
-    model = m.FGSM(input_shape, encrypt=e.numpy_encrypt)
+    model = m.FGSM(input_shape, encrypt=e.encrypt)
     model.load(name)
     class_names = mnist_classes
 

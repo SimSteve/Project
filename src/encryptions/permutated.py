@@ -17,7 +17,7 @@ reverse = tfp.bijectors.Permute(permutation=permutation_indexes)
 #     return enc_inputs / 255.0 - 0.5
 
 
-def numpy_encrypt(inputs):
+def encrypt(inputs):
     dims = np.array(inputs).shape
 
     permutated_flattened = np.random.RandomState(seed=seed).permutation(inputs.flatten())

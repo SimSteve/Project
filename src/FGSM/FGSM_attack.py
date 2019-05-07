@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np
-import src.Models as m
+import src.FGSM.Models as m
 import time
 import matplotlib.pyplot as plt
 from src.FGSM.cleverhans.cleverhans.utils_keras import KerasModelWrapper
@@ -13,29 +13,17 @@ cifar10_classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog
 class_names = []
 
 
-def filter(inputs, model, labels):
-    f_x = []
-    f_y = []
-
-    pred = [model.predict(inputs[i:i+1]) for i in range(len(labels))]
-    pred = [np.argmax(pr) for pr in pred]
-
-    for i in range(len(inputs)):
-        if pred[i] == labels[i]:
-            f_x.append(inputs[i])
-            f_y.append(labels[i])
-    return np.array(f_x), f_y
-
-
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
-    _, (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    _, (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
 
     num_of_examples = 1000
 
     x_test = x_test[:num_of_examples]
     y_test = y_test[:num_of_examples]
+
+    print(x_test.shape)
 
     x_test = x_test / 255.0
     dims = np.array(x_test).shape
@@ -48,21 +36,18 @@ with tf.Session() as sess:
     # import src.encryptions.permutated as e
     # name = "mnist_FGSM_PERMUTATED"
 
-    import src.encryptions.unencrypted as e
-    name = "mnist_FGSM_UNENCRYPTED"
+    # import src.encryptions.unencrypted as e
+    # name = "mnist_FGSM_UNENCRYPTED"
 
     # import src.encryptions.permutated as e
     # name = "fashion_mnist_FGSM_PERMUTATED"
 
-    # import src.encryptions.unencrypted as e
-    # name = "fashion_mnist_FGSM_UNENCRYPTED"
+    import src.encryptions.unencrypted as e
+    name = "fashion_mnist_FGSM_UNENCRYPTED"
 
     model = m.FGSM(input_shape, encrypt=e.encrypt)
     model.load(name)
     class_names = fashion_mnist_classes
-
-    x_test, y_test = filter(x_test, model, y_test)
-    print(len(x_test))
 
     wrap = KerasModelWrapper(model)
     fgsm = FastGradientMethod(wrap, sess=sess)
@@ -72,31 +57,53 @@ with tf.Session() as sess:
 
     adv_x = fgsm.generate_np(x_test, **fgsm_params)
 
-    import src.encryptions.permutated as e
-    name = "mnist_FGSM_PERMUTATED"
+    _, test_acc = model.evaluate(adv_x, y_test)
+    print("unencrypted accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
 
     # import src.encryptions.permutated as e
-    # name = "fashion_mnist_FGSM_PERMUTATED"
+    # name = "mnist_FGSM_PERMUTATED"
 
-    model = m.FGSM(input_shape, encrypt=e.numpy_encrypt)
+    import src.encryptions.permutated as e
+    name = "fashion_mnist_FGSM_PERMUTATED"
+
+    model = m.FGSM(input_shape, encrypt=e.encrypt)
     model.load(name)
 
-    adv_pred_prob = model.predict(adv_x)
-    orig_pred_prob = model.predict(x_test)
+    _, test_acc = model.evaluate(adv_x, y_test)
+    print("permutated accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
 
-    adv_pred = [np.argmax(pr) for pr in adv_pred_prob]
-    orig_pred = [np.argmax(pr) for pr in orig_pred_prob]
+    good = 0.0
+    bad = 0.0
 
-    adv_acc = np.mean(np.equal(adv_pred, y_test))
-    orig_acc = np.mean(np.equal(orig_pred, y_test))
+    safe = open("safe_indexes_FGSM_fashion", 'w')
+    unsafe = open("unsafe_indexes_FGSM_fashion", 'w')
 
-    print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * adv_acc, (1.0 - adv_acc) * 100))
+    for i in range(len(adv_x)):
 
-    # r = open("attacked_results", 'a')
-    # r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * adv_acc,
-    #                                                               (1.0 - adv_acc) * 100))
-    # r.write("#####################################################\n")
-    # r.close()
-    #
-    # print("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(name, 100 * adv_acc,
-    #                                                               (1.0 - adv_acc) * 100))
+        real = y_test[i]
+        # enc_adv = np.reshape(e.encrypt(adv[i]), (1,28,28,1))
+        prob_adv = sess.run(model.predict(np.float32(np.reshape(adv_x[i], (1, 28, 28, 1))))[0])  # the output is 2D array
+        pred_adv = np.argmax(prob_adv).tolist()
+
+        # enc_orig = np.reshape(e.encrypt(x_test[i]), (1, 28, 28, 1))
+        prob_orig = sess.run(model.predict(np.float32(np.reshape(x_test[i], (1, 28, 28, 1))))[0])  # the output is 2D array
+        pred_orig = np.argmax(prob_orig).tolist()
+
+        good += pred_adv == real
+        bad += pred_adv != real
+
+        if pred_adv == real:
+            safe.write("{}\n".format(i))
+        else:
+            if pred_orig == real:
+                unsafe.write("{}*\n".format(i))  # images that the attacker successfully misleaded the model
+            else:
+                unsafe.write("{}\n".format(i))  # the model is wrong
+
+        # if pred_adv != real and pred_orig == real:
+        #     print("{}*\n".format(i))
+    safe.close()
+    unsafe.close()
+
+    test_acc = good / (good + bad)
+    print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))

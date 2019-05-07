@@ -29,7 +29,7 @@ input_shape = np.array(x_train[0]).shape
 # model.load("fashion_mnist_CW_1_UNENCRYPTED_0.5NORM")
 
 import src.FGSM.Models as m
-model = m.FGSM(input_shape, e.numpy_encrypt)
+model = m.FGSM(input_shape, e.encrypt)
 # model.load("mnist_FGSM_UNENCRYPTED")
 # model.load("fashion_mnist_FGSM_UNENCRYPTED")
 # model.load("mnist_FGSM_PERMUTATED")
