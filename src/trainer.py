@@ -6,10 +6,11 @@ import tensorflow as tf
 import json
 import src.padding as p
 
-
-data_types = {'fashion_mnist':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
+data_types = {'fashion_mnist': tf.keras.datasets.fashion_mnist, 'mnist': tf.keras.datasets.mnist,
+              'cifar10': tf.keras.datasets.cifar10}
 models = {"CW_1": mdl.CW_1, "CW_2": mdl.CW_2, "FGSM": mdl.FGSM}
-train_mode = {"CTR":"encryptions.ctr","CBC":"encryptions.cbc","ECB":"encryptions.ecb", "PERMUTATED":"encryptions.permutated", "UNENCRYPTED":"encryptions.unencrypted"}
+train_mode = {"CTR": "encryptions.ctr", "CBC": "encryptions.cbc", "ECB": "encryptions.ecb",
+              "PERMUTATED": "encryptions.permutated", "UNENCRYPTED": "encryptions.unencrypted"}
 
 
 def main():
@@ -20,8 +21,8 @@ def main():
 
     if PADDING:
         # padding
-        x_train = [p.pad(img, number_of_paddings=72, padder=0.0) for img in x_train]
-        x_test = [p.pad(img, number_of_paddings=72, padder=0.0) for img in x_test]
+        x_train = [p.pad(img, number_of_paddings=padd_extra, padder=0.0) for img in x_train]
+        x_test = [p.pad(img, number_of_paddings=padd_extra, padder=0.0) for img in x_test]
 
     helper = importlib.import_module(train_mode[TRAIN_WITH_ME])
 
@@ -44,9 +45,9 @@ def main():
     model.compile()
     test_loss, test_acc = model.evaluate(x_test, y_test)
 
-    # r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
-    # helper.print_encryption_details(out=r)
-    # r.write("#####################################################\n")
+    r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
+    helper.print_encryption_details(out=r)
+    r.write("#####################################################\n")
 
     # results = {
     #     "name": MODEL_NAME,
@@ -74,16 +75,31 @@ if __name__ == '__main__':
     DATASET = "fashion_mnist"
     MODEL = "CW_1"
     TRAIN_WITH_ME = "PERMUTATED"
-    VERSION = ""
 
     PADDING = True
 
-    MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM" + VERSION + "_PADDED_72"
 
-    print("DATASET = {}".format(DATASET))
-    print("MODEL = {}".format(MODEL))
-    print("TRAINER = {}\n".format(TRAIN_WITH_ME))
+    for padd_extra in [72]:
 
-    # r = open("results_padding_permutated", "a")
-    main()
-    # r.close()
+        print(str(padd_extra) + "GOING-ON")
+        print(str(padd_extra) + "GOING-ON")
+        print(str(padd_extra) + "GOING-ON")
+
+        r = open("results_padding_permutated", "a")
+
+        MODEL_NAME = DATASET + "_" + MODEL + "_" + TRAIN_WITH_ME + "_0.5NORM_PADDED_" + str(padd_extra)
+
+        print("DATASET = {}".format(DATASET))
+        print("MODEL = {}".format(MODEL))
+        print("TRAINER = {}\n".format(TRAIN_WITH_ME))
+
+        main()
+        r.close()
+
+        print(str(padd_extra) + "ENDING")
+        print(str(padd_extra) + "ENDING")
+        print(str(padd_extra) + "ENDING")
+
+
+
+
