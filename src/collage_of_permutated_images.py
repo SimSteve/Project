@@ -15,16 +15,18 @@ def encrypt(inputs):
 
 PADDING = False
 
-(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
 
-num_of_classes = 10
-num_of_examples_per_class = 10
+num_of_classes = 3
+num_of_examples_per_class = 6
 
 dict = {i:[] for i in range(num_of_classes)}
 
 counter = num_of_classes
 
 for i,y in enumerate(y_train):
+    if y >= num_of_classes:
+        continue
     if len(dict[y]) < num_of_examples_per_class:
         dict[y].append(i)
         if len(dict[y]) == num_of_examples_per_class:
@@ -32,7 +34,7 @@ for i,y in enumerate(y_train):
     if counter == 0:
         break
 
-rows = 10
+rows = num_of_classes
 columns = num_of_examples_per_class
 
 for title in ["Original", "Permutated"]:
