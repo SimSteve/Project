@@ -2,6 +2,11 @@ import numpy as np
 
 
 def pad(img, number_of_paddings, padder=0):
+    if number_of_paddings == 0:
+        return np.array(img)
+
+    number_of_paddings = int(number_of_paddings / 2)
+
     def pad_with(vector, pad_width, iaxis, kwargs):
         pad_value = kwargs.get('padder', 10)
         vector[:pad_width[0]] = pad_value
@@ -10,6 +15,6 @@ def pad(img, number_of_paddings, padder=0):
 
     return np.pad(img, number_of_paddings, pad_with, padder=padder)
 
-# a = np.arange(9)
-# a = a.reshape((3, 3))
-# print(pad(a,3,7))
+# img = [[1,2],[3,4]]
+# print(pad(img, 0, 9))
+# print(pad(img, 12, 9))

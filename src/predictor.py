@@ -4,16 +4,29 @@ import matplotlib.pyplot as plt
 import src.Models as mdl
 import numpy as np
 import tensorflow as tf
+import sys
+from pathlib import PurePath
 
 fashion_mnist_classes = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 mnist_classes = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 cifar10_classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 class_names = []
 
-class_types = {'fashion_mnist':fashion_mnist_classes, 'mnist':mnist_classes, 'cifar10':cifar10_classes}
-data_types = {'fashion_mnist':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
-models = {"CW_1": mdl.CW_1, "CW_2": mdl.CW_2, "FGSM": mdl.FGSM}
-train_mode = {"CTR":"ctr","CBC":"cbc","ECB":"ecb", "PERMUTATED":"permutated", "UNENCRYPTED":"unencrypted"}
+class_types = {'fashion':fashion_mnist_classes, 'mnist':mnist_classes, 'cifar10':cifar10_classes}
+data_types = {'fashion':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
+models = {"modelA": mdl.modelA, "modelB": mdl.modelB}
+train_mode = {"CTR": "ctr", "CBC": "cbc", "ECB": "ecb",
+              "PERMUTATED": "permutated", "UNENCRYPTED": "unencrypted"}
+
+DATASET = "DATASET"
+MODEL = "MODEL"
+TRAIN_WITH_ME = "TRAIN_WITH_ME"
+PADDING = "PADDING"
+NORM = "NORM"
+FILE = "FILE"
+INDEX = "INDEX"
+
+params = {DATASET: None, MODEL: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, INDEX:None}
 
 
 def plot_image(predictions, true_label, img):
@@ -36,7 +49,7 @@ def plot_image(predictions, true_label, img):
 
     predicted_label = np.argmax(predictions)
     if predicted_label == true_label:
-        color = 'blue'
+        color = 'green'
     else:
         color = 'red'
 
@@ -45,58 +58,91 @@ def plot_image(predictions, true_label, img):
     plt.show()
 
 
-def predict(model, data, labels, i=None):
-    if i is None:
-        # predicting the whole data
-        predictions = model.predict(data)
+def predict(model, img, label):
+    predictions = model.predict(img)
 
-        '''
-        Do whatever you want with the predictions (plotting, calculating accuracies, ...)
-        '''
-    else:
-        # adding a first dimension, batch-size
-        img = np.expand_dims(data[i], axis=0)
-        predictions = model.predict(img)
+    img = np.reshape(img, (28, 28))
 
-        plot_image(predictions, labels[i], data[i])
+    plot_image(predictions, label, img)
 
 
 def main():
     global class_names
 
-    data = data_types[DATASET]
-    class_names = class_types[DATASET]
+    data = data_types[params[DATASET]]
+    class_names = class_types[params[DATASET]]
 
     # loading the data
     _, (x_test, y_test) = data.load_data()
 
-    if PADDING:
-        # padding
-        x_test = [p.pad(img, number_of_paddings=32, padder=0.0) for img in x_test]
+    img = x_test[params[INDEX]]
+    label = y_test[params[INDEX]]
 
-    dims = np.array(x_test).shape
+    # normalizing
+    img = img / 255.0 - params[NORM]
 
-    if len(dims) != 4:
-        # expanding the images to get a third dimension (needed for conv layers)
-        x_test = np.expand_dims(x_test, -1)
+    # padding
+    img = p.pad(img, number_of_paddings=params[PADDING], padder=0.0)
 
-    helper = importlib.import_module("src.encryptions." + train_mode[TRAIN_WITH_ME])
+    img = np.reshape(img, (1, 28, 28, 1))
 
-    input_shape = np.array(x_test[0]).shape
+    helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
+
+    input_shape = np.array(img[0]).shape
 
     # getting the desired model
-    model = models[MODEL](input_shape, encrypt=helper.encrypt)
-    model.load(MODEL_FILE)
+    model = models[params[MODEL]](input_shape, encrypt=helper.encrypt)
+    model.load(params[FILE])
 
-    predict(model, x_test, y_test, i=90)
+    predict(model, img, label)
 
 
 if __name__ == '__main__':
-    DATASET = "mnist"
-    MODEL = "CW_1"
-    TRAIN_WITH_ME = "PERMUTATED"
-    MODEL_FILE = "mnist_CW_1_PERMUTATED_0.5NORM_PADDED_32"
+    # getting command line arguments
+    if len(sys.argv) == 1:
+        print("Missing arguments. Try -h for help")
+        exit()
 
-    PADDING = True
+    if sys.argv[1] == '-h':
+        print("Welcome to our predicting tool:")
+        print("\t-f\tspecifying the filename of the model (mandatory)")
+        print("\t-i\tspecifying the index (mandatory)")
+        exit()
 
-    main()
+    for i in range(1, len(sys.argv)):
+        if sys.argv[i] == '-f':
+            if ".h5" in sys.argv[i + 1]:
+                params[FILE] = PurePath(sys.argv[i+1]).parts[-1].split(".h5")[0]
+            else:
+                params[FILE] = sys.argv[i + 1]
+        if sys.argv[i] == '-i':
+            params[INDEX] = int(sys.argv[i + 1], 10)
+
+    MODEL_NAME = params[FILE]
+
+    name_parts = MODEL_NAME.split('_')
+    for i,part in enumerate(name_parts):
+        if part == "mnist" or part == "fashion":
+            params[DATASET] = part
+        if part == "modelA" or part == "modelB":
+            params[MODEL] = part
+        if part == "UNENCRYPTED" or part == "PERMUTATED":
+            params[TRAIN_WITH_ME] = part
+        if "NORM" in part:
+            params[NORM] = float(part.split("NORM")[0])
+        if "PADDED" in part:
+            params[PADDING] = int(part.split("PADDED")[0])
+
+    print("DATASET\t= {}".format(params[DATASET]))
+    print("MODEL\t= {}".format(params[MODEL]))
+    print("TRAINER\t= {}".format(params[TRAIN_WITH_ME]))
+    print("NORM\t= {}".format(params[NORM]))
+    print("PADDING\t= {}".format(params[PADDING]))
+    print("NAME\t= {}".format(MODEL_NAME))
+    print("INDEX\t= {}".format(params[INDEX]))
+
+    try:
+        main()
+    except:
+        print("\n\tBad configuration. Try -h for help")
+        exit()

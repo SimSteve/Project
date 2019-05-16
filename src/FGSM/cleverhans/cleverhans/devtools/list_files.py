@@ -1,6 +1,6 @@
 """Code for listing files that belong to the library."""
 import os
-import cleverhans
+# import cleverhans
 
 
 def list_files(suffix=""):

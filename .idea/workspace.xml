@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="updated table">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_FGSM_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_FGSM_mnist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_l0_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_l0_mnist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_l2_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_l2_mnist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_li_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_li_mnist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collage_of_permutated_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/collage_of_permutated_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_FGSM_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_FGSM_mnist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_l0_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_l0_mnist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_l2_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_l2_mnist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_li_fashion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_li_mnist" beforeDir="false" />
-    </list>
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="updated table" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/collage_of_permutated_images.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -92,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/CW/visualize_attack.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="37" />
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="37" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#1818#1874#0" />
@@ -261,7 +240,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="240" />
     <option name="y" value="127" />
     <option name="width" value="1440" />
@@ -280,29 +259,6 @@
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CW" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="encryptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FGSM" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -753,7 +709,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719395" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.24045262" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.24045262" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1135,7 +1091,7 @@
     <entry file="file://$PROJECT_DIR$/src/collage_of_permutated_images.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -1145,7 +1101,7 @@
     <entry file="file://$PROJECT_DIR$/src/CW/visualize_attack.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="37" />
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="37" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#1818#1874#0" />
