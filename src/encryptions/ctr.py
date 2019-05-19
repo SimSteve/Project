@@ -4,19 +4,18 @@ from Crypto.Cipher import AES
 import numpy as np
 from Crypto.Util import Counter
 
-key = bytes(os.urandom(16))
-IV = Counter.new(16 * 8)
-
+key = b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+nonce = b'\xe9\x94\x83ud\xdf\x04\xe9'
 
 def encrypt(inputs):
 
-    return encrypt_v2(inputs)
+    return flattening(inputs * 255.0)
 
 
-def encrypt_v1(inputs):
+def flattening(inputs):
     dims = np.array(inputs).shape
 
-    aes_cipher = AES.new(key, AES.MODE_CTR, counter=IV)
+    aes_cipher = AES.new(key, AES.MODE_CTR, counter=Counter.new(nbits=8 * 8,prefix=nonce))
 
     flattened = bytes(map(int, inputs.flatten().tolist()))
     aes_flattened = list(aes_cipher.encrypt(flattened))
@@ -25,10 +24,10 @@ def encrypt_v1(inputs):
     return enc_inputs / 255.0
 
 
-def encrypt_v2(inputs):
+def blocking(inputs):
     dims = np.array(inputs).shape
 
-    aes_cipher = AES.new(key, AES.MODE_CTR, counter=IV)
+    aes_cipher = AES.new(key, AES.MODE_CTR, counter=Counter.new(nbits=8 * 8,prefix=nonce))
 
     np_image = np.array(inputs)
     blocked_image = blockshaped(np_image, 4, 4)

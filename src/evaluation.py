@@ -51,7 +51,7 @@ for i,part in enumerate(name_parts):
         params[DATASET] = part
     if part == "modelA" or part == "modelB":
         params[MODEL] = part
-    if part == "UNENCRYPTED" or part == "PERMUTATED":
+    if part == "UNENCRYPTED" or part == "PERMUTATED" or part == "ECB" or part == "CBC" or part == "CTR":
         params[TRAIN_WITH_ME] = part
     if "NORM" in part:
         params[NORM] = float(part.split("NORM")[0])

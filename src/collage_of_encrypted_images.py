@@ -3,17 +3,19 @@ import matplotlib.pyplot as plt
 import src.padding as p
 import numpy as np
 import sys
-import src.encryptions.permutated as e
+import src.encryptions as e
+import importlib
 
 data_types = {'fashion':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist}
 
 DATASET = "DATASET"
+TRAIN_WITH_ME = "TRAIN_WITH_ME"
 PADDING = "PADDING"
 NUM_OF_CLASSES = "NUM_OF_CLASSES"
 NUM_OF_EXAMPLES_PER_CLASS ="NUM_OF_EXAMPLES_PER_CLASS"
 
 
-params = {DATASET: None, PADDING: 0, NUM_OF_CLASSES:10, NUM_OF_EXAMPLES_PER_CLASS:10}
+params = {DATASET: None, TRAIN_WITH_ME: None, PADDING: 0, NUM_OF_CLASSES:10, NUM_OF_EXAMPLES_PER_CLASS:10}
 
 # getting command line arguments
 if len(sys.argv) == 1:
@@ -23,6 +25,7 @@ if len(sys.argv) == 1:
 if sys.argv[1] == '-h':
     print("Welcome to our collage tool:")
     print("\t-d\tspecifying the dataset; mnist or fashion (mandatory)")
+    print("\t-e\tspecifying the encryption method; PERMUTATED, ECB, CBC or CTR (mandatory)")
     print("\t-p\tspecifying the number of rows to pad, default is 0 (optional)")
     print("\t-c\tspecifying the number of classes, default is 10 (optional)")
     print("\t-i\tspecifying the number images for each class, default is 10 (optional)")
@@ -31,6 +34,8 @@ if sys.argv[1] == '-h':
 for i in range(1, len(sys.argv)):
     if sys.argv[i] == '-d':
         params[DATASET] = sys.argv[i + 1]
+    if sys.argv[i] == '-e':
+        params[TRAIN_WITH_ME] = sys.argv[i + 1].lower()
     if sys.argv[i] == '-p':
         params[PADDING] = int(sys.argv[i + 1], 10)
     if sys.argv[i] == '-c':
@@ -69,8 +74,10 @@ for i,y in enumerate(y_train):
 rows = num_of_classes
 columns = num_of_examples_per_class
 
+helper = importlib.import_module("src.encryptions." + params[TRAIN_WITH_ME])
+
 # plotting the collage
-for title in ["Original", "Permutated"]:
+for title in ["original", params[TRAIN_WITH_ME]]:
     fig = plt.figure()
     fig.suptitle(title)
     for i in range(rows * columns):
@@ -82,8 +89,10 @@ for title in ["Original", "Permutated"]:
         ax.set_yticks([])
         img = x_train[dict[_class][_example]]
         img = p.pad(img, number_of_paddings=params[PADDING], padder=0.0)
-        if title == "Permutated":
-            img = e.encrypt(img)
+        if title == params[TRAIN_WITH_ME]:
+            if title != "permutated":
+                img = img / 255.0
+            img = helper.encrypt(img)
         ax.imshow(img, cmap=plt.cm.binary)
         #ax.imshow(img)
 

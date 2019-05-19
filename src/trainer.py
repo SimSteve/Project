@@ -1,5 +1,4 @@
 import importlib
-
 import src.Models as mdl
 import numpy as np
 import tensorflow as tf
@@ -88,7 +87,7 @@ if __name__ == '__main__':
         print("Welcome to our training tool:")
         print("\t-d\tspecifying the dataset; mnist or fashion (mandatory)")
         print("\t-m\tspecifying the model architecture; modelA or modelB (mandatory)")
-        print("\t-e\tspecifying the encryption method; UNENCRPTED or PERMUTATED. default is UNENCRYPTED (optional)")
+        print("\t-e\tspecifying the encryption method; UNENCRYPTED, PERMUTATED, ECB, CBC or CTR. default is UNENCRYPTED (optional)")
         print("\t-p\tspecifying the number of rows to pad, default is 0 (optional)")
         print("\t-n\tspecifying the normalization (img / 255.0 - n), default is 0 (optional)")
         exit()

@@ -3,16 +3,16 @@ import os
 from Crypto.Cipher import AES
 import numpy as np
 
-key = bytes(os.urandom(16))
-IV = bytes(os.urandom(16))
+key = b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
+IV = b'\x96\xb8\xcf\xf6\x89\x9f0\x13H\xbd\xf59Y\x15\x947'
 
 
 def encrypt(inputs):
 
-    return encrypt_v2(inputs)
+    return flattening(inputs * 255.0)
 
 
-def encrypt_v1(inputs):
+def flattening(inputs):
     dims = np.array(inputs).shape
 
     aes_cipher = AES.new(key, AES.MODE_CBC,  IV=IV)
@@ -24,7 +24,7 @@ def encrypt_v1(inputs):
     return enc_inputs / 255.0
 
 
-def encrypt_v2(inputs):
+def blocking(inputs):
     dims = np.array(inputs).shape
 
     aes_cipher = AES.new(key, AES.MODE_CBC, IV=IV)
