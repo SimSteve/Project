@@ -55,4 +55,4 @@ def blockshaped(arr, nrows, ncols):
 
 
 def print_encryption_details(out):
-    out.write("key: {}\tIV: {}\n".format(key, IV))
+    out.write("key: {}\tIV: {}\n".format(key, nonce))
