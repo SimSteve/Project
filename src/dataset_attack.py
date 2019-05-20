@@ -141,4 +141,4 @@ print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - t
 r = open("attacked_ctr", 'a')
 r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
 r.close()
-save_indexes(model, adv, y_test, params[MODEL]+params[DATASET])
+save_indexes(model, adv, y_test, MODEL_NAME)
