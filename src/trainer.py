@@ -34,6 +34,9 @@ def main():
 
     helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
 
+    if params[TRAIN_WITH_ME] in ["ECB", "CBC", "CTR"]:
+        helper.NORM = params[NORM]
+
     dims = np.array(x_train).shape
 
     if len(dims) != 4:
@@ -47,7 +50,7 @@ def main():
     model = models[params[MODEL]](input_shape, encrypt=helper.encrypt)
 
     # training
-    loss, epoch_accs, epochs = model.train(x_train, y_train, ep=6)
+    loss, epoch_accs, epochs = model.train(x_train, y_train, ep=5)
 
     # evaluating
     model.compile()

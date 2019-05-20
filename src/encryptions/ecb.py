@@ -5,10 +5,11 @@ import numpy as np
 
 key = b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
 
+NORM = 0
+
 
 def encrypt(inputs):
-
-    return flattening(inputs * 255.0)
+    return flattening((inputs + NORM) * 255.0)
 
 
 def flattening(inputs):
@@ -20,7 +21,7 @@ def flattening(inputs):
     aes_flattened = list(aes_cipher.encrypt(flattened))
     enc_inputs = np.reshape(aes_flattened, dims)
 
-    return enc_inputs / 255.0
+    return (enc_inputs / 255.0) - NORM
 
 
 def blocking(inputs):
@@ -33,7 +34,7 @@ def blocking(inputs):
     flattened = bytes(map(int,[item for block in blocked_image for item in block.flatten().tolist()]))
     aes_flattened = list(aes_cipher.encrypt(flattened))
     enc_inputs = np.reshape(aes_flattened, dims)
-    return enc_inputs / 255.0
+    return (enc_inputs / 255.0) - NORM
 
 
 def blockshaped(arr, nrows, ncols):

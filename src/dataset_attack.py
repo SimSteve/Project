@@ -50,9 +50,6 @@ def save_indexes(model, adv, labels, name):
                 unsafe.write("{}*\n".format(i))  # images that the attacker successfully misleaded the model
             else:
                 unsafe.write("{}\n".format(i))  # the model is wrong
-
-        if pred_adv != labels[i] and pred_orig == labels[i]:
-            print("{}*\n".format(i))
     safe.close()
     unsafe.close()
 
@@ -68,7 +65,7 @@ if len(sys.argv) == 1:
 if sys.argv[1] == '-h':
     print("Welcome to our predicting tool:")
     print("\t-f\tspecifying the filename of the model (mandatory)")
-    print("\t-i\tspecifying the index (mandatory)")
+    print("\t-i\tspecifying the amount, default is 1000 (optional)")
     print("\t-c\tspecifying carlini mode; 2,0 or i. default is 2 (optional)")
     exit()
 
@@ -96,7 +93,7 @@ for i, part in enumerate(name_parts):
         from src.FGSM import FGSM_attack as a
     if part == "mnist" or part == "fashion":
         params[DATASET] = part
-    if part == "UNENCRYPTED" or part == "PERMUTATED":
+    if part == "UNENCRYPTED" or part == "PERMUTATED" or part == "ECB" or part == "CBC" or part == "CTR":
         params[TRAIN_WITH_ME] = part
     if "NORM" in part:
         params[NORM] = float(part.split("NORM")[0])
@@ -126,15 +123,22 @@ if len(np.array(x_test).shape) != 4:
 # white-box attack, so the attacker gets to know only the architecture of the model
 # which is like giving him the unencrypted version
 model = MODEL_NAME.replace("PERMUTATED", "UNENCRYPTED")
+model = model.replace("ECB", "UNENCRYPTED")
+model = model.replace("CBC", "UNENCRYPTED")
+model = model.replace("CTR", "UNENCRYPTED")
 
 adv = a.attack(x_test, y_test, model)
 
 helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
+if params[TRAIN_WITH_ME] in ["ECB", "CBC", "CTR"]:
+    helper.NORM = params[NORM]
 input_shape = np.array(x_test[0]).shape
 model = models[params[MODEL]](input_shape, encrypt=helper.encrypt)
 model.load(MODEL_NAME)
 
 _, test_acc = model.evaluate(adv, y_test)
 print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
-
-# save_indexes(model, adv, y_test, params[MODEL]+params[DATASET])
+r = open("attacked_ctr", 'a')
+r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
+r.close()
+save_indexes(model, adv, y_test, params[MODEL]+params[DATASET])

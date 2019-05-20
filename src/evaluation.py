@@ -81,6 +81,9 @@ x_test = np.array([p.pad(img, number_of_paddings=params[PADDING], padder=0.0) fo
 
 helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
 
+if params[TRAIN_WITH_ME] in ["ECB", "CBC", "CTR"]:
+    helper.NORM = params[NORM]
+
 dims = x_test.shape
 
 if len(dims) != 4:

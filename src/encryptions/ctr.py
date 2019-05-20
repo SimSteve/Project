@@ -7,9 +7,11 @@ from Crypto.Util import Counter
 key = b'&\xcc\xa4\xaa\x88\xbc\xad\xcf\x0f\xe9`\xe1w]\x1eo'
 nonce = b'\xe9\x94\x83ud\xdf\x04\xe9'
 
-def encrypt(inputs):
+NORM = 0
 
-    return flattening(inputs * 255.0)
+
+def encrypt(inputs):
+    return flattening((inputs + NORM) * 255.0)
 
 
 def flattening(inputs):
@@ -21,7 +23,7 @@ def flattening(inputs):
     aes_flattened = list(aes_cipher.encrypt(flattened))
     enc_inputs = np.reshape(aes_flattened, dims)
 
-    return enc_inputs / 255.0
+    return (enc_inputs / 255.0) - NORM
 
 
 def blocking(inputs):
@@ -35,7 +37,7 @@ def blocking(inputs):
     aes_flattened = list(aes_cipher.encrypt(flattened))
     enc_inputs = np.reshape(aes_flattened, dims)
 
-    return enc_inputs / 255.0
+    return (enc_inputs / 255.0) - NORM
 
 
 def blockshaped(arr, nrows, ncols):

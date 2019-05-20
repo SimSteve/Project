@@ -88,6 +88,9 @@ def main():
 
     helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
 
+    if params[TRAIN_WITH_ME] in ["ECB", "CBC", "CTR"]:
+        helper.NORM = params[NORM]
+
     input_shape = np.array(img[0]).shape
 
     # getting the desired model
