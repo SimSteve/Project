@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="ctr">
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="added nice visualization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies-new.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies-new.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attacked_ctr" beforeDir="false" afterPath="$PROJECT_DIR$/attacked_ctr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_weights/fashion_modelB_CTR_0.5NORM_0PADDED.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_weights/mnist_modelA_CTR_0NORM_0PADDED.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CW/CW_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CW/CW_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataset_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataset_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predictor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/visualize_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualize_attack.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+            <state relative-caret-position="207">
+              <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -139,6 +131,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="..." />
         <option value="Steve Gutfreund &lt;simgutfreund@gmail.com&gt;" />
         <option value="Yishay" />
       </list>
@@ -428,7 +421,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/visualize_attack.py" />
-      <option name="PARAMETERS" value="-f fashion_modelB_CTR_0NORM_0PADDED -i 613" />
+      <option name="PARAMETERS" value="-f mnist_modelB_CTR_0NORM_0PADDED -i 613" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -698,7 +691,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558338943161</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added nice visualization">
+      <created>1558446436469</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1558446436469</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -726,7 +726,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated the code, encryption is 'part of' the model and invisible during prediction (for client)" />
     <MESSAGE value="runninh again the models to make sure there are no bugs" />
     <MESSAGE value="ran 'unencrypted' models and 'permutated' models on both datasets" />
     <MESSAGE value="ran ECB version 1" />
@@ -751,7 +750,8 @@
     <MESSAGE value="done with CW" />
     <MESSAGE value="updated table" />
     <MESSAGE value="ctr" />
-    <option name="LAST_COMMIT_MESSAGE" value="ctr" />
+    <MESSAGE value="added nice visualization" />
+    <option name="LAST_COMMIT_MESSAGE" value="added nice visualization" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1025,8 +1025,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+        <state relative-caret-position="207">
+          <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>

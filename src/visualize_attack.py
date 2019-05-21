@@ -61,18 +61,25 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
         noise = noise[:, :, 0]
 
     orig_img = [[int((p + params[NORM]) * 255.0) for p in orig_img[i]] for i in range(28)]
-    noise = [[(int(p * 255.0) + 255) % 255 for p in noise[i]] for i in range(28)]
     adv_img = [[int((p + params[NORM]) * 255.0) for p in adv_img[i]] for i in range(28)]
 
-    # print(orig_img)
-    # print(noise)
-    # print(adv_img)
-    # exit()
+    R = np.zeros((28,28,3))
+    for r in range(28):
+        for c in range(28):
+            if noise[r][c] > 0:
+                noise[r][c] = int(160)
+                R[r][c] = [10,10,10]
+            elif noise[r][c] < 0:
+                noise[r][c] = int(80)
+                R[r][c] = [128,128,128]
+            else:
+                noise[r][c] = int(0)
+                R[r][c] = [255,255,255]
 
     fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
 
     axes = [ax1, ax2, ax3]
-    images = [orig_img, noise, adv_img]
+    images = [orig_img, R, adv_img]
     titles = ["Original", "Noise", "Adversarial"]
 
     probs = [[orig_prob_attacked, orig_prob_safe], [], [adv_prob_attacked, adv_prob_safe]]
@@ -84,12 +91,11 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
         axes[i].set_yticks([])
         axes[i].title.set_text(titles[i])
 
-        # axes[i].imshow(images[i], cmap=plt.cm.binary)  # row=0, col=0
-        axes[i].imshow(images[i], cmap=plt.get_cmap('gray'))  # row=0, col=0
-        # axes[i].imshow(images[i])
-
         if i == 1:
+            axes[i].imshow(R)  # row=0, col=0
             continue
+
+        axes[i].imshow(images[i], cmap=plt.get_cmap('gray'))  # row=0, col=0
 
         if preds[i][0] == true_label:
             color0 = 'green'
