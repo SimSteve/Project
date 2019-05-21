@@ -16,7 +16,7 @@ def set_mode(mode):
         from src.CW.li_attack import CarliniLi as c
 
 
-def attack(img, label, model_name):
+def attack(img, label, model_name, evaluate=False):
 
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
@@ -31,7 +31,8 @@ def attack(img, label, model_name):
 
         adv = attack.attack(img, target)
 
-        _, test_acc = model.evaluate(adv, label)
-        print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
+        if evaluate:
+            _, test_acc = model.evaluate(adv, label)
+            print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
 
         return adv

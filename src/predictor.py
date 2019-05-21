@@ -45,7 +45,8 @@ def plot_image(predictions, true_label, img):
     plt.xticks([])
     plt.yticks([])
 
-    plt.imshow(img, cmap=plt.cm.binary)
+    # plt.imshow(img, cmap=plt.cm.binary)
+    plt.imshow(img, cmap='gray')
 
     predicted_label = np.argmax(predictions)
     if predicted_label == true_label:
@@ -129,7 +130,7 @@ if __name__ == '__main__':
             params[DATASET] = part
         if part == "modelA" or part == "modelB":
             params[MODEL] = part
-        if part == "UNENCRYPTED" or part == "PERMUTATED":
+        if part == "UNENCRYPTED" or part == "PERMUTATED" or part == "ECB" or part == "CBC" or part == "CTR":
             params[TRAIN_WITH_ME] = part
         if "NORM" in part:
             params[NORM] = float(part.split("NORM")[0])

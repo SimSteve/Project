@@ -6,6 +6,7 @@ import numpy as np
 import src.Models as m
 import matplotlib.pyplot as plt
 import sys
+import random as r
 
 data_types = {'fashion':tf.keras.datasets.fashion_mnist, 'mnist':tf.keras.datasets.mnist, 'cifar10':tf.keras.datasets.cifar10}
 fashion_mnist_classes = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag',
@@ -18,6 +19,7 @@ models = {"modelA": m.modelA, "modelB": m.modelB}
 
 train_mode = {"CTR": "ctr", "CBC": "cbc", "ECB": "ecb",
               "PERMUTATED": "permutated", "UNENCRYPTED": "unencrypted"}
+attacks = {"modelA":"CW", "modelB":"FGSM"}
 
 
 DATASET = "DATASET"
@@ -29,40 +31,82 @@ FILE = "FILE"
 INDEX = "INDEX"
 CARLINI = "CARLINI"
 
-params = {DATASET: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, FILE:None, CARLINI:None}
+params = {DATASET: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, FILE:None, CARLINI:None, INDEX:-1}
 
 
-def plot_original_adversarial(orig_img, adv_img, orig_pred, adv_pred, orig_prob, adv_prob, true_label):
+def multicolor_xlabel(ax,list_of_strings,list_of_colors, h=0.0, anchorpad=0,**kw):
+    """this function creates axes labels with multiple colors
+    ax specifies the axes object where the labels should be drawn
+    list_of_strings is a list of all of the text items
+    list_if_colors is a corresponding list of colors for the strings
+    axis='x', 'y', or 'both' and specifies which label(s) should be drawn"""
+    from matplotlib.offsetbox import AnchoredOffsetbox, TextArea, HPacker
+
+    boxes = [TextArea(text, textprops=dict(color=color, ha='left',va='bottom',**kw))
+                for text,color in zip(list_of_strings,list_of_colors) ]
+    xbox = HPacker(children=boxes,align="bottom",pad=0, sep=5)
+    anchored_xbox = AnchoredOffsetbox(loc=3, child=xbox, pad=anchorpad,frameon=False,bbox_to_anchor=(0,h),
+                                      bbox_transform=ax.transAxes, borderpad=0.)
+    ax.add_artist(anchored_xbox)
+
+
+def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig_prob_safe, adv_prob_attacked, adv_prob_safe, true_label):
     if len(np.array(orig_img).shape) > 2:
         orig_img = orig_img[:, :, 0]
 
     if len(np.array(adv_img).shape) > 2:
         adv_img = adv_img[:, :, 0]
 
-    fig, (ax1, ax2) = plt.subplots(1, 2)
+    if len(np.array(noise).shape) > 2:
+        noise = noise[:, :, 0]
 
-    axes = [ax1, ax2]
-    images = [orig_img, adv_img]
-    preds = [orig_pred, adv_pred]
-    probs = [orig_prob, adv_prob]
-    titles = ["Original", "Adversarial"]
+    orig_img = [[int((p + params[NORM]) * 255.0) for p in orig_img[i]] for i in range(28)]
+    noise = [[(int(p * 255.0) + 255) % 255 for p in noise[i]] for i in range(28)]
+    adv_img = [[int((p + params[NORM]) * 255.0) for p in adv_img[i]] for i in range(28)]
 
-    for i in range(2):
-        #axes[i].imshow(images[i], cmap=plt.cm.binary)  # row=0, col=0
-        axes[i].imshow(images[i])
+    # print(orig_img)
+    # print(noise)
+    # print(adv_img)
+    # exit()
+
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
+
+    axes = [ax1, ax2, ax3]
+    images = [orig_img, noise, adv_img]
+    titles = ["Original", "Noise", "Adversarial"]
+
+    probs = [[orig_prob_attacked, orig_prob_safe], [], [adv_prob_attacked, adv_prob_safe]]
+    preds = [[np.argmax(orig_prob_attacked), np.argmax(orig_prob_safe)], [], [np.argmax(adv_prob_attacked), np.argmax(adv_prob_safe)]]
+
+    for i in range(3):
         axes[i].grid(False)
         axes[i].set_xticks([])
         axes[i].set_yticks([])
         axes[i].title.set_text(titles[i])
 
-        if preds[i] == true_label:
-            color = 'green'
+        # axes[i].imshow(images[i], cmap=plt.cm.binary)  # row=0, col=0
+        axes[i].imshow(images[i], cmap=plt.get_cmap('gray'))  # row=0, col=0
+        # axes[i].imshow(images[i])
+
+        if i == 1:
+            continue
+
+        if preds[i][0] == true_label:
+            color0 = 'green'
         else:
-            color = 'red'
+            color0 = 'red'
 
-        axes[i].set_xlabel("{:2.0f}% it's {} (true label: {})".format(100 * np.max(probs[i]), class_names[preds[i]],
-                                                              class_names[true_label]), color=color)
+        if preds[i][1] == true_label:
+            color1 = 'green'
+        else:
+            color1 = 'red'
 
+        label0 = "{:2.0f}% it's {}".format(100 * np.max(probs[i][0]), class_names[preds[i][0]])
+        label1 = "{:2.0f}% it's {}".format(100 * np.max(probs[i][1]), class_names[preds[i][1]])
+        multicolor_xlabel(axes[i], ["regular: ", label0], ['black', color0], h=-0.18)
+        multicolor_xlabel(axes[i], ["protected: ", label1], ['black', color1], h=-0.30)
+
+    plt.suptitle("encryption: " + params[TRAIN_WITH_ME] + "\nattack: " + attacks[params[MODEL]], fontsize=18, fontweight='bold', color='blue')
     plt.show()
 
 
@@ -74,7 +118,7 @@ if len(sys.argv) == 1:
 if sys.argv[1] == '-h':
     print("Welcome to our predicting tool:")
     print("\t-f\tspecifying the filename of the model (mandatory)")
-    print("\t-i\tspecifying the index (mandatory)")
+    print("\t-i\tspecifying the index, if non specified than randomly chosen (optional)")
     print("\t-c\tspecifying carlini mode; 2,0 or i. default is 2 (optional)")
     exit()
 
@@ -89,6 +133,9 @@ for i in range(1, len(sys.argv)):
     if sys.argv[i] == '-c':
         params[CARLINI] = sys.argv[i+1]
 
+if params[INDEX] == -1:
+    params[INDEX] = r.randint(0, 999)
+
 MODEL_NAME = params[FILE]
 
 name_parts = MODEL_NAME.split('_')
@@ -102,7 +149,7 @@ for i, part in enumerate(name_parts):
         from src.FGSM import FGSM_attack as a
     if part == "mnist" or part == "fashion":
         params[DATASET] = part
-    if part == "UNENCRYPTED" or part == "PERMUTATED":
+    if part == "UNENCRYPTED" or part == "PERMUTATED" or part == "ECB" or part == "CBC" or part == "CTR":
         params[TRAIN_WITH_ME] = part
     if "NORM" in part:
         params[NORM] = float(part.split("NORM")[0])
@@ -131,24 +178,46 @@ img = img / 255.0 - params[NORM]
 # img = p.pad(img, number_of_paddings=params[PADDING], padder=0.0)
 img = np.reshape(img, (1,28,28,1))
 
-# white-box attack, so the attacker gets to know only the architecture of the model
+# gray-box attack, so the attacker gets to know only the architecture of the model
 # which is like giving him the unencrypted version
-model = MODEL_NAME.replace("PERMUTATED", "UNENCRYPTED")
+lab_model = MODEL_NAME.replace("PERMUTATED", "UNENCRYPTED")
+lab_model = lab_model.replace("ECB", "UNENCRYPTED")
+lab_model = lab_model.replace("CBC", "UNENCRYPTED")
+lab_model = lab_model.replace("CTR", "UNENCRYPTED")
 
-adv = a.attack(img, label, model)
+adv = a.attack(img, label, lab_model)
+''''''
+input_shape = np.array(img[0]).shape
+model = models[params[MODEL]](input_shape)
+model.load(lab_model)
+
+prob_adv_attacked_model = model.predict(np.float32(adv))[0]  # the output is 2D array
+prob_orig_attacked_model = model.predict(np.float32(img))[0] # likewise
+
+pred_adv_attacked_model = np.argmax(prob_adv_attacked_model)
+pred_orig_attacked_model = np.argmax(prob_orig_attacked_model)
+''''''
 
 helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
+if params[TRAIN_WITH_ME] in ["ECB", "CBC", "CTR"]:
+    helper.NORM = params[NORM]
+
 input_shape = np.array(img[0]).shape
 model = models[params[MODEL]](input_shape, encrypt=helper.encrypt)
 model.load(MODEL_NAME)
 
-prob_adv = model.predict(np.float32(adv))[0]  # the output is 2D array
-prob_orig = model.predict(np.float32(img))[0] # likewise
+prob_adv_safe_model = model.predict(np.float32(adv))[0]  # the output is 2D array
+prob_orig_safe_model = model.predict(np.float32(img))[0] # likewise
 
-pred_adv = np.argmax(prob_adv)
-pred_orig = np.argmax(prob_orig)
+pred_adv_safe_model = np.argmax(prob_adv_safe_model)
+pred_orig_safe_model = np.argmax(prob_orig_safe_model)
 
-plot_original_adversarial(img[0], adv[0], pred_orig, pred_adv, prob_orig, prob_adv, label)
+# plot_original_adversarial(orig_img=img[0], adv_img=adv[0], orig_pred=pred_orig_safe_model, adv_pred=pred_adv_safe_model, orig_prob=prob_orig_safe_model,
+#                           adv_prob=prob_adv_safe_model, true_label=label, noise=adv[0] - img[0])
+
+plot_original_adversarial(orig_img=img[0], adv_img=adv[0], noise=adv[0] - img[0], orig_prob_safe=prob_orig_safe_model,
+                          orig_prob_attacked=prob_orig_attacked_model, adv_prob_safe=prob_adv_safe_model,
+                          adv_prob_attacked=prob_adv_attacked_model, true_label=label)
 
 # adv_img = np.reshape(adv[i], (28,28))
 # np.save("src/adversarial_images/adv1", adv_img)

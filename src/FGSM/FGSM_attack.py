@@ -4,10 +4,8 @@ import src.Models as m
 from src.FGSM.cleverhans.cleverhans.attacks.fast_gradient_method import FastGradientMethod
 from src.FGSM.cleverhans.cleverhans.utils_keras import KerasModelWrapper
 
-FILE = "FILE"
 
-
-def attack(img, label, model_name):
+def attack(img, label, model_name, evaluate=False):
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
 
@@ -17,13 +15,14 @@ def attack(img, label, model_name):
 
         wrap = KerasModelWrapper(model)
         fgsm = FastGradientMethod(wrap, sess=sess)
-        fgsm_params = {'eps': 0.3,
-                       'clip_min': 0.,
-                       'clip_max': 1.}
+        fgsm_params = {'eps': 0.1,
+                       'clip_min': 0,
+                       'clip_max': 1}
 
         adv = fgsm.generate_np(img, **fgsm_params)
 
-        _, test_acc = model.evaluate(adv, label)
-        print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
+        if evaluate:
+            _, test_acc = model.evaluate(adv, label)
+            print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
 
         return adv

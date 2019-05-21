@@ -120,25 +120,26 @@ if len(np.array(x_test).shape) != 4:
     # expanding the images to get a third dimension (needed for conv layers)
     x_test = np.expand_dims(x_test, -1)
 
-# white-box attack, so the attacker gets to know only the architecture of the model
+# gray-box attack, so the attacker gets to know only the architecture of the model
 # which is like giving him the unencrypted version
-model = MODEL_NAME.replace("PERMUTATED", "UNENCRYPTED")
-model = model.replace("ECB", "UNENCRYPTED")
-model = model.replace("CBC", "UNENCRYPTED")
-model = model.replace("CTR", "UNENCRYPTED")
+lab_model = MODEL_NAME.replace("PERMUTATED", "UNENCRYPTED")
+lab_model = lab_model.replace("ECB", "UNENCRYPTED")
+lab_model = lab_model.replace("CBC", "UNENCRYPTED")
+lab_model = lab_model.replace("CTR", "UNENCRYPTED")
 
-adv = a.attack(x_test, y_test, model)
+adv = a.attack(x_test, y_test, lab_model, evaluate=True)
 
 helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
 if params[TRAIN_WITH_ME] in ["ECB", "CBC", "CTR"]:
     helper.NORM = params[NORM]
+
 input_shape = np.array(x_test[0]).shape
 model = models[params[MODEL]](input_shape, encrypt=helper.encrypt)
 model.load(MODEL_NAME)
 
 _, test_acc = model.evaluate(adv, y_test)
 print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
-r = open("attacked_ctr", 'a')
-r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
-r.close()
-save_indexes(model, adv, y_test, MODEL_NAME)
+# r = open("attacked_ctr", 'a')
+# r.write("{}\taccuracy: {:.2f}%\terror rate: {:.2f}%\n".format(MODEL_NAME, 100 * test_acc, (1.0 - test_acc) * 100))
+# r.close()
+# save_indexes(model, adv, y_test, MODEL_NAME)
