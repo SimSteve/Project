@@ -23,4 +23,7 @@ def attack(img, label, model_name):
 
         adv = fgsm.generate_np(img, **fgsm_params)
 
+        _, test_acc = model.evaluate(adv, label)
+        print("accuracy: {:.2f}%\terror rate: {:.2f}%\n".format(100 * test_acc, (1.0 - test_acc) * 100))
+
         return adv
