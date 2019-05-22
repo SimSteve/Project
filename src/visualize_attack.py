@@ -60,36 +60,14 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
     if len(np.array(noise).shape) > 2:
         noise = noise[:, :, 0]
 
-    orig_img = [[int((p + params[NORM]) * 255.0) for p in orig_img[i]] for i in range(28)]
-    adv_img = [[int((p + params[NORM]) * 255.0) for p in adv_img[i]] for i in range(28)]
-
-    image_r = np.zeros((28,28))
-    image_g = np.zeros((28,28))
-    image_b = np.zeros((28,28))
-    for r in range(28):
-        for c in range(28):
-            if noise[r][c] > 0:
-                image_r[r][c] = 200
-                image_g[r][c] = 200
-                image_b[r][c] = 200
-            elif noise[r][c] < 0:
-                image_r[r][c] = 100
-                image_g[r][c] = 100
-                image_b[r][c] = 100
-            else:
-                image_r[r][c] = 255
-                image_g[r][c] = 255
-                image_b[r][c] = 255
-
-    from astropy.visualization import make_lupton_rgb
-    noise = make_lupton_rgb(image_r, image_g, image_b)
+    orig_img += params[NORM]
+    adv_img += params[NORM]
 
     fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
 
     axes = [ax1, ax2, ax3]
     images = [orig_img, noise, adv_img]
     titles = ["Original", "Noise", "Adversarial"]
-
     probs = [[orig_prob_attacked, orig_prob_safe], [], [adv_prob_attacked, adv_prob_safe]]
     preds = [[np.argmax(orig_prob_attacked), np.argmax(orig_prob_safe)], [], [np.argmax(adv_prob_attacked), np.argmax(adv_prob_safe)]]
 
@@ -99,11 +77,10 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
         axes[i].set_yticks([])
         axes[i].title.set_text(titles[i])
 
-        if i == 1:
-            axes[i].imshow(images[i])  # row=0, col=0
-            continue
+        axes[i].imshow(images[i], cmap=plt.cm.binary, vmin=0.0, vmax=1.0)  # row=0, col=0
 
-        axes[i].imshow(images[i], cmap=plt.get_cmap('gray'))  # row=0, col=0
+        if i == 1:
+            continue
 
         if preds[i][0] == true_label:
             color0 = 'green'
@@ -120,7 +97,8 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
         multicolor_xlabel(axes[i], ["regular: ", label0], ['black', color0], h=-0.18)
         multicolor_xlabel(axes[i], ["protected: ", label1], ['black', color1], h=-0.30)
 
-    plt.suptitle("encryption: " + params[TRAIN_WITH_ME] + "\nattack: " + attacks[params[MODEL]], fontsize=18, fontweight='bold', color='blue')
+    plt.suptitle("\nencryption: " + params[TRAIN_WITH_ME] + "\nattack: " + attacks[params[MODEL]]
+                 + "\n\ntrue label: " + class_names[true_label], fontsize=15, fontweight='bold', color='brown')
     plt.show()
 
 
