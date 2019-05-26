@@ -79,7 +79,7 @@ helper = importlib.import_module("src.encryptions." + params[TRAIN_WITH_ME])
 # plotting the collage
 for title in ["original", params[TRAIN_WITH_ME]]:
     fig = plt.figure()
-    fig.suptitle(title)
+    fig.suptitle(title, fontsize=18, fontweight='bold', color='darkblue')
     for i in range(rows * columns):
         ax = fig.add_subplot(rows, columns, i + 1)
         _class = int(i / num_of_examples_per_class)

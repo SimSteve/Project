@@ -76,6 +76,7 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
         axes[i].set_xticks([])
         axes[i].set_yticks([])
         axes[i].title.set_text(titles[i])
+        # axes[i].axis('off')
 
         axes[i].imshow(images[i], cmap=plt.cm.binary, vmin=0.0, vmax=1.0)  # row=0, col=0
 

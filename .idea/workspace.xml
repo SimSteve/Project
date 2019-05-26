@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="...">
-      <change afterPath="$PROJECT_DIR$/mnist_A_permutated_456.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mnist_B_permutated_456.png" afterDir="false" />
+    <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="finishing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dnn.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_fashion_modelA_CTR_0.5NORM_0PADDED" beforeDir="false" afterPath="$PROJECT_DIR$/indexes/safe_indexes_fashion_modelA_CTR_0.5NORM_0PADDED" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_fashion_modelB_CTR_0NORM_0PADDED" beforeDir="false" afterPath="$PROJECT_DIR$/indexes/safe_indexes_fashion_modelB_CTR_0NORM_0PADDED" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_mnist_modelA_CTR_0.5NORM_0PADDED" beforeDir="false" afterPath="$PROJECT_DIR$/indexes/safe_indexes_mnist_modelA_CTR_0.5NORM_0PADDED" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/safe_indexes_mnist_modelB_CTR_0NORM_0PADDED" beforeDir="false" afterPath="$PROJECT_DIR$/indexes/safe_indexes_mnist_modelB_CTR_0NORM_0PADDED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accuracies-new.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies-new.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collage_of_encrypted_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/collage_of_encrypted_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predictor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/visualize_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualize_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_fashion_modelA_CTR_0.5NORM_0PADDED" beforeDir="false" afterPath="$PROJECT_DIR$/indexes/unsafe_indexes_fashion_modelA_CTR_0.5NORM_0PADDED" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_fashion_modelB_CTR_0NORM_0PADDED" beforeDir="false" afterPath="$PROJECT_DIR$/indexes/unsafe_indexes_fashion_modelB_CTR_0NORM_0PADDED" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_mnist_modelA_CTR_0.5NORM_0PADDED" beforeDir="false" afterPath="$PROJECT_DIR$/indexes/unsafe_indexes_mnist_modelA_CTR_0.5NORM_0PADDED" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unsafe_indexes_mnist_modelB_CTR_0NORM_0PADDED" beforeDir="false" afterPath="$PROJECT_DIR$/indexes/unsafe_indexes_mnist_modelB_CTR_0NORM_0PADDED" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,14 +16,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/evaluation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="96" column="46" selection-start-line="96" selection-start-column="46" selection-end-line="96" selection-end-column="46" />
+            <state relative-caret-position="289">
+              <caret line="129" column="37" lean-forward="true" selection-start-line="128" selection-end-line="129" selection-end-column="37" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
                 <element signature="e#1371#2211#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/predictor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/collage_of_encrypted_images.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="81" column="71" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,8 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/FGSM/cleverhans/cleverhans/devtools/version.py" />
-        <option value="$PROJECT_DIR$/cleverhans/cleverhans/__init__.py" />
         <option value="$PROJECT_DIR$/cleverhans/cleverhans/devtools/version.py" />
         <option value="$PROJECT_DIR$/cleverhans/cleverhans/devtools/list_files.py" />
         <option value="$PROJECT_DIR$/cleverhans/cleverhans/model.py" />
@@ -155,15 +178,17 @@
         <option value="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/CW_attack.py" />
         <option value="$PROJECT_DIR$/src/stam.py" />
+        <option value="$PROJECT_DIR$/src/collage_of_encrypted_images.py" />
         <option value="$PROJECT_DIR$/src/visualize_attack.py" />
+        <option value="$PROJECT_DIR$/src/predictor.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="240" />
-    <option name="y" value="128" />
+    <option name="y" value="127" />
     <option name="width" value="1440" />
-    <option name="height" value="773" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -171,12 +196,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_weights" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
@@ -193,7 +224,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,8 +255,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.visualize_attack">
-    <configuration name="collage_of_permutated_images" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.predictor">
+    <configuration name="collage_of_encrypted_images" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -238,29 +268,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/collage_of_permutated_images.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dataset_attack" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
-      <module name="Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/dataset_attack.py" />
-      <option name="PARAMETERS" value="-f fashion_modelB_CTR_0.5NORM_0PADDED" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/collage_of_encrypted_images.py" />
+      <option name="PARAMETERS" value="-d mnist -e ctr -c 3 -i 3" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -302,7 +311,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/evaluation.py" />
-      <option name="PARAMETERS" value="-f fashion_modelB_CTR_0.5NORM_0PADDED -n 1000" />
+      <option name="PARAMETERS" value="-f fashion_modelB_CBC_0NORM_0PADDED -n 1000" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="predictor" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/predictor.py" />
+      <option name="PARAMETERS" value="-f fashion_modelA_UNENCRYPTED_0.5NORM_0PADDED 7956" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -378,17 +408,17 @@
       <item itemvalue="Python.train" />
       <item itemvalue="Python.evaluation" />
       <item itemvalue="Python.visualize_attack" />
-      <item itemvalue="Python.collage_of_permutated_images" />
-      <item itemvalue="Python.dataset_attack" />
+      <item itemvalue="Python.collage_of_encrypted_images" />
       <item itemvalue="Python.stam" />
+      <item itemvalue="Python.predictor" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.predictor" />
         <item itemvalue="Python.visualize_attack" />
-        <item itemvalue="Python.stam" />
-        <item itemvalue="Python.dataset_attack" />
         <item itemvalue="Python.evaluation" />
-        <item itemvalue="Python.collage_of_permutated_images" />
+        <item itemvalue="Python.collage_of_encrypted_images" />
+        <item itemvalue="Python.stam" />
       </list>
     </recent_temporary>
   </component>
@@ -641,18 +671,26 @@
       <option name="project" value="LOCAL" />
       <updated>1558413758796</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="finishing">
+      <created>1558549959815</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1558549959815</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.24240422" />
+      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.24240422" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719395" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.27439886" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.27439886" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -668,7 +706,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated the code, encryption is 'part of' the model and invisible during prediction (for client)" />
     <MESSAGE value="runninh again the models to make sure there are no bugs" />
     <MESSAGE value="ran 'unencrypted' models and 'permutated' models on both datasets" />
     <MESSAGE value="ran ECB version 1" />
@@ -693,7 +730,8 @@
     <MESSAGE value="done with CW" />
     <MESSAGE value="updated table" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="finishing" />
+    <option name="LAST_COMMIT_MESSAGE" value="finishing" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -725,7 +763,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/collage_of_permutated_images.bat" />
     <entry file="file://$PROJECT_DIR$/results">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -877,13 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/evaluation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/attacked_ctr">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -897,11 +927,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unsafe_indexes_fashion_modelA_CTR_0.5NORM_0PADDED">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-356" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/unsafe_indexes_fashion_modelA_CTR_0.5NORM_0PADDED" />
     <entry file="file://$PROJECT_DIR$/src/dataset_attack.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -932,16 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/predictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="47" column="40" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python36/Lib/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -949,23 +965,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stam.py">
+    <entry file="file://$PROJECT_DIR$/src/stam.py" />
+    <entry file="file://$PROJECT_DIR$/src/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="139">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collage_of_encrypted_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="81" column="71" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="96" column="46" selection-start-line="96" selection-start-column="46" selection-end-line="96" selection-end-column="46" />
+        <state relative-caret-position="289">
+          <caret line="129" column="37" lean-forward="true" selection-start-line="128" selection-end-line="129" selection-end-column="37" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
             <element signature="e#1371#2211#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>

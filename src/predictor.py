@@ -6,6 +6,7 @@ import numpy as np
 import tensorflow as tf
 import sys
 from pathlib import PurePath
+import random as r
 
 fashion_mnist_classes = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 mnist_classes = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
@@ -26,7 +27,7 @@ NORM = "NORM"
 FILE = "FILE"
 INDEX = "INDEX"
 
-params = {DATASET: None, MODEL: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, INDEX:None}
+params = {DATASET: None, MODEL: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, INDEX:-1}
 
 
 def plot_image(predictions, true_label, img):
@@ -44,9 +45,10 @@ def plot_image(predictions, true_label, img):
     plt.grid(False)
     plt.xticks([])
     plt.yticks([])
+    plt.axis('off')
 
-    # plt.imshow(img, cmap=plt.cm.binary)
-    plt.imshow(img, cmap='gray')
+    plt.imshow(img, cmap=plt.cm.binary)
+    # plt.imshow(img, cmap='gray')
 
     predicted_label = np.argmax(predictions)
     if predicted_label == true_label:
@@ -110,7 +112,7 @@ if __name__ == '__main__':
     if sys.argv[1] == '-h':
         print("Welcome to our predicting tool:")
         print("\t-f\tspecifying the filename of the model (mandatory)")
-        print("\t-i\tspecifying the index (mandatory)")
+        print("\t-i\tspecifying the index, if non specified than randomly chosen (optional)")
         exit()
 
     for i in range(1, len(sys.argv)):
@@ -121,6 +123,9 @@ if __name__ == '__main__':
                 params[FILE] = sys.argv[i + 1]
         if sys.argv[i] == '-i':
             params[INDEX] = int(sys.argv[i + 1], 10)
+
+    if params[INDEX] == -1:
+        params[INDEX] = r.randint(0, 999)
 
     MODEL_NAME = params[FILE]
 
