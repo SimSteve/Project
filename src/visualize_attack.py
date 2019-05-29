@@ -95,11 +95,11 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
 
         label0 = "{:2.0f}% it's {}".format(100 * np.max(probs[i][0]), class_names[preds[i][0]])
         label1 = "{:2.0f}% it's {}".format(100 * np.max(probs[i][1]), class_names[preds[i][1]])
-        multicolor_xlabel(axes[i], ["regular: ", label0], ['black', color0], h=-0.18)
-        multicolor_xlabel(axes[i], ["protected: ", label1], ['black', color1], h=-0.30)
+        multicolor_xlabel(axes[i], ["insecured: ", label0], ['black', color0], h=-0.18)
+        multicolor_xlabel(axes[i], ["secured: ", label1], ['black', color1], h=-0.30)
 
     plt.suptitle("\nencryption: " + params[TRAIN_WITH_ME] + "\nattack: " + attacks[params[MODEL]]
-                 + "\n\ntrue label: " + class_names[true_label], fontsize=15, fontweight='bold', color='brown')
+                 + "\n\ntrue label: " + class_names[true_label], fontsize=15, fontweight='bold', color=(74.0/255.0, 146.0/255.0, 156.0/255.0))
     plt.show()
 
 
