@@ -2,34 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="finishing">
-      <change afterPath="$PROJECT_DIR$/bai-blog-panda.png__2334x1086_q85_subsampling-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fashion_CW_16_adv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fashion_CW_940_adv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fashion_CW_940_clean.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fashion_CW_940_noise.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mlp_mnist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mnist_2layers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mnist_A_456_permutated_adv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mnist_A_456_permutated_clear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mnist_A_456_permutated_noise.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mnist_B_456_permutated_adv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mnist_B_456_permutated_clear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mnist_B_456_permutated_noise.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/noise.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/panda_.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poster-with-man.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poster-without-man.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stam.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accuracies.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/accuracies.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mnist_A_permutated_456.png" beforeDir="false" afterPath="$PROJECT_DIR$/mnist_A_permutated_456.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mnist_B_permutated_456.png" beforeDir="false" afterPath="$PROJECT_DIR$/mnist_B_permutated_456.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/padding_accuracies.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/padding_accuracies.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panda.png" beforeDir="false" afterPath="$PROJECT_DIR$/panda.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poster.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/poster.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poster.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/poster.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualize_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualize_attack.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="51">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -174,10 +148,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="126" />
+    <option name="x" value="1893" />
+    <option name="y" value="-13" />
     <option name="width" value="1440" />
-    <option name="height" value="775" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -671,9 +645,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.24174373" />
+      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.24130663" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -967,13 +941,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python36/Lib/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="729" column="4" selection-start-line="729" selection-start-column="4" selection-end-line="729" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/matplotlib/pyplot.py" />
     <entry file="file://$PROJECT_DIR$/src/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -983,8 +951,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="51">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
