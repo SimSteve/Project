@@ -63,22 +63,25 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
     orig_img += params[NORM]
     adv_img += params[NORM]
 
-    fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
-
-    axes = [ax1, ax2, ax3]
+    #TODO
+    # fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
+    #
+    # axes = [ax1, ax2, ax3]
     images = [orig_img, noise, adv_img]
     titles = ["Original", "Noise", "Adversarial"]
     probs = [[orig_prob_attacked, orig_prob_safe], [], [adv_prob_attacked, adv_prob_safe]]
     preds = [[np.argmax(orig_prob_attacked), np.argmax(orig_prob_safe)], [], [np.argmax(adv_prob_attacked), np.argmax(adv_prob_safe)]]
 
     for i in range(3):
-        axes[i].grid(False)
-        axes[i].set_xticks([])
-        axes[i].set_yticks([])
-        axes[i].title.set_text(titles[i])
+        fig, axes = plt.subplots()
+        axes.grid(False)
+        axes.set_xticks([])
+        axes.set_yticks([])
+        # axes[i].title.set_text(titles[i])
         # axes[i].axis('off')
 
-        axes[i].imshow(images[i], cmap=plt.cm.binary, vmin=0.0, vmax=1.0)  # row=0, col=0
+        axes.imshow(images[i], cmap=plt.cm.binary, vmin=0.0, vmax=1.0)  # row=0, col=0
+        continue
 
         if i == 1:
             continue
@@ -98,8 +101,8 @@ def plot_original_adversarial(orig_img, adv_img, noise, orig_prob_attacked, orig
         multicolor_xlabel(axes[i], ["insecured: ", label0], ['black', color0], h=-0.18)
         multicolor_xlabel(axes[i], ["secured: ", label1], ['black', color1], h=-0.30)
 
-    plt.suptitle("\nencryption: " + params[TRAIN_WITH_ME] + "\nattack: " + attacks[params[MODEL]]
-                 + "\n\ntrue label: " + class_names[true_label], fontsize=15, fontweight='bold', color=(74.0/255.0, 146.0/255.0, 156.0/255.0))
+    # plt.suptitle("\nencryption: " + params[TRAIN_WITH_ME] + "\nattack: " + attacks[params[MODEL]]
+    #              + "\n\ntrue label: " + class_names[true_label], fontsize=15, fontweight='bold', color=(74.0/255.0, 146.0/255.0, 156.0/255.0))
     plt.show()
 
 
