@@ -48,6 +48,7 @@ class CarliniL0:
         independent_channels: set to false optimizes for number of pixels changed,
           set to true (not recommended) returns number of channels changed.
         """
+        print("l0_attack")
         self.model = model
         self.sess = sess
 
