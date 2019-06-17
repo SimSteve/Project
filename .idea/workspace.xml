@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28aff17f-f03d-4a9d-a6dd-83c9133cd425" name="Default" comment="finishing">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashion_CW_291_noise.png" beforeDir="false" afterPath="$PROJECT_DIR$/fashion_CW_291_noise.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poster-arad.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poster-arad.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poster-snake.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poster-snake.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poster-with-man.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poster-without-man.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/poster.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/poster.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poster.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/poster.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revolver.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shield.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,21 +24,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dataset_attack.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/collage_of_encrypted_images.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
+            <state relative-caret-position="1275">
               <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -38,19 +36,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CW/li_attack.py">
+        <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+            <state relative-caret-position="170">
+              <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CW/l0_attack.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state relative-caret-position="116">
+              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -167,19 +168,19 @@
         <option value="$PROJECT_DIR$/src/encryptions/ctr.py" />
         <option value="$PROJECT_DIR$/src/FGSM/FGSM_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/CW_attack.py" />
-        <option value="$PROJECT_DIR$/src/stam.py" />
         <option value="$PROJECT_DIR$/src/collage_of_encrypted_images.py" />
         <option value="$PROJECT_DIR$/src/predictor.py" />
-        <option value="$PROJECT_DIR$/src/visualize_attack.py" />
         <option value="$PROJECT_DIR$/src/dataset_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/li_attack.py" />
         <option value="$PROJECT_DIR$/src/CW/l0_attack.py" />
+        <option value="$PROJECT_DIR$/src/visualize_attack.py" />
+        <option value="$PROJECT_DIR$/src/stam.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="240" />
-    <option name="y" value="126" />
+    <option name="y" value="125" />
     <option name="width" value="1440" />
     <option name="height" value="775" />
   </component>
@@ -195,6 +196,11 @@
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_weights" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
@@ -237,7 +243,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.visualize_attack">
+  <component name="RunManager" selected="Python.evaluation">
     <configuration name="collage_of_encrypted_images" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -314,7 +320,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/evaluation.py" />
-      <option name="PARAMETERS" value="-f fashion_modelA_PERMUTATED_0.5NORM_32PADDED -n 1000" />
+      <option name="PARAMETERS" value="-f fashion_modelB_CTR_0NORM_0PADDED -n 1000" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -398,7 +404,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/visualize_attack.py" />
-      <option name="PARAMETERS" value="-f fashion_modelA_CTR_0.5NORM_0PADDED -i 291 456" />
+      <option name="PARAMETERS" value="-f fashion_modelA_CTR_0.5NORM_0PADDED -i 291" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -418,9 +424,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.evaluation" />
         <item itemvalue="Python.collage_of_encrypted_images" />
         <item itemvalue="Python.dataset_attack" />
-        <item itemvalue="Python.evaluation" />
         <item itemvalue="Python.predictor" />
         <item itemvalue="Python.stam" />
       </list>
@@ -687,14 +693,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.24108322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719395" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71270424" visible="true" weight="0.43281472" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71270424" weight="0.43281472" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -929,7 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stam.py" />
     <entry file="file://$PROJECT_DIR$/src/predictor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -951,23 +955,6 @@
       </provider>
     </entry>
     <entry file="file://C:/Python36/Lib/site-packages/matplotlib/pyplot.py" />
-    <entry file="file://$PROJECT_DIR$/src/evaluation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CW/l2_attack.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -977,7 +964,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataset_attack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
+        <state relative-caret-position="1853">
           <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
@@ -999,13 +986,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/stam.py" />
     <entry file="file://$PROJECT_DIR$/src/collage_of_encrypted_images.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
+        <state relative-caret-position="1275">
           <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/visualize_attack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
         </state>
       </provider>
     </entry>
