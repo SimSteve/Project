@@ -38,6 +38,8 @@ def plot_image(predictions, true_label, img):
     :param img: the image itself
     :return:
     '''
+    img += params[NORM]
+
     # in order to plot the image, we need a 2D array
     if len(np.array(img).shape) == 3:
         img = img[:, :, 0]
@@ -45,10 +47,8 @@ def plot_image(predictions, true_label, img):
     plt.grid(False)
     plt.xticks([])
     plt.yticks([])
-    plt.axis('off')
 
-    plt.imshow(img, cmap=plt.cm.binary)
-    # plt.imshow(img, cmap='gray')
+    plt.imshow(img, cmap=plt.cm.binary, vmin=0.0, vmax=1.0)
 
     predicted_label = np.argmax(predictions)
     if predicted_label == true_label:
@@ -64,7 +64,8 @@ def plot_image(predictions, true_label, img):
 def predict(model, img, label):
     predictions = model.predict(img)
 
-    img = np.reshape(img, (28, 28))
+    d = img.shape[1]
+    img = np.reshape(img, (d, d))
 
     plot_image(predictions, label, img)
 
@@ -85,9 +86,10 @@ def main():
     img = img / 255.0 - params[NORM]
 
     # padding
-    img = p.pad(img, number_of_paddings=params[PADDING], padder=0.0)
+    img = p.pad(img, number_of_paddings=params[PADDING], padder=0.0 - params[NORM])
 
-    img = np.reshape(img, (1, 28, 28, 1))
+    d = img.shape[1]
+    img = np.reshape(img, (1, d, d, 1))
 
     helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
 
@@ -151,8 +153,4 @@ if __name__ == '__main__':
     print("NAME\t= {}".format(MODEL_NAME))
     print("INDEX\t= {}".format(params[INDEX]))
 
-    try:
-        main()
-    except:
-        print("\n\tBad configuration. Try -h for help")
-        exit()
+    main()

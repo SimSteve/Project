@@ -84,7 +84,7 @@ class modelA_no_softmax(Encrypted_Model):
         super(modelA_no_softmax, self).__init__(encrypt)
 
         self.num_channels = 1
-        self.image_size = 28
+        self.image_size = input_shape[0]
         self.num_labels = 10
 
         self.model = Sequential()

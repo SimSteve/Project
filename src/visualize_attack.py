@@ -166,11 +166,14 @@ _, (x_test, y_test) = data.load_data()
 img = x_test[params[INDEX]]
 label = y_test[params[INDEX]]
 
+# normalizing
 img = img / 255.0 - params[NORM]
-# TODO
+
 # padding
-# img = p.pad(img, number_of_paddings=params[PADDING], padder=0.0)
-img = np.reshape(img, (1,28,28,1))
+img = p.pad(img, number_of_paddings=params[PADDING], padder=0.0 - params[NORM])
+
+d = img.shape[1]
+img = np.reshape(img, (1, d, d, 1))
 
 # gray-box attack, so the attacker gets to know only the architecture of the model
 # which is like giving him the unencrypted version
@@ -180,7 +183,7 @@ lab_model = lab_model.replace("CBC", "UNENCRYPTED")
 lab_model = lab_model.replace("CTR", "UNENCRYPTED")
 
 adv = a.attack(img, label, lab_model)
-''''''
+
 input_shape = np.array(img[0]).shape
 model = models[params[MODEL]](input_shape)
 model.load(lab_model)
@@ -190,7 +193,6 @@ prob_orig_attacked_model = model.predict(np.float32(img))[0] # likewise
 
 pred_adv_attacked_model = np.argmax(prob_adv_attacked_model)
 pred_orig_attacked_model = np.argmax(prob_orig_attacked_model)
-''''''
 
 helper = importlib.import_module("src.encryptions." + train_mode[params[TRAIN_WITH_ME]])
 if params[TRAIN_WITH_ME] in ["ECB", "CBC", "CTR"]:
