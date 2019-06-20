@@ -24,7 +24,6 @@ CARLINI = "CARLINI"
 AMOUNT = "AMOUNT"
 
 params = {DATASET: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, FILE:None, AMOUNT:1000, CARLINI:None}
-norm = {"modelA":0.5, "modelB":0}
 
 
 def save_indexes(model, adv, labels, name):
@@ -97,10 +96,10 @@ for i, part in enumerate(name_parts):
         params[DATASET] = part
     if part == "UNENCRYPTED" or part == "PERMUTATED" or part == "ECB" or part == "CBC" or part == "CTR":
         params[TRAIN_WITH_ME] = part
+    if "NORM" in part:
+        params[NORM] = float(part.split("NORM")[0])
     if "PADDED" in part:
         params[PADDING] = int(part.split("PADDED")[0])
-
-params[NORM] = norm[params[MODEL]]
 
 print("DATASET\t= {}".format(params[DATASET]))
 print("MODEL\t= {}".format(params[MODEL]))

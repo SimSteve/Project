@@ -19,7 +19,6 @@ PADDING = "PADDING"
 NORM = "NORM"
 
 params = {DATASET: None, MODEL: None, TRAIN_WITH_ME: "UNENCRYPTED", PADDING: 0, NORM: 0}
-norm = {"modelA":0.5, "modelB":0}
 
 
 def main():
@@ -51,7 +50,7 @@ def main():
     model = models[params[MODEL]](input_shape, encrypt=helper.encrypt)
 
     # training
-    loss, epoch_accs, epochs = model.train(x_train, y_train, ep=6)
+    loss, epoch_accs, epochs = model.train(x_train, y_train, ep=5)
 
     # evaluating
     model.compile()
@@ -88,12 +87,13 @@ if __name__ == '__main__':
         exit()
 
     if sys.argv[1] == '-h':
-        print("\npython .\src\\trainer.py  [-h] <-d dataset> <-m architecture> [-e encryption] [-p padsize]")
+        print("\npython .\src\\trainer.py  [-h] <-d dataset> <-m architecture> [-e encryption] [-p padsize] [-n normalization]")
         print("\t-h\tshow this help text")
         print("\t-d\tspecifying the dataset; mnist or fashion <must>")
         print("\t-m\tspecifying the model architecture; modelA or modelB <must>")
         print("\t-e\tspecifying the encryption method; UNENCRYPTED, PERMUTATED, ECB, CBC or CTR. default is UNENCRYPTED [optional]")
         print("\t-p\tspecifying the number of rows to pad, default is 0 [optional]")
+        print("\t-n\tspecifying the normalization (img / 255.0 - n), default is 0 [optional]")
         exit()
 
     for i in range(1, len(sys.argv)):
@@ -105,10 +105,10 @@ if __name__ == '__main__':
             params[TRAIN_WITH_ME] = sys.argv[i+1]
         if sys.argv[i] == '-p':
             params[PADDING] = int(sys.argv[i+1],10)
+        if sys.argv[i] == '-n':
+            params[NORM] = float(sys.argv[i+1])
 
-    params[NORM] = norm[params[MODEL]]
-
-    MODEL_NAME = params[DATASET] + "_" + params[MODEL] + "_" + params[TRAIN_WITH_ME] + "_" + str(params[PADDING]) + "PADDED"
+    MODEL_NAME = params[DATASET] + "_" + params[MODEL] + "_" + params[TRAIN_WITH_ME] + "_" + str(params[NORM]) + "NORM_" + str(params[PADDING]) + "PADDED"
 
     print("DATASET\t= {}".format(params[DATASET]))
     print("MODEL\t= {}".format(params[MODEL]))

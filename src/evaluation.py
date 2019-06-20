@@ -21,7 +21,6 @@ FILE = "FILE"
 AMOUNT = "AMOUNT"
 
 params = {DATASET: None, MODEL: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, AMOUNT:10000}
-norm = {"modelA":0.5, "modelB":0}
 
 # getting command line arguments
 if len(sys.argv) == 1:
@@ -47,8 +46,6 @@ for i in range(1, len(sys.argv)):
 
 MODEL_NAME = params[FILE]
 
-norm_is_set = False
-
 name_parts = MODEL_NAME.split('_')
 for i,part in enumerate(name_parts):
     if part == "mnist" or part == "fashion":
@@ -59,12 +56,8 @@ for i,part in enumerate(name_parts):
         params[TRAIN_WITH_ME] = part
     if "NORM" in part:
         params[NORM] = float(part.split("NORM")[0])
-        norm_is_set = True
     if "PADDED" in part:
         params[PADDING] = int(part.split("PADDED")[0])
-
-if not norm_is_set:
-    params[NORM] = norm[params[MODEL]]
 
 print("DATASET\t= {}".format(params[DATASET]))
 print("MODEL\t= {}".format(params[MODEL]))
