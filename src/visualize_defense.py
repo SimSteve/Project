@@ -50,15 +50,12 @@ def multicolor_xlabel(ax,list_of_strings,list_of_colors, h=0.0, anchorpad=0,**kw
     ax.add_artist(anchored_xbox)
 
 
-def plot_original_adversarial(orig_img, adv_img, orig_prob, adv_prob, true_label, model_description):
+def plot_original_adversarial(orig_img, adv_img, orig_prob, adv_prob, true_label, model_description, encrypt_tech):
     if len(np.array(orig_img).shape) > 2:
         orig_img = orig_img[:, :, 0]
 
     if len(np.array(adv_img).shape) > 2:
         adv_img = adv_img[:, :, 0]
-
-    orig_img += params[NORM]
-    adv_img += params[NORM]
 
     fig, (ax1, ax2) = plt.subplots(1, 2)
 
@@ -75,7 +72,7 @@ def plot_original_adversarial(orig_img, adv_img, orig_prob, adv_prob, true_label
         axes[i].title.set_text(titles[i])
         # axes[i].axis('off')
 
-        axes[i].imshow(images[i], cmap=plt.cm.binary, vmin=0.0, vmax=1.0)  # row=0, col=0
+        axes[i].imshow(images[i], cmap=plt.cm.binary, vmin=0.0, vmax=1.0)
 
         if preds[i] == true_label:
             color = 'green'
@@ -85,9 +82,8 @@ def plot_original_adversarial(orig_img, adv_img, orig_prob, adv_prob, true_label
         label = "{:2.0f}% it's {}".format(100 * np.max(probs[i]), class_names[preds[i]])
         multicolor_xlabel(axes[i], ["{}: ".format(model_description), label], ['black', color], h=-0.18)
 
-    plt.suptitle("\nencryption: " + params[TRAIN_WITH_ME] + "\nattack: " + attacks[params[MODEL]]
-                 + "\n\ntrue label: " + class_names[true_label], fontsize=15, fontweight='bold', color=(74.0/255.0, 146.0/255.0, 156.0/255.0))
-
+    plt.suptitle("\nencryption: " + encrypt_tech + "\nattack: " + attacks[params[MODEL]]
+                 + "\ntrue label: " + class_names[true_label], fontsize=15, fontweight='bold', color=(74.0/255.0, 146.0/255.0, 156.0/255.0))
 
 
 # getting command line arguments
@@ -96,7 +92,7 @@ if len(sys.argv) == 1:
     exit()
 
 if sys.argv[1] == '-h':
-    print("python .\src\\visualize_attack.py [-h] <-f filename> [-i index] [-c CW_mode]")
+    print("python .\src\\visualize_defense.py [-h] <-f filename> [-i index] [-c CW_mode]")
     print("\t-h\tshow this help text")
     print("\t-f\tspecifying the filename of the model <must>")
     print("\t-i\tspecifying the index, if non specified than randomly chosen [optional]")
@@ -195,10 +191,14 @@ prob_orig_safe_model = model.predict(np.float32(img))[0] # likewise
 pred_adv_safe_model = np.argmax(prob_adv_safe_model)
 pred_orig_safe_model = np.argmax(prob_orig_safe_model)
 
-plot_original_adversarial(orig_img=img[0], adv_img=adv[0], orig_prob=prob_orig_attacked_model,
-                          adv_prob=prob_adv_attacked_model, true_label=label, model_description="unsecured")
 
-plot_original_adversarial(orig_img=helper.encrypt(img[0]), adv_img=helper.encrypt(adv[0]),
-                          orig_prob=prob_orig_safe_model, adv_prob=prob_adv_safe_model, true_label=label, model_description="secured")
+img[0] += params[NORM]
+adv[0] += params[NORM]
+
+plot_original_adversarial(orig_img=img[0], adv_img=adv[0], orig_prob=prob_orig_attacked_model, adv_prob=prob_adv_attacked_model,
+                          true_label=label, model_description="unsecured", encrypt_tech="UNENCRYPTED")
+
+plot_original_adversarial(orig_img=helper.encrypt(img[0]), adv_img=helper.encrypt(adv[0]), orig_prob=prob_orig_safe_model,
+                          adv_prob=prob_adv_safe_model, true_label=label, model_description="secured", encrypt_tech=params[TRAIN_WITH_ME])
 
 plt.show()
