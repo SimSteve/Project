@@ -54,9 +54,9 @@ for i in range(1, len(sys.argv)):
         params[NUM_OF_EXAMPLES_PER_CLASS] = int(sys.argv[i + 1], 10)
 
 
-print("DATASET\t\t\t\t\t\t= {}".format(params[DATASET]))
-print("PADDING\t\t\t\t\t\t= {}".format(params[PADDING]))
-print("NUM_OF_CLASSES\t\t\t\t= {}".format(params[NUM_OF_CLASSES]))
+print("DATASET\t\t\t\t= {}".format(params[DATASET]))
+print("PADDING\t\t\t\t= {}".format(params[PADDING]))
+print("NUM_OF_CLASSES\t\t\t= {}".format(params[NUM_OF_CLASSES]))
 print("NUM_OF_EXAMPLES_PER_CLASS\t= {}".format(params[NUM_OF_EXAMPLES_PER_CLASS]))
 
 data = data_types[params[DATASET]]

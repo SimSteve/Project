@@ -5,21 +5,6 @@
 ## This program is licenced under the BSD 2-Clause licence,
 ## contained in the LICENCE file in this directory.
 
-import matplotlib.pyplot as plt
-
-
-def plot_original_adversarial(image):
-    if len(np.array(image).shape) > 2:
-        image = np.reshape(image, (28,28))
-
-    plt.grid(False)
-    plt.xticks([])
-    plt.yticks([])
-
-    plt.imshow(image)
-
-    plt.show()
-
 
 import sys
 import tensorflow as tf
@@ -67,6 +52,7 @@ class CarliniL2:
         boxmin: Minimum pixel value (default -0.5).
         boxmax: Maximum pixel value (default 0.5).
         """
+        print("l2_attack")
         image_size, num_channels, num_labels = model.image_size, model.num_channels, model.num_labels
         self.sess = sess
         self.TARGETED = targeted
@@ -213,11 +199,6 @@ class CarliniL2:
                 _, l, l2s, scores, nimg = self.sess.run([self.train, self.loss,
                                                          self.l2dist, self.output,
                                                          self.newimg])
-
-                # if iteration == self.MAX_ITERATIONS - 1:
-                #     plot_original_adversarial(nimg)
-                #     plot_original_adversarial(perm_img)
-
 
                 if np.all(scores >= -.0001) and np.all(scores <= 1.0001):
                     if np.allclose(np.sum(scores, axis=1), 1.0, atol=1e-3):

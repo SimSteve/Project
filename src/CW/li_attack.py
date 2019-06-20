@@ -49,6 +49,7 @@ class CarliniLi:
         const_factor: The rate at which we should increase the constant, when the
           previous constant failed. Should be greater than one, smaller is better.
         """
+        print("li_attack")
         self.model = model
         self.sess = sess
 

@@ -40,11 +40,11 @@ class Encrypted_Model():
         return self.model.predict(enc_img)
 
     def save(self, m_file):
-        self.model.save_weights(filepath='saved_weights/{}.h5'.format(m_file))
+        self.model.save_weights(filepath='saved_models/{}.h5'.format(m_file))
 
     def load(self, m_file):
-        if Path('saved_weights/{}.h5'.format(m_file)).is_file():
-            self.model.load_weights(filepath='saved_weights/{}.h5'.format(m_file))
+        if Path('saved_models/{}.h5'.format(m_file)).is_file():
+            self.model.load_weights(filepath='saved_models/{}.h5'.format(m_file))
         else:
             print("WARNING! No saved model found, train one from scratch.")
             self.model = None

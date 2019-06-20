@@ -207,6 +207,8 @@ adv[0] += params[NORM]
 plot_original_adversarial(orig_img=img[0], adv_img=adv[0], orig_prob=prob_orig_attacked_model, adv_prob=prob_adv_attacked_model,
                           true_label=label, model_description="unsecured", encrypt_tech="UNENCRYPTED")
 
+if params[TRAIN_WITH_ME] in ["ECB", "CBC", "CTR"]:
+    helper.NORM = 0
 plot_original_adversarial(orig_img=helper.encrypt(img[0]), adv_img=helper.encrypt(adv[0]), orig_prob=prob_orig_safe_model,
                           adv_prob=prob_adv_safe_model, true_label=label, model_description="secured", encrypt_tech=params[TRAIN_WITH_ME])
 
