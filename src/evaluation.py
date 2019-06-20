@@ -28,9 +28,10 @@ if len(sys.argv) == 1:
     exit()
 
 if sys.argv[1] == '-h':
-    print("Welcome to our evaluation tool:")
-    print("\t-f\tspecifying the filename of the model (mandatory)")
-    print("\t-n\tspecifying the amount of images, default is 10000 (optional)")
+    print("python .\src\\evaluation.py [-h] <-f filename> [-n amount]")
+    print("\t-h\tshow this help text")
+    print("\t-f\tspecifying the filename of the model <must>")
+    print("\t-n\tspecifying the amount of images, default is 10000 [optional]")
     exit()
 
 for i in range(1, len(sys.argv)):

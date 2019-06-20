@@ -23,12 +23,13 @@ if len(sys.argv) == 1:
     exit()
 
 if sys.argv[1] == '-h':
-    print("Welcome to our collage tool:")
-    print("\t-d\tspecifying the dataset; mnist or fashion (mandatory)")
-    print("\t-e\tspecifying the encryption method; PERMUTATED, ECB, CBC or CTR (mandatory)")
-    print("\t-p\tspecifying the number of rows to pad, default is 0 (optional)")
-    print("\t-c\tspecifying the number of classes, default is 10 (optional)")
-    print("\t-i\tspecifying the number images for each class, default is 10 (optional)")
+    print("\npython .\src\\collage_of_encrypted_images.py [-h] <-d dataset> <-e encryption> [-p padsize] [-c classes] [-i images]")
+    print("\t-h\tshow this help text")
+    print("\t-d\tspecifying the dataset; mnist or fashion <must>")
+    print("\t-e\tspecifying the encryption method; PERMUTATED, ECB, CBC or CTR <must>")
+    print("\t-p\tspecifying the number of rows to pad, default is 0 [optional]")
+    print("\t-c\tspecifying the number of classes, default is 10 [optional]")
+    print("\t-i\tspecifying the number images for each class, default is 10 [optional]")
     exit()
 
 for i in range(1, len(sys.argv)):

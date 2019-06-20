@@ -109,10 +109,11 @@ if len(sys.argv) == 1:
     exit()
 
 if sys.argv[1] == '-h':
-    print("Welcome to our predicting tool:")
-    print("\t-f\tspecifying the filename of the model (mandatory)")
-    print("\t-i\tspecifying the index, if non specified than randomly chosen (optional)")
-    print("\t-c\tspecifying carlini mode; 2,0 or i. default is 2 (optional)")
+    print("python .\src\\visualize_attack.py [-h] <-f filename> [-i index] [-c CW_mode]")
+    print("\t-h\tshow this help text")
+    print("\t-f\tspecifying the filename of the model <must>")
+    print("\t-i\tspecifying the index, if non specified than randomly chosen [optional]")
+    print("\t-c\tspecifying carlini mode; 2,0 or i. default is 2 [optional]")
     exit()
 
 for i in range(1, len(sys.argv)):

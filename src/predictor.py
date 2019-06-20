@@ -110,9 +110,10 @@ if __name__ == '__main__':
         exit()
 
     if sys.argv[1] == '-h':
-        print("Welcome to our predicting tool:")
-        print("\t-f\tspecifying the filename of the model (mandatory)")
-        print("\t-i\tspecifying the index, if non specified than randomly chosen (optional)")
+        print("python .\src\\predictor.py [-h] <-f filename> [-i index]")
+        print("\t-h\tshow this help text")
+        print("\t-f\tspecifying the filename of the model <must>")
+        print("\t-i\tspecifying the index, if non specified than randomly chosen [optional]")
         exit()
 
     for i in range(1, len(sys.argv)):

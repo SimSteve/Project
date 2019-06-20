@@ -1,5 +1,0 @@
-mnist_modelA_CTR_0.5NORM_0PADDED	accuracy: 95.80%	error rate: 4.20%
-mnist_modelB_CTR_0NORM_0PADDED	accuracy: 68.90%	error rate: 31.10%
-fashion_modelA_CTR_0.5NORM_0PADDED	accuracy: 82.80%	error rate: 17.20%
-fashion_modelB_CTR_0NORM_0PADDED	accuracy: 33.70%	error rate: 66.30%
-fashion_modelB_CTR_0NORM_0PADDED	accuracy: 33.70%	error rate: 66.30%
