@@ -1,3 +1,11 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+
+The DNN architectures used in this project
+'''
+
+
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from pathlib import Path

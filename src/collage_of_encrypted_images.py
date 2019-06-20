@@ -1,3 +1,12 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+
+This script plots 2 collages, one containing original images
+and the other one containing encrypted images.
+'''
+
+
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import src.padding as p
@@ -52,6 +61,7 @@ print("NUM_OF_EXAMPLES_PER_CLASS\t= {}".format(params[NUM_OF_EXAMPLES_PER_CLASS]
 
 data = data_types[params[DATASET]]
 
+# loading data
 (x_train, y_train), _ = data.load_data()
 
 num_of_classes = params[NUM_OF_CLASSES]

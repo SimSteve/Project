@@ -1,6 +1,14 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+'''
+
+
 import numpy as np
 
-
+'''
+padding an image
+'''
 def pad(img, number_of_paddings, padder=0):
     if number_of_paddings == 0:
         return np.array(img)

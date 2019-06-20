@@ -1,3 +1,11 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+
+This scripts loads an already trained model and show its prediction on a single image
+'''
+
+
 import importlib
 import src.padding as p
 import matplotlib.pyplot as plt

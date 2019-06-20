@@ -1,3 +1,11 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+
+This script visualizes an attack on a single image, it plots the original image, the noise and the adversarial image
+'''
+
+
 import importlib
 from pathlib import PurePath
 import src.padding as p

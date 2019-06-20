@@ -1,10 +1,18 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+'''
+
+
 import numpy as np
 import tensorflow as tf
 import tensorflow_probability as tfp
 
 seed = 42
 
-
+'''
+random permutation on the image
+'''
 def encrypt(inputs):
     # performs numpy permutation on inputs
     dims = np.array(inputs).shape

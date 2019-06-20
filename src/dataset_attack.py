@@ -1,3 +1,11 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+
+This script is running an attack on a dataset of images (mnist or fashion)
+'''
+
+
 import importlib
 from pathlib import PurePath
 import src.padding as p
@@ -26,6 +34,9 @@ AMOUNT = "AMOUNT"
 params = {DATASET: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, FILE:None, AMOUNT:1000, CARLINI:None}
 
 
+'''
+saving the indexes of images that were successfully attacked and the ones not
+'''
 def save_indexes(model, adv, labels, name):
     good = 0.0
     bad = 0.0
@@ -111,6 +122,7 @@ print("AMOUNT\t= {}".format(params[AMOUNT]))
 
 data = data_types[params[DATASET]]
 
+# loading data
 _, (x_test, y_test) = data.load_data()
 
 x_test = x_test[:params[AMOUNT]]

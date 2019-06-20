@@ -1,3 +1,11 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+
+This scripts build models according to various parameters (encryption, padding, architecture etc.)
+'''
+
+
 import importlib
 import src.Models as mdl
 import numpy as np

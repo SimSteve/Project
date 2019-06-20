@@ -1,3 +1,11 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+
+A script designed to load an already trained model and evaluate it on the test-set
+'''
+
+
 from pathlib import PurePath
 import tensorflow as tf
 import numpy as np
@@ -69,6 +77,7 @@ print("NAME\t= {}".format(MODEL_NAME))
 
 data = data_types[params[DATASET]]
 
+# loading data
 (x_train, y_train), (x_test, y_test) = data.load_data()
 
 x_test = x_test[:params[AMOUNT]]

@@ -1,10 +1,18 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+'''
+
+
 import tensorflow as tf
 import numpy as np
 import src.Models as m
 from src.FGSM.cleverhans.cleverhans.attacks.fast_gradient_method import FastGradientMethod
 from src.FGSM.cleverhans.cleverhans.utils_keras import KerasModelWrapper
 
-
+'''
+performing an FGSM attack on a set of images
+'''
 def attack(img, label, model_name, evaluate=False):
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())

@@ -1,3 +1,12 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+
+This script visualizes the defense system, it plots the images (origiinal + adversarial) for how
+the unsecured model 'sees' them, and it plots them how the secured model sees them (encrypted)
+'''
+
+
 import importlib
 from pathlib import PurePath
 import src.padding as p

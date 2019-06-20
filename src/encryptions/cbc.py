@@ -1,3 +1,9 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+'''
+
+
 import json
 import os
 from Crypto.Cipher import AES
@@ -13,6 +19,9 @@ def encrypt(inputs):
     return flattening((inputs + NORM) * 255.0)
 
 
+'''
+flattens the image, encrypts and reshapes
+'''
 def flattening(inputs):
     dims = np.array(inputs).shape
 
@@ -25,6 +34,9 @@ def flattening(inputs):
     return (enc_inputs / 255.0) - NORM
 
 
+'''
+flattens according to blocks, encrypts and reshapes
+'''
 def blocking(inputs):
     dims = np.array(inputs).shape
 

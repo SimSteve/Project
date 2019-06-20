@@ -1,3 +1,9 @@
+'''
+Yishay Asher & Steve Gutfreund
+Final Project, 2019
+'''
+
+
 import tensorflow as tf
 import numpy as np
 import src.Models as m
@@ -15,7 +21,9 @@ def set_mode(mode):
     if mode == 'i':
         from src.CW.li_attack import CarliniLi as c
 
-
+'''
+performing a CW attack on a set of images
+'''
 def attack(img, label, model_name, evaluate=False):
 
     with tf.Session() as sess:
