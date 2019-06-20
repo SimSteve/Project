@@ -28,6 +28,7 @@ FILE = "FILE"
 INDEX = "INDEX"
 
 params = {DATASET: None, MODEL: None, TRAIN_WITH_ME: None, PADDING: 0, NORM: 0, INDEX:-1}
+norm = {"modelA":0.5, "modelB":0}
 
 
 def plot_image(predictions, true_label, img):
@@ -138,10 +139,10 @@ if __name__ == '__main__':
             params[MODEL] = part
         if part == "UNENCRYPTED" or part == "PERMUTATED" or part == "ECB" or part == "CBC" or part == "CTR":
             params[TRAIN_WITH_ME] = part
-        if "NORM" in part:
-            params[NORM] = float(part.split("NORM")[0])
         if "PADDED" in part:
             params[PADDING] = int(part.split("PADDED")[0])
+
+    params[NORM] = norm[params[MODEL]]
 
     print("DATASET\t= {}".format(params[DATASET]))
     print("MODEL\t= {}".format(params[MODEL]))
